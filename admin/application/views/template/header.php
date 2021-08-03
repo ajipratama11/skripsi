@@ -15,6 +15,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="<?= base_url('./../assets/adminlte/dist/css/skins/skin-blue.min.css');?>">
+  <!-- <link rel="stylesheet" href="<?= base_url('./../assets/adminlte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css'); ?>"> -->
   <!-- Date Picker -->
   <link rel="stylesheet" href="<?= base_url('./../assets/adminlte/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css');?>">
   <!-- Daterange picker -->
@@ -30,8 +31,8 @@
   <!-- jQuery 3 -->
   <script src="<?= base_url('./../assets/adminlte/bower_components/jquery/dist/jquery.min.js');?>"></script>
   <!-- DataTables -->
-  <script src="<?= base_url('./../assets/adminlte/bower_components/datatables.net/js/jquery.dataTables.min.js');?>"></script>
-  <script src="<?= base_url('./../assets/adminlte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js');?>"></script>
+  <!-- <script src="<?= base_url('./../assets/adminlte/bower_components/datatables.net/js/jquery.dataTables.min.js');?>"></script>
+  <script src="<?= base_url('./../assets/adminlte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js');?>"></script> -->
   <!-- jQuery UI 1.11.4 -->
   <!-- <script src="<?= base_url('./../assets/adminlte/bower_components/jquery-ui/jquery-ui.min.js');?>"></script> -->
   <!-- Sweetalert -->
