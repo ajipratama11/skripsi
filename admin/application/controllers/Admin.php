@@ -373,22 +373,25 @@ class Admin extends CI_Controller {
 
 		$data['title'] = 'Data Set';
 		$data['set_data'] = $this->m_admin->list_dataset()->result();
-		$sub = $this->db->query("SELECT * FROM sub_kriteria_tb")->result();
+		$sub = $this->db->query("SELECT * FROM siswa")->result();
+		$sub2 = $this->db->query("SELECT * FROM nilai")->result();
 		$data['sub'] = $sub;
+		$data['id'] = $sub2;
+		$data['nilai'] = $sub2;
 
-		$arrayNilai = array();
-		foreach ($sub as $s) {
-			$nilai = $this->db->query("SELECT data_set.*, konversi.*, sub_kriteria_tb.* 
-			FROM data_set JOIN sub_kriteria_tb ON data_set.nama_sub = sub_kriteria_tb.nama_sub 
-			JOIN konversi ON data_set.nilai = konversi.atribut_konversi ")->row();
-			if ($nilai) {
-				$arrayNilai[] = $nilai->nilai;
-			} else {
-				$arrayNilai[] = "-";
-			}
-		}
+		// $arrayNilai = array();
+		// foreach ($sub as $s) {
+		// 	$nilai = $this->db->query("SELECT data_set.*, konversi.*, sub_kriteria_tb.* 
+		// 	FROM data_set JOIN sub_kriteria_tb ON data_set.nama_sub = sub_kriteria_tb.nama_sub 
+		// 	JOIN konversi ON data_set.nilai = konversi.atribut_konversi ")->row();
+		// 	if ($nilai) {
+		// 		$arrayNilai[] = $nilai->nilai;
+		// 	} else {
+		// 		$arrayNilai[] = "-";
+		// 	}
+		// }
 
-		$data['hasil'] = $arrayNilai;
+		// $data['hasil'] = $arrayNilai;
 
 		$this->header($data);
 		$this->load->view('aturan');
