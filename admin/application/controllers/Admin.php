@@ -306,31 +306,31 @@ class Admin extends CI_Controller {
 
 	public function nilaimin_alternatif($id){
 
-		$mapel = $this->db->query("SELECT * FROM mapel")->result();
-		$nilai = $this->db->query("SELECT * FROM minimum_alternatif_tb")->result();
-		$data['listminimum'] = $this->m_admin->list_nilaimin()->result();
-		$data['listmapel'] = $this->m_admin->list_mapel()->result();
 		$data['title'] = 'Nilai Minimum';
-		$data['mapel'] = $mapel;
-		$data['nilai'] =$nilai;
-		$data['detail'] = $this->db->query("SELECT * FROM alternatif_tb WHERE id_alternatif = '". $id ."'")->row();
+		// $mapel = $this->db->query("SELECT * FROM mapel")->result();
+		// $nilai = $this->db->query("SELECT * FROM minimum_alternatif_tb")->result();
+		// $data['listminimum'] = $this->m_admin->list_nilaimin()->result();
+		// $data['listmapel'] = $this->m_admin->list_mapel()->result();
+		// $data['mapel'] = $mapel;
+		// $data['nilai'] =$nilai;
+		$data['detail'] = $this->db->query("SELECT * FROM minimum_nilai_alternatif JOIN alternatif_tb ON minimum_nilai_alternatif.id_alternatif=alternatif_tb.id_alternatif WHERE minimum_nilai_alternatif.id_alternatif = '". $id ."'")->result();
 
-		$arrayNilai = array();
-		foreach ($mapel as $mpl) {
-			$nilai = $this->db->query("SELECT alternatif_tb.*, mapel.*, minimum_alternatif_tb.*
-			 FROM minimum_alternatif_tb JOIN alternatif_tb 
-			ON minimum_alternatif_tb.nama_alternatif = alternatif_tb.id_alternatif JOIN mapel 
-			ON minimum_alternatif_tb.mapel = mapel.id_mapel 
-			WHERE minimum_alternatif_tb.nama_alternatif = '".$id."' AND mapel.id_mapel = '". $mpl->id_mapel ."'")->row();
+		// $arrayNilai = array();
+		// foreach ($mapel as $mpl) {
+		// 	$nilai = $this->db->query("SELECT alternatif_tb.*, mapel.*, minimum_alternatif_tb.*
+		// 	 FROM minimum_alternatif_tb JOIN alternatif_tb 
+		// 	ON minimum_alternatif_tb.nama_alternatif = alternatif_tb.id_alternatif JOIN mapel 
+		// 	ON minimum_alternatif_tb.mapel = mapel.id_mapel 
+		// 	WHERE minimum_alternatif_tb.nama_alternatif = '".$id."' AND mapel.id_mapel = '". $mpl->id_mapel ."'")->row();
 
-			if ($nilai) {
-				$arrayNilai[] = $nilai->nilai;
-			} else {
-				$arrayNilai[] = "-";
-			}
-		}
+		// 	if ($nilai) {
+		// 		$arrayNilai[] = $nilai->nilai;
+		// 	} else {
+		// 		$arrayNilai[] = "-";
+		// 	}
+		// }
 
-		$data['hasil'] = $arrayNilai;
+		// $data['hasil'] = $arrayNilai;
 
 		$this->header($data);
 		$this->load->view('nilai_minimum_alternatif');
