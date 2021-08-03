@@ -381,4 +381,12 @@ class M_Admin extends CI_Model{
         $this->db->update($table, $data);
     }
 
+    public function get_nilai()
+    {
+        $this->db->select('*');
+        $this->db->from('nilai');
+        $this->db->join('siswa', 'nilai.id_siswa = siswa.id_siswa');
+        return $this->db->get()->result();
+    }
+
 }

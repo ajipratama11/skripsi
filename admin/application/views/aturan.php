@@ -15,68 +15,71 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>nama</th>
+                            <th>Nama</th>
                             <th>NIS</th>
+                            <th>Kimia</th>
+                            <th>Biologi</th>
+                            <th>Fisika</th>
+                            <th>Matematika</th>
+                            <th>Bhs Inggris</th>
+                            <th>Bhs Indonesia</th>
+                            <th>realistis</th>
+                            <th>intelektual</th>
+                            <th>artistik</th>
+                            <th>sosial</th>
+                            <th>enterprise</th>
+                            <th>konvensional</th>
+                            <th>linguistik</th>
+                            <th>matematikal</th>
+                            <th>musikal</th>
+                            <th>kinestik</th>
+                            <th>spartial</th>
+                            <th>intrapersonal</th>
+                            <th>interpersonal</th>
+                            <th>naturalistik</th>
+                            <th>eksistensial</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($sub as $s) : ?>
+                        <?php $no = 1; ?>
+                        <?php foreach ($nilai as $n) : ?>
                             <tr>
-                                <td><?= $s->id_siswa ?></td>
-                                <td><?= $s->nama ?></td>
-                                <td><?= $s->nis ?></td>
+                                <td><?= $no++ ?></td>
+                                <td><?= $n->nama ?></td>
+                                <td><?= $n->nis ?></td>
+                                <td><input type="text" name="kimia" class="form-control" value="<?= $n->kimia ?>"></td>
+                                <td><input type="text" name="biologi" class="form-control" value="<?= $n->biologi ?>"></td>
+                                <td><input type="text" name="fisika" class="form-control" value="<?= $n->fisika ?>"></td>
+                                <td><input type="text" name="matematika" class="form-control" value="<?= $n->matematika ?>"></td>
+                                <td><input type="text" name="bhs_inggris" class="form-control" value="<?= $n->bhs_inggris ?>"></td>
+                                <td><input type="text" name="bhs_indonesia" class="form-control" value="<?= $n->bhs_indonesia ?>"></td>
+                                <td><input type="text" name="realistis" class="form-control" value="<?= $n->realistis ?>"></td>
+                                <td><input type="text" name="intelektual" class="form-control" value="<?= $n->intelektual ?>"></td>
+                                <td><input type="text" name="artistik" class="form-control" value="<?= $n->artistik ?>"></td>
+                                <td><input type="text" name="sosial" class="form-control" value="<?= $n->sosial ?>"></td>
+                                <td><input type="text" name="enterprise" class="form-control" value="<?= $n->enterprise ?>"></td>
+                                <td><input type="text" name="konvensional" class="form-control" value="<?= $n->konvensional ?>"></td>
+                                <td><input type="text" name="linguistik" class="form-control" value="<?= $n->linguistik ?>"></td>
+                                <td><input type="text" name="matematikal" class="form-control" value="<?= $n->matematikal ?>"></td>
+                                <td><input type="text" name="musikal" class="form-control" value="<?= $n->musikal ?>"></td>
+                                <td><input type="text" name="kinestik" class="form-control" value="<?= $n->kinestik ?>"></td>
+                                <td><input type="text" name="spartial" class="form-control" value="<?= $n->spartial ?>"></td>
+                                <td><input type="text" name="intrapersonal" class="form-control" value="<?= $n->intrapersonal ?>"></td>
+                                <td><input type="text" name="interpersonal" class="form-control" value="<?= $n->interpersonal ?>"></td>
+                                <td><input type="text" name="naturalistik" class="form-control" value="<?= $n->naturalistik ?>"></td>
+                                <td><input type="text" name="eksistensial" class="form-control" value="<?= $n->eksistensial ?>"></td>
                                 <td>
-                                    <a href="#datanilai<?= $s->id_siswa ?>" data-toggle="modal" class="btn btn-primary">Lihat Nilai</a>
+                                    <a href="#datanilai<?= $n->id_siswa ?>" data-toggle="modal" class="btn btn-primary">Lihat Nilai</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
-                        <!-- <button class="btn btn-xs btn-warning" data-toggle="modal" data-target="#editKelas"><i class="fa fa-edit"></i> Edit</button> &nbsp;
-                        <button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#hapusKelas"><i class="fa fa-trash"></i> Hapus</button> -->
                     </tbody>
                 </table>
             </div>
         </div>
     </section>
 </div>
-<?php foreach ($id as $id) : ?>
-    <div class="modal fade" id="datanilai<?= $id->id_siswa ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal data nilai</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form>
-                    <div class="modal-body">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <td>Mapel</td>
-                                    <td>Nilai</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($nilai as $n) : ?>
-                                    <tr>
-                                        <td><?= $n->mapel ?></td>
-                                        <td><input type="text" name="nilai" value="<?= $n->nilai ?>" readonly></td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                        <button type="submit" class="btn btn-primary">Konvert Nilai</button>
-                    </div>
-                </form>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-<?php endforeach; ?>
 <script>
     $(document).ready(function() {
         $('#dataset').DataTable({

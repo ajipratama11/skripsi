@@ -372,27 +372,11 @@ class Admin extends CI_Controller {
 	public function aturan(){
 
 		$data['title'] = 'Data Set';
-		$data['set_data'] = $this->m_admin->list_dataset()->result();
-		$sub = $this->db->query("SELECT * FROM siswa")->result();
-		$sub2 = $this->db->query("SELECT * FROM nilai")->result();
+		//$data['set_data'] = $this->m_admin->list_dataset()->result();
+		$nilai = $this->m_admin->get_nilai();
+		$sub = $this->db->query("SELECT * FROM sub_kriteria")->result();
 		$data['sub'] = $sub;
-		$data['id'] = $sub2;
-		$data['nilai'] = $sub2;
-
-		// $arrayNilai = array();
-		// foreach ($sub as $s) {
-		// 	$nilai = $this->db->query("SELECT data_set.*, konversi.*, sub_kriteria_tb.* 
-		// 	FROM data_set JOIN sub_kriteria_tb ON data_set.nama_sub = sub_kriteria_tb.nama_sub 
-		// 	JOIN konversi ON data_set.nilai = konversi.atribut_konversi ")->row();
-		// 	if ($nilai) {
-		// 		$arrayNilai[] = $nilai->nilai;
-		// 	} else {
-		// 		$arrayNilai[] = "-";
-		// 	}
-		// }
-
-		// $data['hasil'] = $arrayNilai;
-
+		$data['nilai'] = $nilai;
 		$this->header($data);
 		$this->load->view('aturan');
 		$this->load->view('template/footer');
@@ -421,6 +405,32 @@ class Admin extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 
+	public function konversi_nilaii()
+	{
+		$data = array(
+            'kimia' => $this->input->post('kimia'),
+            'biologi' => $this->input->post('biologi'),
+            'fisika' => $this->input->post('fisika'),
+            'matematika' => $this->input->post('matematika'),
+            'bhs_inggris' => $this->input->post('bhs_inggris'),
+            'bhs_indonesia' => $this->input->post('bhs_indonesia'),
+            'realistis' => $this->input->post('realistis'),
+            'intelektual' => $this->input->post('intelektual'),
+            'artistik' => $this->input->post('artistik'),
+            'sosial' => $this->input->post('sosial'),
+            'enterprise' => $this->input->post('enterprise'),
+            'konvensional' => $this->input->post('konvensional'),
+            'linguistik' => $this->input->post('linguistik'),
+            'matematikal' => $this->input->post('matematikal'),
+            'musikal' => $this->input->post('musikal'),
+            'kinestik' => $this->input->post('kinestik'),
+            'spartial' => $this->input->post('spartial'),
+            'intrapersonal' => $this->input->post('intrapersonal'),
+            'interpersonal' => $this->input->post('matematikal'),
+            'natrularistik' => $this->input->post('natrularistik'),
+            'eksistensial' => $this->input->post('eksistensial')
+        );
+	}
 
 	//Perhitungan
 	public function perhitungan(){
