@@ -397,6 +397,29 @@ class Admin extends CI_Controller {
 		$this->load->view('aturan');
 		$this->load->view('template/footer');
 	}
+	public function konversi_alternatif($id){
+
+		$data['title'] = 'Konversi';
+		$data['set_data'] = $this->db->query("SELECT * FROM siswa")->result();
+
+		// $arrayNilai = array();
+		// foreach ($sub as $s) {
+		// 	$nilai = $this->db->query("SELECT data_set.*, konversi.*, sub_kriteria_tb.* 
+		// 	FROM data_set JOIN sub_kriteria_tb ON data_set.nama_sub = sub_kriteria_tb.nama_sub 
+		// 	JOIN konversi ON data_set.nilai = konversi.atribut_konversi ")->row();
+		// 	if ($nilai) {
+		// 		$arrayNilai[] = $nilai->nilai;
+		// 	} else {
+		// 		$arrayNilai[] = "-";
+		// 	}
+		// }
+
+		// $data['hasil'] = $arrayNilai;
+
+		$this->header($data);
+		$this->load->view('aturan');
+		$this->load->view('template/footer');
+	}
 
 
 	//Perhitungan
