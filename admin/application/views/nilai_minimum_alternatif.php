@@ -49,7 +49,6 @@
             <table id="tabelSiswa" class="table table-bordered table-striped table-hover" id="tabelSiswa">
                     <thead>
                         <tr>
-                          
                                 <th>Kimia</th>
                                 <th>Biologi</th>
                                 <th>Fisika</th>
