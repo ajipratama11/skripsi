@@ -384,7 +384,29 @@ class Admin extends CI_Controller {
 	public function konversi_alternatif($id){
 
 		$data['title'] = 'Konversi';
-		$data['set_data'] = $this->db->query("SELECT * FROM siswa")->result();
+		$data = array(
+            'kimia' => $this->input->post('kimia'),
+            'biologi' => $this->input->post('biologi'),
+            'fisika' => $this->input->post('fisika'),
+            'matematika' => $this->input->post('matematika'),
+            'bhs_inggris' => $this->input->post('bhs_inggris'),
+            'bhs_indonesia' => $this->input->post('bhs_indonesia'),
+            'realistis' => $this->input->post('realistis'),
+            'intelektual' => $this->input->post('intelektual'),
+            'artistik' => $this->input->post('artistik'),
+            'sosial' => $this->input->post('sosial'),
+            'enterprise' => $this->input->post('enterprise'),
+            'konvensional' => $this->input->post('konvensional'),
+            'linguistik' => $this->input->post('linguistik'),
+            'matematikal' => $this->input->post('matematikal'),
+            'musikal' => $this->input->post('musikal'),
+            'kinestik' => $this->input->post('kinestik'),
+            'spartial' => $this->input->post('spartial'),
+            'intrapersonal' => $this->input->post('intrapersonal'),
+            'interpersonal' => $this->input->post('matematikal'),
+            'natrularistik' => $this->input->post('natrularistik'),
+            'eksistensial' => $this->input->post('eksistensial')
+        );
 
 		// $arrayNilai = array();
 		// foreach ($sub as $s) {
@@ -401,7 +423,7 @@ class Admin extends CI_Controller {
 		// $data['hasil'] = $arrayNilai;
 
 		$this->header($data);
-		$this->load->view('aturan');
+		$this->load->view('konversi_alternatif');
 		$this->load->view('template/footer');
 	}
 
