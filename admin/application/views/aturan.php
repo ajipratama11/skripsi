@@ -48,29 +48,30 @@
                                 <td><?= $no++ ?></td>
                                 <td><?= $n->nama ?></td>
                                 <td><?= $n->nis ?></td>
-                                <td><input type="text" name="kimia" class="form-control" value="<?= $n->kimia ?>"></td>
-                                <td><input type="text" name="biologi" class="form-control" value="<?= $n->biologi ?>"></td>
-                                <td><input type="text" name="fisika" class="form-control" value="<?= $n->fisika ?>"></td>
-                                <td><input type="text" name="matematika" class="form-control" value="<?= $n->matematika ?>"></td>
-                                <td><input type="text" name="bhs_inggris" class="form-control" value="<?= $n->bhs_inggris ?>"></td>
-                                <td><input type="text" name="bhs_indonesia" class="form-control" value="<?= $n->bhs_indonesia ?>"></td>
-                                <td><input type="text" name="realistis" class="form-control" value="<?= $n->realistis ?>"></td>
-                                <td><input type="text" name="intelektual" class="form-control" value="<?= $n->intelektual ?>"></td>
-                                <td><input type="text" name="artistik" class="form-control" value="<?= $n->artistik ?>"></td>
-                                <td><input type="text" name="sosial" class="form-control" value="<?= $n->sosial ?>"></td>
-                                <td><input type="text" name="enterprise" class="form-control" value="<?= $n->enterprise ?>"></td>
-                                <td><input type="text" name="konvensional" class="form-control" value="<?= $n->konvensional ?>"></td>
-                                <td><input type="text" name="linguistik" class="form-control" value="<?= $n->linguistik ?>"></td>
-                                <td><input type="text" name="matematikal" class="form-control" value="<?= $n->matematikal ?>"></td>
-                                <td><input type="text" name="musikal" class="form-control" value="<?= $n->musikal ?>"></td>
-                                <td><input type="text" name="kinestik" class="form-control" value="<?= $n->kinestik ?>"></td>
-                                <td><input type="text" name="spartial" class="form-control" value="<?= $n->spartial ?>"></td>
-                                <td><input type="text" name="intrapersonal" class="form-control" value="<?= $n->intrapersonal ?>"></td>
-                                <td><input type="text" name="interpersonal" class="form-control" value="<?= $n->interpersonal ?>"></td>
-                                <td><input type="text" name="naturalistik" class="form-control" value="<?= $n->naturalistik ?>"></td>
-                                <td><input type="text" name="eksistensial" class="form-control" value="<?= $n->eksistensial ?>"></td>
+                                <td><input type="text" name="kimia" class="form-control" value="<?= $n->kimia ?>" readonly></td>
+                                <td><input type="text" name="biologi" class="form-control" value="<?= $n->biologi ?>" readonly></td>
+                                <td><input type="text" name="fisika" class="form-control" value="<?= $n->fisika ?>" readonly></td>
+                                <td><input type="text" name="matematika" class="form-control" value="<?= $n->matematika ?>" readonly></td>
+                                <td><input type="text" name="bhs_inggris" class="form-control" value="<?= $n->bhs_inggris ?>" readonly></td>
+                                <td><input type="text" name="bhs_indonesia" class="form-control" value="<?= $n->bhs_indonesia ?>" readonly></td>
+                                <td><input type="text" name="realistis" class="form-control" value="<?= $n->realistis ?>" readonly></td>
+                                <td><input type="text" name="intelektual" class="form-control" value="<?= $n->intelektual ?>" readonly></td>
+                                <td><input type="text" name="artistik" class="form-control" value="<?= $n->artistik ?>" readonly></td>
+                                <td><input type="text" name="sosial" class="form-control" value="<?= $n->sosial ?>" readonly></td>
+                                <td><input type="text" name="enterprise" class="form-control" value="<?= $n->enterprise ?>" readonly></td>
+                                <td><input type="text" name="konvensional" class="form-control" value="<?= $n->konvensional ?>" readonly></td>
+                                <td><input type="text" name="linguistik" class="form-control" value="<?= $n->linguistik ?>" readonly></td>
+                                <td><input type="text" name="matematikal" class="form-control" value="<?= $n->matematikal ?>" readonly></td>
+                                <td><input type="text" name="musikal" class="form-control" value="<?= $n->musikal ?>" readonly></td>
+                                <td><input type="text" name="kinestik" class="form-control" value="<?= $n->kinestik ?>" readonly></td>
+                                <td><input type="text" name="spartial" class="form-control" value="<?= $n->spartial ?>" readonly></td>
+                                <td><input type="text" name="intrapersonal" class="form-control" value="<?= $n->intrapersonal ?>" readonly></td>
+                                <td><input type="text" name="interpersonal" class="form-control" value="<?= $n->interpersonal ?>" readonly></td>
+                                <td><input type="text" name="naturalistik" class="form-control" value="<?= $n->naturalistik ?>" readonly></td>
+                                <td><input type="text" name="eksistensial" class="form-control" value="<?= $n->eksistensial ?>" readonly></td>
                                 <td>
-                                    <a href="#datanilai<?= $n->id_siswa ?>" data-toggle="modal" class="btn btn-primary">Lihat Nilai</a>
+                                    <!-- <button type="submit" class="btn btn-primary">Konversi Nilai</button> -->
+                                    <a href="<?= base_url('KlasifikasiNB/konvert_nilai/'. $n->id_nilai) ?>" class="btn btn-primary">Konversi nilai</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
