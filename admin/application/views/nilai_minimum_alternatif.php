@@ -69,7 +69,8 @@
                                     <td><?= $a->eksistensial ?><input type="text" class="form-control" style="width: 70px;" readonly name="eksistensial" value="<?= $a->eksistensial <= 100 && $a->eksistensial >= 80 ? 'Tinggi' : ($a->eksistensial <= 79 && $a->eksistensial >= 69 ? 'Normal' : ($a->eksistensial <= 68 && $a->eksistensial >= 0 ? 'Rendah' : 'Rendah')) ?>" /></td>
                                     <td>
                                         <button class="btn btn-xs btn-warning" data-toggle="modal" data-target="#editAlternatif<?= $a->id_nilai_alternatif ?>"><i class="fa fa-edit"></i> Edit</button> &nbsp;
-                                        <button type="submit" class="btn btn-xs btn-success" <i class="fa fa-edit"></i> Konversi</button>
+                                        <a href="<?= base_url('Admin/coba_konversi/' . $a->id_nilai_alternatif) ?>" class="btn btn-xs btn-primary">Coba</a>
+                                        <button type="submit" class="btn btn-xs btn-success"> <i class="fa fa-edit"></i> Konversi</button>
                                         <button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#hapusAlternatif<?= $a->id_nilai_alternatif ?>"><i class="fa fa-trash"></i> Hapus</button>
                                     </td>
                                 </form>

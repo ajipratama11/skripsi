@@ -68,20 +68,6 @@ class KlasifikasiNB extends CI_Controller
 			$data['passwdguru'] = $this->m_admin->cek_passwd_guru($where)->row_array();
 		}
 
-		$data['nilai'] =
-
-			$nilai = '';
-		$nilai2 = '';
-		$nilai3 = '';
-
-		if ($nilai >= 80 && $nilai <= 100) {
-			$data['tinggi'] = $nilai;
-		} else if ($nilai2 >= 69 && $nilai2 <= 79) {
-			$data['normal'] = $nilai2;
-		} else if ($nilai3 >= 0 && $nilai3 <= 68) {
-			$data['rendah'] = $nilai3;
-		}
-
 		$data['title'] = 'Dashboard';
 
 		$this->header($data);

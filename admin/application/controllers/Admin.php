@@ -427,9 +427,11 @@ class Admin extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 
-	public function konversi_nilaii()
+	public function coba_konversi_nilai()
 	{
-		$data = array(
+		$data['title'] = 'konversi';
+		$data_input = array(
+			'nama' => $this->input->post('nama_alternatif'),
             'kimia' => $this->input->post('kimia'),
             'biologi' => $this->input->post('biologi'),
             'fisika' => $this->input->post('fisika'),
@@ -452,6 +454,21 @@ class Admin extends CI_Controller {
             'natrularistik' => $this->input->post('natrularistik'),
             'eksistensial' => $this->input->post('eksistensial')
         );
+
+		$data['a'] = $data_input;
+		$this->header($data);
+		$this->load->view('hasil_coba');
+		$this->load->view('template/footer');
+
+	}
+
+	public function coba_konversi($id)
+	{
+		$data['title'] = 'Coba';
+		$data['datanilai'] = $this->db->query("SELECT * FROM minimum_nilai_alternatif JOIN alternatif_tb ON minimum_nilai_alternatif.id_alternatif=alternatif_tb.id_alternatif WHERE minimum_nilai_alternatif.id_alternatif = '". $id ."'")->row();
+		$this->header($data);
+		$this->load->view('proses_konversi');
+		$this->load->view('template/footer');
 	}
 
 	//Perhitungan
