@@ -456,6 +456,8 @@ class Admin extends CI_Controller {
         );
 
 		$data['a'] = $data_input;
+		$data['bobot1'] = $data_input;
+		$data['bobot2'] = $data_input;
 		$this->header($data);
 		$this->load->view('hasil_coba');
 		$this->load->view('template/footer');

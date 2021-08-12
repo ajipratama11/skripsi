@@ -9,10 +9,7 @@
     </section>
     <section class="content">
         <div class="box box-warning">
-            <!-- <a href="<?= site_url('alternatif'); ?>" class="btn btn-sm btn-warning"><i class="fa fa-angle-left"></i> Kembali</a>
-            <button type="button" data-toggle="modal" data-target="#tambah-nilai" class="btn btn-sm btn-flat btn-success"><i class="fa fa-plus"></i> Tambah Nilai</button> -->
             <div class="box-body">
-
                 <table id="dataset" class="table table-bordered table-striped">
                     <thead>
                         <tr>
@@ -77,6 +74,46 @@
             </div>
         </div>
     </section>
+    <section class="content">
+        <div class="box box-warning">
+            <div class="box-body">
+                <table id="table" class="table">
+                    <thead>
+                        <tr>
+                            <th>Kriteria</th>
+                            <th>Bobot</th>
+                            <th>Kimia <br><input type="text" id="kimia1" style="width: 50px;" value="<?= $bobot1['kimia'] ?>" readonly></th>
+                            <th>Biologi <br><input type="text" id="biologi1" style="width: 50px;" value="<?= $bobot1['biologi'] ?>" readonly></th>
+                            <th>Fisika <br><input type="text" id="fisika1" style="width: 50px;" value="<?= $bobot1['fisika'] ?>" readonly></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kimia</td>
+                            <td><input type="text" id="kimia2" style="width: 50px;" value="<?= $bobot2['kimia'] ?>" readonly></td>
+                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                        </tr>
+                        <tr>
+                            <td>biologi</td>
+                            <td><input type="text" id="biologi2" style="width: 50px;" value="<?= $bobot2['biologi'] ?>" readonly></td>
+                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
+                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
+                        </tr>
+                        <tr>
+                            <td>fisika</td>
+                            <td><input type="text" id="fisika2" style="width: 50px;" value="<?= $bobot2['fisika'] ?>" readonly></td>
+                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 </div>
 <script>
     $(document).ready(function() {
@@ -86,6 +123,36 @@
             "scrollX": true,
             'searching': false,
             'autoWidth': false
+        });
+    });
+
+    $(document).ready(function() {
+        $('#dataset2').DataTable({
+            'paging': false,
+            'lengthChange': true,
+            "scrollX": true,
+            'searching': false,
+            'autoWidth': false
+        });
+    });
+
+    $(document).ready(function() {
+        $("#kimia1, #kimia2").each(function() {
+            var kimia1 = $("#kimia1").val();
+            var kimia2 = $("#kimia2").val();
+            var biologi1 = $("#biologi1").val();
+            var biologi2 = $("#biologi2").val();
+            var fisika1 = $("#fisika1").val();
+            var fisika2 = $("#fisika2").val();
+
+            var kimiakimia = parseInt(kimia1) / parseInt(kimia2);
+            $("#kimiakimia").val(kimiakimia);
+            var kimiabiologi = parseInt(kimia2) / parseInt(biologi1);
+            $("#kimiabiologi").val(kimiabiologi);
+            var biologibiologi = parseInt(biologi1) / parseInt(biologi2);
+            $("#biologibiologi").val(biologibiologi);
+            var fisikafisika = parseInt(fisika1) / parseInt(fisika2);
+            $("#fisikafisika").val(fisikafisika);
         });
     });
 </script>
