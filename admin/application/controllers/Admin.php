@@ -1,9 +1,10 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 date_default_timezone_set("Asia/Jakarta");
 
-class Admin extends CI_Controller {
+class Admin extends CI_Controller
+{
 
 	/**
 	 * Index Page for this controller.
@@ -23,15 +24,16 @@ class Admin extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-        $this->db->query('SET time_zone="+7:00"');
-		if(!$this->session->status){
+		$this->db->query('SET time_zone="+7:00"');
+		if (!$this->session->status) {
 			redirect('login');
 		}
 		$this->load->model('M_Admin', 'm_admin');
 	}
 
 	//Header
-	private function header($data){
+	private function header($data)
+	{
 		//admin
 		if ($this->session->status == 'admin') {
 			# code...
@@ -49,15 +51,17 @@ class Admin extends CI_Controller {
 	}
 
 	//Logout
-	public function logout(){
+	public function logout()
+	{
 		$this->session->sess_destroy();
 		redirect('login');
 	}
 
 	//Index
-	public function index(){
+	public function index()
+	{
 		//Cek Password Guru
-		if($this->session->status == 'guru'){
+		if ($this->session->status == 'guru') {
 			$where = array(
 				'id_guru' => $this->session->id
 			);
@@ -77,21 +81,22 @@ class Admin extends CI_Controller {
 	}
 
 	//Metode Perhitungan
-	
+
 	// kriteria
-	public function kriteria(){
-		
+	public function kriteria()
+	{
+
 		$data['title'] = 'kriteria';
 		$data['kriteria_p'] = $this->m_admin->list_kriteria()->result();
-		
+
 		$this->header($data);
 		$this->load->view('kriteria_p');
 		$this->load->view('template/footer');
-
 	}
-	
-	public function tambah_kriteria(){
-		if($this->session->status != 'admin'){
+
+	public function tambah_kriteria()
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$kriteria_p = $this->input->post('kriteria');
@@ -99,8 +104,9 @@ class Admin extends CI_Controller {
 		$this->m_admin->insert_kriteria('kriteria', $data);
 		redirect('kriteria');
 	}
-	public function edit_kriteria($id){
-		if($this->session->status != 'admin'){
+	public function edit_kriteria($id)
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$kriteria_p = $this->input->post('nama_kriteria');
@@ -109,8 +115,9 @@ class Admin extends CI_Controller {
 		$this->m_admin->update_kriteria($where, 'kriteria', $data);
 		redirect('kriteria');
 	}
-	public function hapus_kriteria($id){
-		if($this->session->status != 'admin'){
+	public function hapus_kriteria($id)
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$where = array('id_kriteria' => $id);
@@ -119,9 +126,10 @@ class Admin extends CI_Controller {
 	}
 	// sub kriteria
 
-	public function sub_kriteria(){
-		
-		if($this->session->status != 'admin'){
+	public function sub_kriteria()
+	{
+
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$data['title'] = 'Sub Kriteria';
@@ -132,12 +140,12 @@ class Admin extends CI_Controller {
 		$this->header($data);
 		$this->load->view('sub_kriteria');
 		$this->load->view('template/footer');
-
 	}
-	
-	public function tambah_subk(){
 
-		if($this->session->status != 'admin'){
+	public function tambah_subk()
+	{
+
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$nama_sub = $this->input->post('nama_sub');
@@ -145,12 +153,13 @@ class Admin extends CI_Controller {
 		$data = array(
 			'nama_sub' => $nama_sub,
 			'nama_kriteria' => $nama_kriteria
-			);
+		);
 		$this->m_admin->insert_subk('sub_kriteria_tb', $data);
 		redirect('sub_kriteria');
 	}
-	public function edit_subk($id){
-		if($this->session->status != 'admin'){
+	public function edit_subk($id)
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$nama_sub = $this->input->post('nama_sub');
@@ -158,15 +167,16 @@ class Admin extends CI_Controller {
 		$data = array(
 			'nama_sub' => $nama_sub,
 			'nama_kriteria' => $nama_kriteria
-			);
+		);
 
 		$where = array('id_sub_kriteria' => $id);
 		$this->m_admin->update_subk($where, 'sub_kriteria_tb', $data);
 		redirect('sub_kriteria');
 	}
-	
-	public function hapus_subk($id){
-		if($this->session->status != 'admin'){
+
+	public function hapus_subk($id)
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$where = array('id_sub_kriteria' => $id);
@@ -177,7 +187,8 @@ class Admin extends CI_Controller {
 
 	//konversi nilai
 
-	public function konversi_nilai(){
+	public function konversi_nilai()
+	{
 
 		$data['title'] = 'konversi nilai';
 
@@ -188,10 +199,11 @@ class Admin extends CI_Controller {
 		$this->load->view('konversi_nilai_v');
 		$this->load->view('template/footer');
 	}
-	
-	public function tambah_konversi(){
 
-		if($this->session->status != 'admin'){
+	public function tambah_konversi()
+	{
+
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 
@@ -205,8 +217,9 @@ class Admin extends CI_Controller {
 		redirect('konversi');
 	}
 
-	public function edit_konversi($id){
-		if($this->session->status != 'admin'){
+	public function edit_konversi($id)
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$nama_atribut = $this->input->post('atribut_konversi');
@@ -220,8 +233,9 @@ class Admin extends CI_Controller {
 		redirect('konversi');
 	}
 
-	public function hapus_konversi($id){
-		if($this->session->status != 'admin'){
+	public function hapus_konversi($id)
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$where = array('id_konversi' => $id);
@@ -230,19 +244,20 @@ class Admin extends CI_Controller {
 	}
 
 	//nilai konversi
-	public function tambah_nilai_konversi(){
-		if($this->session->status != 'admin'){
+	public function tambah_nilai_konversi()
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$nilai_konversi_a = $this->input->post('nilai_kons');
 		$data = array('nilai_kons' => $nilai_konversi_a);
 		$this->m_admin->insert_nilai_konversi('nilai_konversi', $data);
 		redirect('konversi');
-
 	}
 
-	public function edit_nilai_konversi($id){
-		if($this->session->status != 'admin'){
+	public function edit_nilai_konversi($id)
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$nilai_konversi_a = $this->input->post('nilai_kons');
@@ -252,8 +267,9 @@ class Admin extends CI_Controller {
 		redirect('konversi');
 	}
 
-	public function hapus_nilai_konversi($id){
-		if($this->session->status != 'admin'){
+	public function hapus_nilai_konversi($id)
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$where = array('id_nilai_konversi' => $id);
@@ -262,7 +278,8 @@ class Admin extends CI_Controller {
 	}
 
 	//alternatif
-	public function alternatif(){
+	public function alternatif()
+	{
 
 		$data['title'] = 'alternatif';
 		$data['alternatif'] = $this->m_admin->list_alternatif()->result();
@@ -270,12 +287,12 @@ class Admin extends CI_Controller {
 		$this->header($data);
 		$this->load->view('alternatif_v');
 		$this->load->view('template/footer');
-
 	}
 
-	public function tambah_alternatif(){
+	public function tambah_alternatif()
+	{
 
-		if($this->session->status != 'admin'){
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$alternatif = $this->input->post('nama_alternatif');
@@ -283,8 +300,9 @@ class Admin extends CI_Controller {
 		$this->m_admin->insert_alternatif('alternatif_tb', $data);
 		redirect('alternatif');
 	}
-	public function edit_alternatif($id){
-		if($this->session->status != 'admin'){
+	public function edit_alternatif($id)
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$alternatif = $this->input->post('nama_alternatif');
@@ -293,8 +311,9 @@ class Admin extends CI_Controller {
 		$this->m_admin->update_alternatif($where, 'alternatif_tb', $data);
 		redirect('alternatif');
 	}
-	public function hapus_alternatif($id){
-		if($this->session->status != 'admin'){
+	public function hapus_alternatif($id)
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$where = array('id_alternatif' => $id);
@@ -304,7 +323,8 @@ class Admin extends CI_Controller {
 
 	// nilai alternatif 
 
-	public function nilaimin_alternatif($id){
+	public function nilaimin_alternatif($id)
+	{
 
 		$data['title'] = 'Nilai Minimum';
 		// $mapel = $this->db->query("SELECT * FROM mapel")->result();
@@ -313,7 +333,7 @@ class Admin extends CI_Controller {
 		// $data['listmapel'] = $this->m_admin->list_mapel()->result();
 		// $data['mapel'] = $mapel;
 		// $data['nilai'] =$nilai;
-		$data['detail'] = $this->db->query("SELECT * FROM minimum_nilai_alternatif JOIN alternatif_tb ON minimum_nilai_alternatif.id_alternatif=alternatif_tb.id_alternatif WHERE minimum_nilai_alternatif.id_alternatif = '". $id ."'")->result();
+		$data['detail'] = $this->db->query("SELECT * FROM minimum_nilai_alternatif JOIN alternatif_tb ON minimum_nilai_alternatif.id_alternatif=alternatif_tb.id_alternatif WHERE minimum_nilai_alternatif.id_alternatif = '" . $id . "'")->result();
 
 		// $arrayNilai = array();
 		// foreach ($mapel as $mpl) {
@@ -335,30 +355,29 @@ class Admin extends CI_Controller {
 		$this->header($data);
 		$this->load->view('nilai_minimum_alternatif');
 		$this->load->view('template/footer');
-
 	}
 	// Tambah Nilai Minimum
 	public function act_tnilaiminimum()
 	{
-		if($this->session->status != 'admin'){
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$alternatif = $this->input->post('nama_alternatif');
 		$mapel 		= $this->input->post('mapel');
 		$nilaimin 	= $this->input->post('nilai');
 		$data = array(
-			'nama_alternatif' =>$alternatif,
+			'nama_alternatif' => $alternatif,
 			'mapel' => $mapel,
-			'nilai' =>$nilaimin
+			'nilai' => $nilaimin
 		);
 
-		$this->m_admin->insert_nilaimin('minimum_alternatif_tb',$data);
+		$this->m_admin->insert_nilaimin('minimum_alternatif_tb', $data);
 		redirect('alternatif');
-
 	}
-	
-	public function act_hapusnilaimin($id){
-		if($this->session->status != 'admin'){
+
+	public function act_hapusnilaimin($id)
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$where = array('id_minimum' => $id);
@@ -369,7 +388,8 @@ class Admin extends CI_Controller {
 
 
 	//aturan
-	public function aturan(){
+	public function aturan()
+	{
 
 		$data['title'] = 'Data Set';
 		//$data['set_data'] = $this->m_admin->list_dataset()->result();
@@ -381,32 +401,33 @@ class Admin extends CI_Controller {
 		$this->load->view('aturan');
 		$this->load->view('template/footer');
 	}
-	public function konversi_alternatif($id){
+	public function konversi_alternatif($id)
+	{
 
 		$data['title'] = 'Konversi';
 		$data = array(
-            'kimia' => $this->input->post('kimia'),
-            'biologi' => $this->input->post('biologi'),
-            'fisika' => $this->input->post('fisika'),
-            'matematika' => $this->input->post('matematika'),
-            'bhs_inggris' => $this->input->post('bhs_inggris'),
-            'bhs_indonesia' => $this->input->post('bhs_indonesia'),
-            'realistis' => $this->input->post('realistis'),
-            'intelektual' => $this->input->post('intelektual'),
-            'artistik' => $this->input->post('artistik'),
-            'sosial' => $this->input->post('sosial'),
-            'enterprise' => $this->input->post('enterprise'),
-            'konvensional' => $this->input->post('konvensional'),
-            'linguistik' => $this->input->post('linguistik'),
-            'matematikal' => $this->input->post('matematikal'),
-            'musikal' => $this->input->post('musikal'),
-            'kinestik' => $this->input->post('kinestik'),
-            'spartial' => $this->input->post('spartial'),
-            'intrapersonal' => $this->input->post('intrapersonal'),
-            'interpersonal' => $this->input->post('matematikal'),
-            'natrularistik' => $this->input->post('natrularistik'),
-            'eksistensial' => $this->input->post('eksistensial')
-        );
+			'kimia' => $this->input->post('kimia'),
+			'biologi' => $this->input->post('biologi'),
+			'fisika' => $this->input->post('fisika'),
+			'matematika' => $this->input->post('matematika'),
+			'bhs_inggris' => $this->input->post('bhs_inggris'),
+			'bhs_indonesia' => $this->input->post('bhs_indonesia'),
+			'realistis' => $this->input->post('realistis'),
+			'intelektual' => $this->input->post('intelektual'),
+			'artistik' => $this->input->post('artistik'),
+			'sosial' => $this->input->post('sosial'),
+			'enterprise' => $this->input->post('enterprise'),
+			'konvensional' => $this->input->post('konvensional'),
+			'linguistik' => $this->input->post('linguistik'),
+			'matematikal' => $this->input->post('matematikal'),
+			'musikal' => $this->input->post('musikal'),
+			'kinestik' => $this->input->post('kinestik'),
+			'spartial' => $this->input->post('spartial'),
+			'intrapersonal' => $this->input->post('intrapersonal'),
+			'interpersonal' => $this->input->post('matematikal'),
+			'natrularistik' => $this->input->post('natrularistik'),
+			'eksistensial' => $this->input->post('eksistensial')
+		);
 
 		// $arrayNilai = array();
 		// foreach ($sub as $s) {
@@ -432,28 +453,28 @@ class Admin extends CI_Controller {
 		$data['title'] = 'konversi';
 		$data_input = array(
 			'nama' => $this->input->post('nama_alternatif'),
-            'kimia' => $this->input->post('kimia'),
-            'biologi' => $this->input->post('biologi'),
-            'fisika' => $this->input->post('fisika'),
-            'matematika' => $this->input->post('matematika'),
-            'bhs_inggris' => $this->input->post('bhs_inggris'),
-            'bhs_indonesia' => $this->input->post('bhs_indonesia'),
-            'realistis' => $this->input->post('realistis'),
-            'intelektual' => $this->input->post('intelektual'),
-            'artistik' => $this->input->post('artistik'),
-            'sosial' => $this->input->post('sosial'),
-            'enterprise' => $this->input->post('enterprise'),
-            'konvensional' => $this->input->post('konvensional'),
-            'linguistik' => $this->input->post('linguistik'),
-            'matematikal' => $this->input->post('matematikal'),
-            'musikal' => $this->input->post('musikal'),
-            'kinestik' => $this->input->post('kinestik'),
-            'spartial' => $this->input->post('spartial'),
-            'intrapersonal' => $this->input->post('intrapersonal'),
-            'interpersonal' => $this->input->post('matematikal'),
-            'natrularistik' => $this->input->post('natrularistik'),
-            'eksistensial' => $this->input->post('eksistensial')
-        );
+			'kimia' => $this->input->post('kimia'),
+			'biologi' => $this->input->post('biologi'),
+			'fisika' => $this->input->post('fisika'),
+			'matematika' => $this->input->post('matematika'),
+			'bhs_inggris' => $this->input->post('bhs_inggris'),
+			'bhs_indonesia' => $this->input->post('bhs_indonesia'),
+			'realistis' => $this->input->post('realistis'),
+			'intelektual' => $this->input->post('intelektual'),
+			'artistik' => $this->input->post('artistik'),
+			'sosial' => $this->input->post('sosial'),
+			'enterprise' => $this->input->post('enterprise'),
+			'konvensional' => $this->input->post('konvensional'),
+			'linguistik' => $this->input->post('linguistik'),
+			'matematikal' => $this->input->post('matematikal'),
+			'musikal' => $this->input->post('musikal'),
+			'kinestik' => $this->input->post('kinestik'),
+			'spartial' => $this->input->post('spartial'),
+			'intrapersonal' => $this->input->post('intrapersonal'),
+			'interpersonal' => $this->input->post('matematikal'),
+			'natrularistik' => $this->input->post('natrularistik'),
+			'eksistensial' => $this->input->post('eksistensial')
+		);
 
 		$data['a'] = $data_input;
 		$data['bobot1'] = $data_input;
@@ -461,20 +482,98 @@ class Admin extends CI_Controller {
 		$this->header($data);
 		$this->load->view('hasil_coba');
 		$this->load->view('template/footer');
+	}
 
+	public function coba_bobot()
+	{
+		$data['title'] = 'matriks';
+		$data_input = array(
+			'nama' => $this->input->post('nama_siswa'),
+			'kimia' => $this->input->post('kimia'),
+			'biologi' => $this->input->post('biologi'),
+			'fisika' => $this->input->post('fisika'),
+			'matematika' => $this->input->post('matematika'),
+			'bhs_inggris' => $this->input->post('bhs_inggris'),
+			'bhs_indonesia' => $this->input->post('bhs_indonesia'),
+			'realistis' => $this->input->post('realistis'),
+			'intelektual' => $this->input->post('intelektual'),
+			'artistik' => $this->input->post('artistik'),
+			'sosial' => $this->input->post('sosial'),
+			'enterprise' => $this->input->post('enterprise'),
+			'konvensional' => $this->input->post('konvensional'),
+			'linguistik' => $this->input->post('linguistik'),
+			'matematikal' => $this->input->post('matematikal'),
+			'musikal' => $this->input->post('musikal'),
+			'kinestik' => $this->input->post('kinestik'),
+			'spartial' => $this->input->post('spartial'),
+			'intrapersonal' => $this->input->post('intrapersonal'),
+			'interpersonal' => $this->input->post('matematikal'),
+			'natrularistik' => $this->input->post('natrularistik'),
+			'eksistensial' => $this->input->post('eksistensial')
+		);
+
+		$data['a'] = $data_input;
+		$data['bobot1'] = $data_input;
+		$data['bobot2'] = $data_input;
+		$this->header($data);
+		$this->load->view('matrik');
+		$this->load->view('template/footer');
+	}
+
+	public function konversi_matrik()
+	{
+		$data['title'] = 'tabel matriks';
+		$data_input = array(
+			'kimia' => $this->input->post('kimia'),
+			'biologi' => $this->input->post('biologi'),
+			'fisika' => $this->input->post('fisika'),
+			'matematika' => $this->input->post('matematika'),
+			'bhs_inggris' => $this->input->post('bhs_inggris'),
+			'bhs_indonesia' => $this->input->post('bhs_indonesia'),
+			'realistis' => $this->input->post('realistis'),
+			'intelektual' => $this->input->post('intelektual'),
+			'artistik' => $this->input->post('artistik'),
+			'sosial' => $this->input->post('sosial'),
+			'enterprise' => $this->input->post('enterprise'),
+			'konvensional' => $this->input->post('konvensional'),
+			'linguistik' => $this->input->post('linguistik'),
+			'matematikal' => $this->input->post('matematikal'),
+			'musikal' => $this->input->post('musikal'),
+			'kinestik' => $this->input->post('kinestik'),
+			'spartial' => $this->input->post('spartial'),
+			'intrapersonal' => $this->input->post('intrapersonal'),
+			'interpersonal' => $this->input->post('matematikal'),
+			'natrularistik' => $this->input->post('natrularistik'),
+			'eksistensial' => $this->input->post('eksistensial')
+		);
+		$data['bobot1'] = $data_input;
+		$data['bobot2'] = $data_input;
+		$this->header($data);
+		$this->load->view('tabel_matrik');
+		$this->load->view('template/footer');
+	}
+
+	public function konversi_bobot($id)
+	{
+		$data['title'] = 'Konversi Bobot';
+		$data['datanilai'] = $this->m_admin->nilai($id);
+		$this->header($data);
+		$this->load->view('konversi_bobot');
+		$this->load->view('template/footer');
 	}
 
 	public function coba_konversi($id)
 	{
 		$data['title'] = 'Coba';
-		$data['datanilai'] = $this->db->query("SELECT * FROM minimum_nilai_alternatif JOIN alternatif_tb ON minimum_nilai_alternatif.id_alternatif=alternatif_tb.id_alternatif WHERE minimum_nilai_alternatif.id_alternatif = '". $id ."'")->row();
+		$data['datanilai'] = $this->db->query("SELECT * FROM minimum_nilai_alternatif JOIN alternatif_tb ON minimum_nilai_alternatif.id_alternatif=alternatif_tb.id_alternatif WHERE minimum_nilai_alternatif.id_alternatif = '" . $id . "'")->row();
 		$this->header($data);
 		$this->load->view('proses_konversi');
 		$this->load->view('template/footer');
 	}
 
 	//Perhitungan
-	public function perhitungan(){
+	public function perhitungan()
+	{
 
 		$data['title'] = 'perhitungan';
 
@@ -485,8 +584,9 @@ class Admin extends CI_Controller {
 
 
 	// Guru
-	public function guru(){
-		if($this->session->status != 'admin'){
+	public function guru()
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$data['title'] = 'guru';
@@ -497,8 +597,9 @@ class Admin extends CI_Controller {
 		$this->load->view('guru');
 		$this->load->view('template/footer');
 	}
-	public function tambah_guru(){
-		if($this->session->status != 'admin'){
+	public function tambah_guru()
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$nama = $this->input->post('nama');
@@ -514,8 +615,9 @@ class Admin extends CI_Controller {
 		$this->m_admin->insert_guru('guru', $data);
 		redirect('guru');
 	}
-	public function edit_guru($id){
-		if($this->session->status != 'admin'){
+	public function edit_guru($id)
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$nama = $this->input->post('nama');
@@ -532,8 +634,9 @@ class Admin extends CI_Controller {
 		$this->m_admin->update_guru($where, 'guru', $data);
 		redirect('guru');
 	}
-	public function hapus_guru($id){
-		if($this->session->status != 'admin'){
+	public function hapus_guru($id)
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$where = array('id_guru' => $id);
@@ -542,8 +645,9 @@ class Admin extends CI_Controller {
 	}
 
 	//Mapel
-	public function mapel(){
-		if($this->session->status != 'admin'){
+	public function mapel()
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$data['title'] = 'Mata Pelajaran';
@@ -554,8 +658,9 @@ class Admin extends CI_Controller {
 		$this->load->view('mapel');
 		$this->load->view('template/footer');
 	}
-	public function tambah_mapel(){
-		if($this->session->status != 'admin'){
+	public function tambah_mapel()
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$mapel = $this->input->post('mapel');
@@ -563,8 +668,9 @@ class Admin extends CI_Controller {
 		$this->m_admin->insert_mapel('mapel', $data);
 		redirect('mapel');
 	}
-	public function edit_mapel($id){
-		if($this->session->status != 'admin'){
+	public function edit_mapel($id)
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$mapel = $this->input->post('mapel');
@@ -573,8 +679,9 @@ class Admin extends CI_Controller {
 		$this->m_admin->update_mapel($where, 'mapel', $data);
 		redirect('mapel');
 	}
-	public function hapus_mapel($id){
-		if($this->session->status != 'admin'){
+	public function hapus_mapel($id)
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$where = array('id_mapel' => $id);
@@ -583,15 +690,16 @@ class Admin extends CI_Controller {
 	}
 
 
-	public function nilaisiswa($id){
+	public function nilaisiswa($id)
+	{
 		$mapel = $this->db->query("SELECT * FROM mapel")->result();
 		$data['title'] = 'Nilai Siswa';
 		$data['mapel'] = $mapel;
-		$data['detail'] = $this->db->query("SELECT * FROM siswa WHERE id_siswa = '". $id ."'")->row();
+		$data['detail'] = $this->db->query("SELECT * FROM siswa WHERE id_siswa = '" . $id . "'")->row();
 
 		$arrayNilai = array();
 		foreach ($mapel as $mpl) {
-			$nilai = $this->db->query("SELECT siswa.*, mapel.*, nilai.* FROM nilai JOIN siswa ON nilai.id_siswa = siswa.id_siswa JOIN mapel ON nilai.id_mapel = mapel.id_mapel WHERE nilai.id_siswa = '".$id."' AND mapel.id_mapel = '". $mpl->id_mapel ."'")->row();
+			$nilai = $this->db->query("SELECT siswa.*, mapel.*, nilai.* FROM nilai JOIN siswa ON nilai.id_siswa = siswa.id_siswa JOIN mapel ON nilai.id_mapel = mapel.id_mapel WHERE nilai.id_siswa = '" . $id . "' AND mapel.id_mapel = '" . $mpl->id_mapel . "'")->row();
 			if ($nilai) {
 				$arrayNilai[] = $nilai->nilai;
 			} else {
@@ -607,8 +715,9 @@ class Admin extends CI_Controller {
 	}
 
 	//Siswa
-	public function siswa(){
-		
+	public function siswa()
+	{
+
 		$data['title'] = 'Siswa';
 		$data['siswa'] = $this->m_admin->list_siswa()->result();
 		$data['listkelas'] = $this->m_admin->list_kelas()->result();
@@ -617,8 +726,9 @@ class Admin extends CI_Controller {
 		$this->load->view('siswa');
 		$this->load->view('template/footer');
 	}
-	public function tambah_siswa(){
-		
+	public function tambah_siswa()
+	{
+
 		$nama = $this->input->post('nama');
 		$nis = $this->input->post('nis');
 		$kelas = $this->input->post('kelas');
@@ -634,8 +744,9 @@ class Admin extends CI_Controller {
 		$this->m_admin->insert_siswa('siswa', $data);
 		redirect('siswa');
 	}
-	public function edit_siswa($id){
-		
+	public function edit_siswa($id)
+	{
+
 		$nama = $this->input->post('nama');
 		$nis = $this->input->post('nis');
 		$kelas = $this->input->post('kelas');
@@ -656,16 +767,18 @@ class Admin extends CI_Controller {
 		$this->m_admin->update_siswa('siswa', $data, $where);
 		redirect('siswa');
 	}
-	public function hapus_siswa($id){
-		
+	public function hapus_siswa($id)
+	{
+
 		$where = array('id_siswa' => $id);
 		$this->m_admin->delete_siswa($where, 'siswa');
 		redirect('siswa');
 	}
 
 	//Kelas
-	public function kelas(){
-		if($this->session->status != 'admin'){
+	public function kelas()
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$data['title'] = 'Kelas / Jurusan';
@@ -677,8 +790,9 @@ class Admin extends CI_Controller {
 		$this->load->view('kelas');
 		$this->load->view('template/footer');
 	}
-	public function tambah_kelas(){
-		if($this->session->status != 'admin'){
+	public function tambah_kelas()
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$kelas = $this->input->post('kelas');
@@ -694,8 +808,9 @@ class Admin extends CI_Controller {
 		$this->m_admin->insert_kelas('kelas', $data);
 		redirect('kelas');
 	}
-	public function edit_kelas($id){
-		if($this->session->status != 'admin'){
+	public function edit_kelas($id)
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$kelas = $this->input->post('kelas');
@@ -712,8 +827,9 @@ class Admin extends CI_Controller {
 		$this->m_admin->update_kelas($where, 'kelas', $data);
 		redirect('kelas');
 	}
-	public function hapus_kelas($id){
-		if($this->session->status != 'admin'){
+	public function hapus_kelas($id)
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$where = array('id_kelas' => $id);
@@ -721,8 +837,9 @@ class Admin extends CI_Controller {
 		redirect('kelas');
 	}
 	//Jurusan
-	public function tambah_jurusan(){
-		if($this->session->status != 'admin'){
+	public function tambah_jurusan()
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$jurusan = $this->input->post('jurusan');
@@ -730,8 +847,9 @@ class Admin extends CI_Controller {
 		$this->m_admin->insert_jurusan('jurusan', $data);
 		redirect('kelas');
 	}
-	public function edit_jurusan($id){
-		if($this->session->status != 'admin'){
+	public function edit_jurusan($id)
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$jurusan = $this->input->post('jurusan');
@@ -740,8 +858,9 @@ class Admin extends CI_Controller {
 		$this->m_admin->update_jurusan($where, 'jurusan', $data);
 		redirect('kelas');
 	}
-	public function hapus_jurusan($id){
-		if($this->session->status != 'admin'){
+	public function hapus_jurusan($id)
+	{
+		if ($this->session->status != 'admin') {
 			redirect('');
 		}
 		$where = array('id_jurusan' => $id);
@@ -750,24 +869,25 @@ class Admin extends CI_Controller {
 	}
 
 	//Soal
-	public function soal($pjk){
+	public function soal($pjk)
+	{
 		//$data['title'] = 'Soal';
 		$mapel = $this->uri->segment(3);
 
 		$vkelas = array('id_kelas' => $pjk);
-		$data['kelas'] = $this->m_admin->vkelas($vkelas)->row_array();		
-		$data['title'] = 'Soal '.$data['kelas']['kode_kelas'];
-		
+		$data['kelas'] = $this->m_admin->vkelas($vkelas)->row_array();
+		$data['title'] = 'Soal ' . $data['kelas']['kode_kelas'];
+
 		//admin
-		if($this->session->status == 'admin'){
+		if ($this->session->status == 'admin') {
 			$data['pilihmapel'] = $this->m_admin->list_mapel()->result();
 			$data['listsoal'] = '';
 		}
-		if($mapel) {
-		 	$data['listsoal'] = $this->m_admin->soal_admin($pjk, $mapel)->result();
-		 }
+		if ($mapel) {
+			$data['listsoal'] = $this->m_admin->soal_admin($pjk, $mapel)->result();
+		}
 		//Guru
-		if($this->session->status == 'guru'){
+		if ($this->session->status == 'guru') {
 			$data['listsoal'] = $this->m_admin->soal_guru($this->session->id, $pjk)->result();
 		}
 
@@ -775,14 +895,16 @@ class Admin extends CI_Controller {
 		$this->load->view('soal');
 		$this->load->view('template/footer');
 	}
-	function soal_by_mapel($kelas, $mapel){
-		$soal = $this->db->query('SELECT * FROM soal WHERE kelas='.$kelas.' AND mapel='.$mapel)->result();
+	function soal_by_mapel($kelas, $mapel)
+	{
+		$soal = $this->db->query('SELECT * FROM soal WHERE kelas=' . $kelas . ' AND mapel=' . $mapel)->result();
 		$this->j($soal);
 	}
 
 	//Tambah Soal
 	//Sebelum menambah soal, ubah settingan maximum file upload pada php.ini
-	public function tambahsoal(){
+	public function tambahsoal()
+	{
 		$data['title'] = 'Tambah Soal';
 		$data['listmapel'] = $this->m_admin->list_mapel()->result();
 		$data['listkelas'] = $this->m_admin->list_kelas()->result();
@@ -793,7 +915,8 @@ class Admin extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 	//Aksi tambah soal
-	function act_tsoal(){
+	function act_tsoal()
+	{
 		$mapel = $this->input->post('mapel');
 		$kelas = $this->input->post('kelas');
 		$guru = $this->input->post('guru');
@@ -824,8 +947,7 @@ class Admin extends CI_Controller {
 			$this->m_admin->in_soal_nomedia('soal', $data);
 			$this->session->set_flashdata('soal', 'Soal berhasil ditambahkan');
 			redirect('tsoal');
-		}
-		else{
+		} else {
 			$config['upload_path'] = './../media';
 			$config['allowed_types'] = 'jpg|png|gif|wav|mp3';
 			//load library upload
@@ -835,8 +957,7 @@ class Admin extends CI_Controller {
 			if (!$this->upload->do_upload('media')) {
 				$data['error'] = $this->upload->display_errors();
 				redirect('tsoal', $data);
-			}
-			else{
+			} else {
 				$media = $this->upload->data('file_name');
 				$data = array(
 					'mapel' => $mapel,
@@ -859,7 +980,8 @@ class Admin extends CI_Controller {
 		}
 	}
 	//Edit Soal
-	public function esoal($id){
+	public function esoal($id)
+	{
 		$data['title'] = 'Edit Soal';
 		$data['listmapel'] = $this->m_admin->list_mapel()->result();
 		$data['listkelas'] = $this->m_admin->list_kelas()->result();
@@ -871,7 +993,8 @@ class Admin extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 	//Aksi ediit soal
-	function act_esoal($id){
+	function act_esoal($id)
+	{
 		$mapel = $this->input->post('mapel');
 		$kelas = $this->input->post('kelas');
 		$guru = $this->input->post('guru');
@@ -903,10 +1026,9 @@ class Admin extends CI_Controller {
 			$this->m_admin->up_soal_nomedia($where, 'soal', $data);
 			$this->session->set_flashdata('soal', 'Soal berhasil diubah');
 			redirect($this->agent->referrer());
-		}
-		else{
-			$s = $this->db->query('select media from soal where id_soal='.$id)->row();
-			unlink('./../media/'.$s->media);
+		} else {
+			$s = $this->db->query('select media from soal where id_soal=' . $id)->row();
+			unlink('./../media/' . $s->media);
 			$config['upload_path'] = './../media';
 			$config['allowed_types'] = 'jpg|png|gif|wav|mp3';
 			//load library upload
@@ -916,8 +1038,7 @@ class Admin extends CI_Controller {
 			if (!$this->upload->do_upload('media')) {
 				$data['error'] = $this->upload->display_errors();
 				redirect('tsoal', $data);
-			}
-			else{
+			} else {
 				$media = $this->upload->data('file_name');
 				$data = array(
 					'mapel' => $mapel,
@@ -940,44 +1061,49 @@ class Admin extends CI_Controller {
 		}
 	}
 	//Hapus Soal
-	function hapus_soal($id){
-		$this->db->query("DELETE FROM soal WHERE id_soal=".$id);
+	function hapus_soal($id)
+	{
+		$this->db->query("DELETE FROM soal WHERE id_soal=" . $id);
 		redirect($this->agent->referrer());
 	}
 
 	//Nilai
-	public function nilai($pjk){
+	public function nilai($pjk)
+	{
 		$mapel = $this->uri->segment(3);
 
 		$vkelas = array('id_kelas' => $pjk);
 		$data['kelas'] = $this->m_admin->vkelas($vkelas)->row_array();
 		$data['kls'] = $data['kelas']['kode_kelas'];
-		$data['title'] = 'Nilai Ujian '.$data['kelas']['kode_kelas'];
+		$data['title'] = 'Nilai Ujian ' . $data['kelas']['kode_kelas'];
 		$data['judul'] = 'Nilai Ujian ';
 		$data['listmapel'] = $this->m_admin->list_mapel()->result();
 		$data['nilai'] = '';
 
 		if ($mapel) {
-			$m = $this->db->query('SELECT mapel FROM mapel WHERE id_mapel='.$mapel)->row_array();
-			$data['judul'] = 'Nilai Ujian '.$m['mapel'];
-			$data['title'] = 'Nilai Ujian '.$m['mapel'].' '.$data['kelas']['kode_kelas'];
+			$m = $this->db->query('SELECT mapel FROM mapel WHERE id_mapel=' . $mapel)->row_array();
+			$data['judul'] = 'Nilai Ujian ' . $m['mapel'];
+			$data['title'] = 'Nilai Ujian ' . $m['mapel'] . ' ' . $data['kelas']['kode_kelas'];
 			$data['nilai'] = $this->nilai_by_mapel($pjk, $mapel)->result();
 		}
 
 		$this->header($data);
 		$this->load->view('nilai');
 		$this->load->view('template/footer');
-	} 
-	function nilai_by_mapel($kelas, $mapel){
-		return $this->db->query('SELECT siswa.id_siswa, siswa.nis, siswa.nama, mapel.mapel, ikut_ujian.id_tes, ikut_ujian.id_ujian, ikut_ujian.nilai, ujian.id_kelas, ujian.id_mapel FROM siswa, ikut_ujian, ujian, mapel WHERE ikut_ujian.id_siswa=siswa.id_siswa AND ujian.id_ujian=ikut_ujian.id_ujian AND ujian.id_mapel=mapel.id_mapel AND ujian.id_kelas='.$kelas.' AND ujian.id_mapel='.$mapel);
 	}
-	function hapus_nilai($id){
-		$this->db->query('DELETE FROM ikut_ujian WHERE id_tes='.$id);
+	function nilai_by_mapel($kelas, $mapel)
+	{
+		return $this->db->query('SELECT siswa.id_siswa, siswa.nis, siswa.nama, mapel.mapel, ikut_ujian.id_tes, ikut_ujian.id_ujian, ikut_ujian.nilai, ujian.id_kelas, ujian.id_mapel FROM siswa, ikut_ujian, ujian, mapel WHERE ikut_ujian.id_siswa=siswa.id_siswa AND ujian.id_ujian=ikut_ujian.id_ujian AND ujian.id_mapel=mapel.id_mapel AND ujian.id_kelas=' . $kelas . ' AND ujian.id_mapel=' . $mapel);
+	}
+	function hapus_nilai($id)
+	{
+		$this->db->query('DELETE FROM ikut_ujian WHERE id_tes=' . $id);
 		redirect($this->agent->referrer());
 	}
 
 	//Ujian
-	public function ujian(){
+	public function ujian()
+	{
 		$data['title'] = 'Ujian';
 		$data['listkelas'] = $this->m_admin->list_kelas()->result();
 		$data['listguru'] = $this->m_admin->list_guru()->result();
@@ -987,11 +1113,13 @@ class Admin extends CI_Controller {
 		$this->load->view('ujian');
 		$this->load->view('template/footer');
 	}
-	function mapel_by_kelas($id){
-		$mapel = $this->db->query('SELECT mapel.* FROM mapel, soal WHERE soal.mapel=mapel.id_mapel AND soal.mapel=mapel.id_mapel AND soal.kelas='.$id.' GROUP BY mapel')->result();
+	function mapel_by_kelas($id)
+	{
+		$mapel = $this->db->query('SELECT mapel.* FROM mapel, soal WHERE soal.mapel=mapel.id_mapel AND soal.mapel=mapel.id_mapel AND soal.kelas=' . $id . ' GROUP BY mapel')->result();
 		echo json_encode($mapel);
 	}
-	function tambah_ujian(){
+	function tambah_ujian()
+	{
 		$ujian = $this->input->post('nmujian');
 		$kelas = $this->input->post('kelas');
 		$mapel = $this->input->post('mapel');
@@ -1011,7 +1139,8 @@ class Admin extends CI_Controller {
 		$this->session->set_flashdata('t_ujian', '');
 		redirect('ujian');
 	}
-	function edit_ujian($id_ujian){
+	function edit_ujian($id_ujian)
+	{
 		$ujian = $this->input->post('nmujian');
 		$kelas = $this->input->post('kelas');
 		$mapel = $this->input->post('mapel');
@@ -1032,13 +1161,15 @@ class Admin extends CI_Controller {
 		$this->session->set_flashdata('t_ujian', '');
 		redirect('ujian');
 	}
-	function hapus_ujian($id){
-		$this->db->query("DELETE FROM ujian WHERE id_ujian=".$id);
+	function hapus_ujian($id)
+	{
+		$this->db->query("DELETE FROM ujian WHERE id_ujian=" . $id);
 		redirect($this->agent->referrer());
 	}
 
 	//Setting
-	public function setting(){
+	public function setting()
+	{
 		if ($this->session->status == 'admin') {
 			$data['admin'] = $this->db->query('SELECT id_admin, nama, username FROM admin')->result();
 		}
@@ -1048,7 +1179,8 @@ class Admin extends CI_Controller {
 		$this->load->view('setting');
 		$this->load->view('template/footer');
 	}
-	function ganti_passwd_admin(){
+	function ganti_passwd_admin()
+	{
 		$password = $this->input->post('password');
 		$passwordbaru = $this->input->post('passwordbaru');
 
@@ -1061,13 +1193,13 @@ class Admin extends CI_Controller {
 			$this->m_admin->update_passwd('admin', $data, $id);
 			$this->session->set_flashdata('passwd', 'Password berhasil diubah');
 			redirect('setting');
-		}
-		else{
+		} else {
 			$this->session->set_flashdata('error', 'Password lama salah !');
 			redirect('setting');
 		}
 	}
-	function ganti_passwd_guru(){
+	function ganti_passwd_guru()
+	{
 		$password = $this->input->post('password');
 		$passwordbaru = $this->input->post('passwordbaru');
 		$where = ['id_guru' => $this->session->id];
@@ -1077,13 +1209,13 @@ class Admin extends CI_Controller {
 			$this->m_admin->update_passwd('guru', $data, $where);
 			$this->session->set_flashdata('passwd', 'Password berhasil diubah');
 			redirect('setting');
-		}
-		else{
+		} else {
 			$this->session->set_flashdata('error', 'Password lama salah !');
 			redirect('setting');
 		}
 	}
-	function ganti_user(){
+	function ganti_user()
+	{
 		$id = $this->session->id;
 		$nama = $this->input->post('nama');
 		$username = $this->input->post('username');
@@ -1092,7 +1224,7 @@ class Admin extends CI_Controller {
 			$where = ['id_admin' => $id];
 			$this->m_admin->update_passwd('admin', $data, $where);
 
-			$this->session->unset_userdata(['nama','username']);
+			$this->session->unset_userdata(['nama', 'username']);
 			$this->session->set_userdata($data);
 
 			$this->session->set_flashdata('passwd', 'Nama/Username berhasil diubah');
@@ -1102,29 +1234,32 @@ class Admin extends CI_Controller {
 			$where = ['id_guru' => $id];
 			$this->m_admin->update_passwd('guru', $data, $where);
 
-			$this->session->unset_userdata(['nama','username']);
+			$this->session->unset_userdata(['nama', 'username']);
 			$this->session->set_userdata($data);
 
 			$this->session->set_flashdata('passwd', 'Nama/Username berhasil diubah');
 			redirect('setting');
 		}
 	}
-	function tambah_admin(){
+	function tambah_admin()
+	{
 		$nama = $this->input->post('nama');
 		$username = $this->input->post('username');
 		$password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
 		$data = ['nama' => $nama, 'username' => $username, 'password' => $password];
 		$this->db->insert('admin', $data);
-		$this->session->set_flashdata('tambahadmin', $nama.' berhasil ditambahkan sebagai admin');
+		$this->session->set_flashdata('tambahadmin', $nama . ' berhasil ditambahkan sebagai admin');
 		redirect('setting');
 	}
-	function hapus_admin($id){
-		$this->db->query('DELETE FROM admin WHERE id_admin='.$id);
+	function hapus_admin($id)
+	{
+		$this->db->query('DELETE FROM admin WHERE id_admin=' . $id);
 		redirect('setting');
 	}
 
 	//Reset aplikasi
-	function teser(){
+	function teser()
+	{
 		$this->db->query('SET FOREIGN_KEY_CHECKS = 0');
 		$this->db->truncate('guru');
 		$this->db->truncate('ikut_ujian');
@@ -1140,7 +1275,8 @@ class Admin extends CI_Controller {
 	}
 
 	//Error 404
-	public function error(){
+	public function error()
+	{
 		$data['title'] = '404 Not Found';
 
 		$this->header($data);
@@ -1148,7 +1284,8 @@ class Admin extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 
-	function j($data){
+	function j($data)
+	{
 		header('Content-Type: application/json');
 		echo json_encode($data);
 	}

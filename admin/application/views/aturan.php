@@ -71,7 +71,8 @@
                                 <td><input type="text" name="eksistensial" class="form-control" value="<?= $n->eksistensial ?>" readonly></td>
                                 <td>
                                     <!-- <button type="submit" class="btn btn-primary">Konversi Nilai</button> -->
-                                    <a href="<?= base_url('KlasifikasiNB/konvert_nilai/'. $n->id_nilai) ?>" class="btn btn-primary">Konversi nilai</a>
+                                    <a href="<?= base_url('KlasifikasiNB/konvert_nilai/' . $n->id_nilai) ?>" class="btn btn-primary">Konversi nilai</a> |
+                                    <a href="<?= base_url('Admin/konversi_bobot/' . $n->id_nilai) ?>" class="btn btn-success">Konversi bobot</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -91,4 +92,16 @@
             'autoWidth': false
         });
     });
+
+    // $(document).ready(function() {
+    //     $("#angka_awal, #angka_akhir").keyup(function() {
+    //         var angka_awl = $("#angka_awal").val();
+    //         // var selisih = $("#selisih").val();
+    //         var angka_akh = $("#angka_akhir").val();
+
+    //         var total = parseInt(angka_awl) * parseInt(angka_akh);
+    //         $("#hasil").val(total);
+    //         console.log(Number(total));
+    //     });
+    // });
 </script>
