@@ -452,6 +452,7 @@ class Admin extends CI_Controller
 	{
 		$data['title'] = 'konversi';
 		$data_input = array(
+			'id_alternatif' => $this->input->post('id_alternatif'),
 			'nama' => $this->input->post('nama_alternatif'),
 			'kimia' => $this->input->post('kimia'),
 			'biologi' => $this->input->post('biologi'),
@@ -482,6 +483,42 @@ class Admin extends CI_Controller
 		$this->header($data);
 		$this->load->view('hasil_coba');
 		$this->load->view('template/footer');
+	}
+
+	public function alternatif_matriks(){
+		$data['title'] = 'ALTERNATIF';
+		$data['datanilai'] = $this->db->query("SELECT * FROM minimum_bobot_alternatif JOIN alternatif_tb ON minimum_bobot_alternatif.id_alternatif=alternatif_tb.id_alternatif ")->result();
+		$this->header($data);
+		$this->load->view('nilai_bobot_alternatif');
+		$this->load->view('template/footer');
+	}
+	public function simpan_bobot(){
+		$data_input = array(
+			'id_alternatif' => $this->input->post('id_alternatif'),
+			'kimia' => $this->input->post('kimia'),
+			'biologi' => $this->input->post('biologi'),
+			'fisika' => $this->input->post('fisika'),
+			'matematika' => $this->input->post('matematika'),
+			'bhs_inggris' => $this->input->post('bhs_inggris'),
+			'bhs_indonesia' => $this->input->post('bhs_indonesia'),
+			'realistis' => $this->input->post('realistis'),
+			'intelektual' => $this->input->post('intelektual'),
+			'artistik' => $this->input->post('artistik'),
+			'sosial' => $this->input->post('sosial'),
+			'enterprise' => $this->input->post('enterprise'),
+			'konvensional' => $this->input->post('konvensional'),
+			'linguistik' => $this->input->post('linguistik'),
+			'matematikal' => $this->input->post('matematikal'),
+			'musikal' => $this->input->post('musikal'),
+			'kinestik' => $this->input->post('kinestik'),
+			'spartial' => $this->input->post('spartial'),
+			'intrapersonal' => $this->input->post('intrapersonal'),
+			'interpersonal' => $this->input->post('matematikal'),
+			'natrularistik' => $this->input->post('natrularistik'),
+			'eksistensial' => $this->input->post('eksistensial')
+		);
+		$this->db->insert('minimum_bobot_alternatif', $data_input);
+		redirect('Admin/konversi_nilai');
 	}
 
 	public function coba_bobot()

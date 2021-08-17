@@ -11,9 +11,9 @@
 
             <div class="box-body">
                 <form action="<?= base_url('Admin/coba_konversi_nilai') ?>" enctype="multipart/form-data" method="POST">
-
                     <div class="col-md-4 form-group">
                         <label for="MataPelajaran">Kimia :</label>
+                        <input type="hidden" name="id_alternatif" value="<?= $datanilai->id_alternatif ?>">
                         <input type="hidden" name="nama_alternatif" value="<?= $datanilai->nama_alternatif ?>">
                         <select name="kimia" class="form-control" required="">
                             <option value="">Nilai...</option>

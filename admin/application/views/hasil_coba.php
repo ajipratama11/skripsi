@@ -40,33 +40,32 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><?= $a['nama'] ?></td>
-                            <td><?= $a['kimia'] ?></td>
-                            <td><?= $a['biologi'] ?></td>
-                            <td><?= $a['fisika'] ?></td>
-                            <td><?= $a['matematika'] ?></td>
-                            <td><?= $a['bhs_inggris'] ?></td>
-                            <td><?= $a['bhs_indonesia'] ?></td>
-                            <td><?= $a['realistis'] ?></td>
-                            <td><?= $a['intelektual'] ?></td>
-                            <td><?= $a['artistik'] ?></td>
-                            <td><?= $a['sosial'] ?></td>
-                            <td><?= $a['enterprise'] ?></td>
-                            <td><?= $a['konvensional'] ?></td>
-                            <td><?= $a['linguistik'] ?></td>
-                            <td><?= $a['matematikal'] ?></td>
-                            <td><?= $a['musikal'] ?></td>
-                            <td><?= $a['kinestik'] ?></td>
-                            <td><?= $a['spartial'] ?></td>
-                            <td><?= $a['intrapersonal'] ?></td>
-                            <td><?= $a['interpersonal'] ?></td>
-                            <td><?= $a['natrularistik'] ?></td>
-                            <td><?= $a['eksistensial'] ?></td>
-                            <td>
-                                <!-- <button class="btn btn-xs btn-warning" data-toggle="modal" data-target="#editAlternatif<?= $a->id_nilai_alternatif ?>"><i class="fa fa-edit"></i> Edit</button> &nbsp;
-                                    <a href="<?= base_url('Admin/coba_konversi/' . $a->id_nilai_alternatif) ?>" class="btn btn-xs btn-primary">Coba</a>
-                                    <button type="submit" class="btn btn-xs btn-success"> <i class="fa fa-edit"></i> Konversi</button>
-                                    <button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#hapusAlternatif<?= $a->id_nilai_alternatif ?>"><i class="fa fa-trash"></i> Hapus</button> -->
+                            <form action="<?= base_url('Admin/simpan_bobot') ?>" method="POST">
+                                <td><input type="hidden" name="id_alternatif" value="<?= $a['id_alternatif'] ?>"><?= $a['nama'] ?></td>
+                                <td><input type="hidden" name="kimia" value="<?= $a['kimia'] ?>"><?= $a['kimia'] ?></td>
+                                <td><input type="hidden" name="biologi" value="<?= $a['biologi'] ?>"><?= $a['biologi'] ?></td>
+                                <td><input type="hidden" name="fisika" value="<?= $a['fisika'] ?>"><?= $a['fisika'] ?></td>
+                                <td><input type="hidden" name="matematika" value="<?= $a['matematika'] ?>"><?= $a['matematika'] ?></td>
+                                <td><input type="hidden" name="bhs_inggris" value="<?= $a['bhs_inggris'] ?>"><?= $a['bhs_inggris'] ?></td>
+                                <td><input type="hidden" name="bhs_indonesia" value="<?= $a['bhs_indonesia'] ?>"><?= $a['bhs_indonesia'] ?></td>
+                                <td><input type="hidden" name="realistis" value="<?= $a['realistis'] ?>"><?= $a['realistis'] ?></td>
+                                <td><input type="hidden" name="intelektual" value="<?= $a['intelektual'] ?>"><?= $a['intelektual'] ?></td>
+                                <td><input type="hidden" name="artistik" value="<?= $a['artistik'] ?>"><?= $a['artistik'] ?></td>
+                                <td><input type="hidden" name="sosial" value="<?= $a['sosial'] ?>"><?= $a['sosial'] ?></td>
+                                <td><input type="hidden" name="enterprise" value="<?= $a['enterprise'] ?>"><?= $a['enterprise'] ?></td>
+                                <td><input type="hidden" name="konvensional" value="<?= $a['konvensional'] ?>"><?= $a['konvensional'] ?></td>
+                                <td><input type="hidden" name="linguistik" value="<?= $a['linguistik'] ?>"><?= $a['linguistik'] ?></td>
+                                <td><input type="hidden" name="matematikal" value="<?= $a['matematikal'] ?>"><?= $a['matematikal'] ?></td>
+                                <td><input type="hidden" name="musikal" value="<?= $a['musikal'] ?>"><?= $a['musikal'] ?></td>
+                                <td><input type="hidden" name="kinestik" value="<?= $a['kinestik'] ?>"><?= $a['kinestik'] ?></td>
+                                <td><input type="hidden" name="spartial" value="<?= $a['spartial'] ?>"><?= $a['spartial'] ?></td>
+                                <td><input type="hidden" name="intrapersonal" value="<?= $a['intrapersonal'] ?>"><?= $a['intrapersonal'] ?></td>
+                                <td><input type="hidden" name="interpersonal" value="<?= $a['interpersonal'] ?>"><?= $a['interpersonal'] ?></td>
+                                <td><input type="hidden" name="natrularistik" value="<?= $a['natrularistik'] ?>"><?= $a['natrularistik'] ?></td>
+                                <td><input type="hidden" name="eksistensial" value="<?= $a['eksistensial'] ?>"><?= $a['eksistensial'] ?></td>
+                                <td>
+                                    <button type="submit" class="btn btn-xs btn-success"> <i class="fa fa-edit"></i> Simpan Konversi</button>
+                            </form>
                             </td>
                         </tr>
                     </tbody>

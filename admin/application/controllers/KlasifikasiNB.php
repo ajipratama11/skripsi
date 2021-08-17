@@ -789,4 +789,6 @@ class KlasifikasiNB extends CI_Controller
 		$this->load->view('normalisasi');
 		$this->load->view('template/footer');
 	}
+
+	
 }
