@@ -1,6 +1,6 @@
 <div class="content-wrapper">
     <section class="content-header">
-        <h1 class="text-center">Coba Klasifikasi</h1>
+        <h1 class="text-center">Hasil Klasifikasi</h1>
     </section>
 
     <section class="content">
