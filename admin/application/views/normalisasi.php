@@ -1141,22 +1141,126 @@
                         </tr>
                     </tbody>
                 </table>
+                <!-- <input type="text" id="hasilhitung"> -->
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="box box-warning">
+            <div class="box-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Kriteria</th>
+                            <th>Eigen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kimia</td>
+                            <td><input type="text" id="eigen1" style="width: 150px;" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Biologi</td>
+                            <td><input type="text" id="eigen2" style="width: 150px;" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Fisika</td>
+                            <td><input type="text" id="eigen3" style="width: 150px;" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Matematika</td>
+                            <td><input type="text" id="eigen4" style="width: 150px;" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Bhs Inggris</td>
+                            <td><input type="text" id="eigen5" style="width: 150px;" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Bhs Indonesia</td>
+                            <td><input type="text" id="eigen6" style="width: 150px;" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Realistis</td>
+                            <td><input type="text" id="eigen7" style="width: 150px;" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Intelektual</td>
+                            <td><input type="text" id="eigen8" style="width: 150px;" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Artistik</td>
+                            <td><input type="text" id="eigen9" style="width: 150px;" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Sosial</td>
+                            <td><input type="text" id="eigen10" style="width: 150px;" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Enterprise</td>
+                            <td><input type="text" id="eigen11" style="width: 150px;" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Konvensional</td>
+                            <td><input type="text" id="eigen12" style="width: 150px;" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Linguistik</td>
+                            <td><input type="text" id="eigen13" style="width: 150px;" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Matematikal</td>
+                            <td><input type="text" id="eigen14" style="width: 150px;" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Musikal</td>
+                            <td><input type="text" id="eigen15" style="width: 150px;" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Kinestik</td>
+                            <td><input type="text" id="eigen16" style="width: 150px;" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Spartial</td>
+                            <td><input type="text" id="eigen17" style="width: 150px;" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Intrapersonal</td>
+                            <td><input type="text" id="eigen18" style="width: 150px;" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Interpersonal</td>
+                            <td><input type="text" id="eigen19" style="width: 150px;" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Natural</td>
+                            <td><input type="text" id="eigen20" style="width: 150px;" readonly></td>
+                        </tr><tr>
+                            <td>Eksistensial</td>
+                            <td><input type="text" id="eigen21" style="width: 150px;" readonly></td>
+                        </tr>
+                        </tr><tr>
+                            <td>total</td>
+                            <td><input type="text" id="jumlaheigen" style="width: 150px;" readonly></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 </div>
 <script>
-    $(document).ready(function() {
-        $(".brs1-a, #hasil1").each(function() {
-            var angka_awl = $(".brs1-a").val();
-            var angka_akh = $("#total1").val();
+    // $(document).ready(function() {
+    //     $("#baris-a1, #baris-a2").each(function() {
+    //         var angka_awl = $("#baris-a1").val();
+    //         var angka_akh = $("#baris-a2").val();
 
-            var total = (parseFloat(angka_akh) / parseFloat(angka_awl));
-            var hasil = total.toFixed(8);
-            $('#hasilcoba').val(angka_akh);
-            console.log(Number(total));
-        });
-    });
+    //         var total = (parseFloat(angka_akh) + parseFloat(angka_awl));
+    //         var hasil_htg = total.toFixed(9);
+    //         $('#hasilhitung').val(angka_awl);
+    //         //console.log(Number(total));
+    //     });
+    // });
 </script>
 <script>
     $(document).ready(function() {
@@ -1288,11 +1392,8 @@
             var total_ba21 = (parseFloat(b1_u) / parseFloat(hasil_brs1));
             var hasil_ba21 = total_ba21.toFixed(4);
             $('#baris-u1').val(hasil_ba21);
-        });
-    });
 
-    $(document).ready(function() {
-        $(".brs2-a, .brs2-b, .brs2-c, .brs2-d, .brs2-e, .brs2-f, .brs2-g, .brs2-h, .brs2-i, .brs2-j, .brs2-k, .brs2-l, .brs2-m, .brs2-n, .brs2-o, .brs2-q, .brs2-r, .brs2-s, .brs2-t, .brs2-u").each(function() {
+
             var b2_a = $(".brs2-a").val();
             var b2_b = $(".brs2-b").val();
             var b2_c = $(".brs2-c").val();
@@ -1384,11 +1485,8 @@
             var total_bb21 = (parseFloat(b2_u) / parseFloat(hasil_brs2));
             var hasil_bb21 = total_bb21.toFixed(9);
             $('#baris-u2').val(hasil_bb21);
-        });
-    });
 
-    $(document).ready(function() {
-        $(".brs3-a, .brs3-b, .brs3-c, .brs3-d, .brs3-e, .brs3-f, .brs3-g, .brs3-h, .brs3-i, .brs3-j, .brs3-k, .brs3-l, .brs3-m, .brs3-n, .brs3-o, .brs3-q, .brs3-r, .brs3-s, .brs3-t, .brs3-u").each(function() {
+
             var b3_a = $(".brs3-a").val();
             var b3_b = $(".brs3-b").val();
             var b3_c = $(".brs3-c").val();
@@ -1480,12 +1578,8 @@
             var total_bc21 = (parseFloat(b3_u) / parseFloat(hasil_brs3));
             var hasil_bc21 = total_bc21.toFixed(9);
             $('#baris-u3').val(hasil_bc21);
-            
-        });
-    });
 
-    $(document).ready(function() {
-        $(".brs4-a, .brs4-b, .brs4-c, .brs4-d, .brs4-e, .brs4-f, .brs4-g, .brs4-h, .brs4-i, .brs4-j, .brs4-k, .brs4-l, .brs4-m, .brs4-n, .brs4-o, .brs4-q, .brs4-r, .brs4-s, .brs4-t, .brs4-u").each(function() {
+
             var b4_a = $(".brs4-a").val();
             var b4_b = $(".brs4-b").val();
             var b4_c = $(".brs4-c").val();
@@ -1577,11 +1671,7 @@
             var total_bd21 = (parseFloat(b4_u) / parseFloat(hasil_brs4));
             var hasil_bd21 = total_bd21.toFixed(9);
             $('#baris-u4').val(hasil_bd21);
-        });
-    });
 
-    $(document).ready(function() {
-        $(".brs5-a, .brs5-b, .brs5-c, .brs5-d, .brs5-e, .brs5-f, .brs5-g, .brs5-h, .brs5-i, .brs5-j, .brs5-k, .brs5-l, .brs5-m, .brs5-n, .brs5-o, .brs5-q, .brs5-r, .brs5-s, .brs5-t, .brs5-u").each(function() {
             var b5_a = $(".brs5-a").val();
             var b5_b = $(".brs5-b").val();
             var b5_c = $(".brs5-c").val();
@@ -1673,11 +1763,7 @@
             var total_be21 = (parseFloat(b5_u) / parseFloat(hasil_brs5));
             var hasil_be21 = total_be21.toFixed(9);
             $('#baris-u5').val(hasil_be21);
-        });
-    });
 
-    $(document).ready(function() {
-        $(".brs6-a, .brs6-b, .brs6-c, .brs6-d, .brs6-e, .brs6-f, .brs6-g, .brs6-h, .brs6-i, .brs6-j, .brs6-k, .brs6-l, .brs6-m, .brs6-n, .brs6-o, .brs6-q, .brs6-r, .brs6-s, .brs6-t, .brs6-u").each(function() {
             var b6_a = $(".brs6-a").val();
             var b6_b = $(".brs6-b").val();
             var b6_c = $(".brs6-c").val();
@@ -1769,11 +1855,7 @@
             var total_bf21 = (parseFloat(b6_u) / parseFloat(hasil_brs6));
             var hasil_bf21 = total_bf21.toFixed(9);
             $('#baris-u6').val(hasil_bf21);
-        });
-    });
 
-    $(document).ready(function() {
-        $(".brs7-a, .brs7-b, .brs7-c, .brs7-d, .brs7-e, .brs7-f, .brs7-g, .brs7-h, .brs7-i, .brs7-j, .brs7-k, .brs7-l, .brs7-m, .brs7-n, .brs7-o, .brs7-q, .brs7-r, .brs7-s, .brs7-t, .brs7-u").each(function() {
             var b7_a = $(".brs7-a").val();
             var b7_b = $(".brs7-b").val();
             var b7_c = $(".brs7-c").val();
@@ -1865,11 +1947,8 @@
             var total_bg21 = (parseFloat(b7_u) / parseFloat(hasil_brs7));
             var hasil_bg21 = total_bg21.toFixed(9);
             $('#baris-u7').val(hasil_bg21);
-        });
-    });
 
-    $(document).ready(function() {
-        $(".brs8-a, .brs8-b, .brs8-c, .brs8-d, .brs8-e, .brs8-f, .brs8-g, .brs8-h, .brs8-i, .brs8-j, .brs8-k, .brs8-l, .brs8-m, .brs8-n, .brs8-o, .brs8-q, .brs8-r, .brs8-s, .brs8-t, .brs8-u").each(function() {
+
             var b8_a = $(".brs8-a").val();
             var b8_b = $(".brs8-b").val();
             var b8_c = $(".brs8-c").val();
@@ -1961,11 +2040,8 @@
             var total_bh21 = (parseFloat(b8_u) / parseFloat(hasil_brs8));
             var hasil_bh21 = total_bh21.toFixed(9);
             $('#baris-u8 ').val(hasil_bh21);
-        });
-    });
 
-    $(document).ready(function() {
-        $(".brs9-a, .brs9-b, .brs9-c, .brs9-d, .brs9-e, .brs9-f, .brs9-g, .brs9-h, .brs9-i, .brs9-j, .brs9-k, .brs9-l, .brs9-m, .brs9-n, .brs9-o, .brs9-q, .brs9-r, .brs9-s, .brs9-t, .brs9-u").each(function() {
+
             var b9_a = $(".brs9-a").val();
             var b9_b = $(".brs9-b").val();
             var b9_c = $(".brs9-c").val();
@@ -2057,11 +2133,8 @@
             var total_bi21 = (parseFloat(b9_u) / parseFloat(hasil_brs9));
             var hasil_bi21 = total_bi21.toFixed(9);
             $('#baris-u9 ').val(hasil_bi21);
-        });
-    });
 
-    $(document).ready(function() {
-        $(".brs10-a, .brs10-b, .brs10-c, .brs10-d, .brs10-e, .brs10-f, .brs10-g, .brs10-h, .brs10-i, .brs10-j, .brs10-k, .brs10-l, .brs10-m, .brs10-n, .brs10-o, .brs10-q, .brs10-r, .brs10-s, .brs10-t, .brs10-u").each(function() {
+
             var b10_a = $(".brs10-a").val();
             var b10_b = $(".brs10-b").val();
             var b10_c = $(".brs10-c").val();
@@ -2153,11 +2226,8 @@
             var total_bj21 = (parseFloat(b10_u) / parseFloat(hasil_brs10));
             var hasil_bj21 = total_bj21.toFixed(9);
             $('#baris-u10 ').val(hasil_bj21);
-        });
-    });
 
-    $(document).ready(function() {
-        $(".brs11-a, .brs11-b, .brs11-c, .brs11-d, .brs11-e, .brs11-f, .brs11-g, .brs11-h, .brs11-i, .brs11-j, .brs11-k, .brs11-l, .brs11-m, .brs11-n, .brs11-o, .brs11-q, .brs11-r, .brs11-s, .brs11-t, .brs11-u").each(function() {
+
             var b11_a = $(".brs11-a").val();
             var b11_b = $(".brs11-b").val();
             var b11_c = $(".brs11-c").val();
@@ -2249,11 +2319,8 @@
             var total_bk21 = (parseFloat(b11_u) / parseFloat(hasil_brs11));
             var hasil_bk21 = total_bk21.toFixed(9);
             $('#baris-u11 ').val(hasil_bk21);
-        });
-    });
 
-    $(document).ready(function() {
-        $(".brs12-a, .brs12-b, .brs12-c, .brs12-d, .brs12-e, .brs12-f, .brs12-g, .brs12-h, .brs12-i, .brs12-j, .brs12-k, .brs12-l, .brs12-m, .brs12-n, .brs12-o, .brs12-q, .brs12-r, .brs12-s, .brs12-t, .brs12-u").each(function() {
+
             var b12_a = $(".brs12-a").val();
             var b12_b = $(".brs12-b").val();
             var b12_c = $(".brs12-c").val();
@@ -2345,11 +2412,8 @@
             var total_bl21 = (parseFloat(b12_u) / parseFloat(hasil_brs12));
             var hasil_bl21 = total_bl21.toFixed(9);
             $('#baris-u12 ').val(hasil_bl21);
-        });
-    });
 
-    $(document).ready(function() {
-        $(".brs13-a, .brs13-b, .brs13-c, .brs13-d, .brs13-e, .brs13-f, .brs13-g, .brs13-h, .brs13-i, .brs13-j, .brs13-k, .brs13-l, .brs13-m, .brs13-n, .brs13-o, .brs13-q, .brs13-r, .brs13-s, .brs13-t, .brs13-u").each(function() {
+
             var b13_a = $(".brs13-a").val();
             var b13_b = $(".brs13-b").val();
             var b13_c = $(".brs13-c").val();
@@ -2441,11 +2505,8 @@
             var total_bm21 = (parseFloat(b13_u) / parseFloat(hasil_brs13));
             var hasil_bm21 = total_bm21.toFixed(9);
             $('#baris-u13 ').val(hasil_bm21);
-        });
-    });
 
-    $(document).ready(function() {
-        $(".brs14-a, .brs14-b, .brs14-c, .brs14-d, .brs14-e, .brs14-f, .brs14-g, .brs14-h, .brs14-i, .brs14-j, .brs14-k, .brs14-l, .brs14-m, .brs14-n, .brs14-o, .brs14-q, .brs14-r, .brs14-s, .brs14-t, .brs14-u").each(function() {
+
             var b14_a = $(".brs14-a").val();
             var b14_b = $(".brs14-b").val();
             var b14_c = $(".brs14-c").val();
@@ -2537,11 +2598,8 @@
             var total_bn21 = (parseFloat(b14_u) / parseFloat(hasil_brs14));
             var hasil_bn21 = total_bn21.toFixed(9);
             $('#baris-u14').val(hasil_bn21);
-        });
-    });
 
-    $(document).ready(function() {
-        $(".brs15-a, .brs15-b, .brs15-c, .brs15-d, .brs15-e, .brs15-f, .brs15-g, .brs15-h, .brs15-i, .brs15-j, .brs15-k, .brs15-l, .brs15-m, .brs15-n, .brs15-o, .brs15-q, .brs15-r, .brs15-s, .brs15-t, .brs15-u").each(function() {
+
             var b15_a = $(".brs15-a").val();
             var b15_b = $(".brs15-b").val();
             var b15_c = $(".brs15-c").val();
@@ -2633,11 +2691,8 @@
             var total_bo21 = (parseFloat(b15_u) / parseFloat(hasil_brs115));
             var hasil_bo21 = total_bo21.toFixed(9);
             $('#baris-u15 ').val(hasil_bo21);
-        });
-    });
 
-    $(document).ready(function() {
-        $(".brs16-a, .brs16-b, .brs16-c, .brs16-d, .brs16-e, .brs16-f, .brs16-g, .brs16-h, .brs16-i, .brs16-j, .brs16-k, .brs16-l, .brs16-m, .brs16-n, .brs16-o, .brs16-q, .brs16-r, .brs16-s, .brs16-t, .brs16-u").each(function() {
+
             var b16_a = $(".brs16-a").val();
             var b16_b = $(".brs16-b").val();
             var b16_c = $(".brs16-c").val();
@@ -2663,77 +2718,73 @@
             var total16 = (parseFloat(b16_a) + parseFloat(b16_b) + parseFloat(b16_c) + parseFloat(b16_d) + parseFloat(b16_e) + parseFloat(b16_f) + parseFloat(b16_g) + parseFloat(b16_h) + parseFloat(b16_i) + parseFloat(b16_j) + parseFloat(b16_k) + parseFloat(b16_l) + parseFloat(b16_m) + parseFloat(b16_n) + parseFloat(b16_o) + parseFloat(b16_p) + parseFloat(b16_q) + parseFloat(b16_r) + parseFloat(b16_s) + parseFloat(b16_t) + parseFloat(b16_u));
             var hasil16 = total16.toFixed(2);
             $("#hasil16").val(hasil16);
-        });
+            var hasil_brs16 = hasil16;
 
-        var hasil_brs10 = hasil10;
+            var total_bp1 = (parseFloat(b16_a) / parseFloat(hasil_brs16));
+            var hasil_bp1 = total_bp1.toFixed(9);
+            $('#baris-a16').val(hasil_bp1);
+            var total_bp2 = (parseFloat(b16_b) / parseFloat(hasil_brs16));
+            var hasil_bp2 = total_bp2.toFixed(9);
+            $('#baris-b16').val(hasil_bp2);
+            var total_bp3 = (parseFloat(b16_c) / parseFloat(hasil_brs16));
+            var hasil_bp3 = total_bp3.toFixed(9);
+            $('#baris-c16').val(hasil_bp3);
+            var total_bp4 = (parseFloat(b16_d) / parseFloat(hasil_brs16));
+            var hasil_bp4 = total_bp4.toFixed(9);
+            $('#baris-d16').val(hasil_bp4);
+            var total_bp5 = (parseFloat(b16_e) / parseFloat(hasil_brs16));
+            var hasil_bp5 = total_bp5.toFixed(9);
+            $('#baris-e16').val(hasil_bp5);
+            var total_bp6 = (parseFloat(b16_f) / parseFloat(hasil_brs16));
+            var hasil_bp6 = total_bp6.toFixed(9);
+            $('#baris-f16').val(hasil_bp6);
+            var total_bp7 = (parseFloat(b16_g) / parseFloat(hasil_brs16));
+            var hasil_bp7 = total_bp7.toFixed(9);
+            $('#baris-g16').val(hasil_bp7);
+            var total_bp8 = (parseFloat(b16_h) / parseFloat(hasil_brs16));
+            var hasil_bp8 = total_bp8.toFixed(9);
+            $('#baris-h16').val(hasil_bp8);
+            var total_bp9 = (parseFloat(b16_i) / parseFloat(hasil_brs16));
+            var hasil_bp9 = total_bp9.toFixed(9);
+            $('#baris-i16').val(hasil_bp9);
+            var total_bp10 = (parseFloat(b16_j) / parseFloat(hasil_brs16));
+            var hasil_bp10 = total_bp10.toFixed(9);
+            $('#baris-j16').val(hasil_bp10);
+            var total_bp11 = (parseFloat(b16_k) / parseFloat(hasil_brs16));
+            var hasil_bp11 = total_bp11.toFixed(9);
+            $('#baris-k16').val(hasil_bp11);
+            var total_bp12 = (parseFloat(b16_l) / parseFloat(hasil_brs16));
+            var hasil_bp12 = total_bp12.toFixed(9);
+            $('#baris-l16').val(hasil_bp12);
+            var total_bp13 = (parseFloat(b16_m) / parseFloat(hasil_brs16));
+            var hasil_bp13 = total_bp13.toFixed(9);
+            $('#baris-m16').val(hasil_bp13);
+            var total_bp14 = (parseFloat(b16_n) / parseFloat(hasil_brs16));
+            var hasil_bp14 = total_bp14.toFixed(9);
+            $('#baris-n16').val(hasil_bp14);
+            var total_bp15 = (parseFloat(b16_o) / parseFloat(hasil_brs16));
+            var hasil_bp15 = total_bp15.toFixed(9);
+            $('#baris-o16').val(hasil_bp15);
+            var total_bp16 = (parseFloat(b16_p) / parseFloat(hasil_brs16));
+            var hasil_bp16 = total_bp16.toFixed(9);
+            $('#baris-p16').val(hasil_bp16);
+            var total_bp17 = (parseFloat(b16_q) / parseFloat(hasil_brs16));
+            var hasil_bp17 = total_bp17.toFixed(9);
+            $('#baris-q16').val(hasil_bp17);
+            var total_bp18 = (parseFloat(b16_r) / parseFloat(hasil_brs16));
+            var hasil_bp18 = total_bp18.toFixed(9);
+            $('#baris-r16').val(hasil_bp18);
+            var total_bp19 = (parseFloat(b16_s) / parseFloat(hasil_brs16));
+            var hasil_bp19 = total_bp19.toFixed(9);
+            $('#baris-s16').val(hasil_bp19);
+            var total_bp20 = (parseFloat(b16_t) / parseFloat(hasil_brs16));
+            var hasil_bp20 = total_bp20.toFixed(9);
+            $('#baris-t16').val(hasil_bp20);
+            var total_bp21 = (parseFloat(b16_u) / parseFloat(hasil_brs16));
+            var hasil_bp21 = total_bp21.toFixed(9);
+            $('#baris-u16 ').val(hasil_bp21);
 
-            var total_bj1 = (parseFloat(b10_a) / parseFloat(hasil_brs10));
-            var hasil_bj1 = total_bj1.toFixed(9);
-            $('#baris-a10').val(hasil_bj1);
-            var total_bj2 = (parseFloat(b10_b) / parseFloat(hasil_brs10));
-            var hasil_bj2 = total_bj2.toFixed(9);
-            $('#baris-b10').val(hasil_bj2);
-            var total_bj3 = (parseFloat(b10_c) / parseFloat(hasil_brs10));
-            var hasil_bj3 = total_bj3.toFixed(9);
-            $('#baris-c10 ').val(hasil_bj3);
-            var total_bj4 = (parseFloat(b10_d) / parseFloat(hasil_brs10));
-            var hasil_bj4 = total_bj4.toFixed(9);
-            $('#baris-d10').val(hasil_bj4);
-            var total_bj5 = (parseFloat(b10_e) / parseFloat(hasil_brs10));
-            var hasil_bj5 = total_bj5.toFixed(9);
-            $('#baris-e10').val(hasil_bj5);
-            var total_bj6 = (parseFloat(b10_f) / parseFloat(hasil_brs10));
-            var hasil_bj6 = total_bj6.toFixed(9);
-            $('#baris-f10').val(hasil_bj6);
-            var total_bj7 = (parseFloat(b10_g) / parseFloat(hasil_brs10));
-            var hasil_bj7 = total_bj7.toFixed(9);
-            $('#baris-g10').val(hasil_bj7);
-            var total_bj8 = (parseFloat(b10_h) / parseFloat(hasil_brs10));
-            var hasil_bj8 = total_bj8.toFixed(9);
-            $('#baris-h10').val(hasil_bj8);
-            var total_bj9 = (parseFloat(b10_i) / parseFloat(hasil_brs10));
-            var hasil_bj9 = total_bj9.toFixed(9);
-            $('#baris-i10').val(hasil_bj9);
-            var total_bj10 = (parseFloat(b10_j) / parseFloat(hasil_brs10));
-            var hasil_bj10 = total_bj10.toFixed(9);
-            $('#baris-j10').val(hasil_bj10);
-            var total_bj11 = (parseFloat(b10_k) / parseFloat(hasil_brs10));
-            var hasil_bj11 = total_bj11.toFixed(9);
-            $('#baris-k10').val(hasil_bj11);
-            var total_bj12 = (parseFloat(b10_l) / parseFloat(hasil_brs10));
-            var hasil_bj12 = total_bj12.toFixed(9);
-            $('#baris-l10').val(hasil_bj12);
-            var total_bj13 = (parseFloat(b10_m) / parseFloat(hasil_brs10));
-            var hasil_bj13 = total_bj13.toFixed(9);
-            $('#baris-m10').val(hasil_bj13);
-            var total_bj14 = (parseFloat(b10_n) / parseFloat(hasil_brs10));
-            var hasil_bj14 = total_bj14.toFixed(9);
-            $('#baris-n10').val(hasil_bj14);
-            var total_bj15 = (parseFloat(b10_o) / parseFloat(hasil_brs10));
-            var hasil_bj15 = total_bj15.toFixed(9);
-            $('#baris-o10').val(hasil_bj15);
-            var total_bj16 = (parseFloat(b10_p) / parseFloat(hasil_brs10));
-            var hasil_bj16 = total_bj16.toFixed(9);
-            $('#baris-p10').val(hasil_bj16);
-            var total_bj17 = (parseFloat(b10_q) / parseFloat(hasil_brs10));
-            var hasil_bj17 = total_bj17.toFixed(9);
-            $('#baris-q10').val(hasil_bj17);
-            var total_bj18 = (parseFloat(b10_r) / parseFloat(hasil_brs10));
-            var hasil_bj18 = total_bj18.toFixed(9);
-            $('#baris-r10').val(hasil_bj18);
-            var total_bj19 = (parseFloat(b10_s) / parseFloat(hasil_brs10));
-            var hasil_bj19 = total_bj19.toFixed(9);
-            $('#baris-s10').val(hasil_bj19);
-            var total_bj20 = (parseFloat(b10_t) / parseFloat(hasil_brs10));
-            var hasil_bj20 = total_bj20.toFixed(9);
-            $('#baris-t10').val(hasil_bj20);
-            var total_bj21 = (parseFloat(b10_u) / parseFloat(hasil_brs10));
-            var hasil_bj21 = total_bj21.toFixed(9);
-            $('#baris-u10 ').val(hasil_bj21);
-    });
 
-    $(document).ready(function() {
-        $(".brs17-a, .brs17-b, .brs17-c, .brs17-d, .brs17-e, .brs17-f, .brs17-g, .brs17-h, .brs17-i, .brs17-j, .brs17-k, .brs17-l, .brs17-m, .brs17-n, .brs17-o, .brs17-q, .brs17-r, .brs17-s, .brs17-t, .brs17-u").each(function() {
             var b17_a = $(".brs17-a").val();
             var b17_b = $(".brs17-b").val();
             var b17_c = $(".brs17-c").val();
@@ -2759,11 +2810,74 @@
             var total17 = (parseFloat(b17_a) + parseFloat(b17_b) + parseFloat(b17_c) + parseFloat(b17_d) + parseFloat(b17_e) + parseFloat(b17_f) + parseFloat(b17_g) + parseFloat(b17_h) + parseFloat(b17_i) + parseFloat(b17_j) + parseFloat(b17_k) + parseFloat(b17_l) + parseFloat(b17_m) + parseFloat(b17_n) + parseFloat(b17_o) + parseFloat(b17_p) + parseFloat(b17_q) + parseFloat(b17_r) + parseFloat(b17_s) + parseFloat(b17_t) + parseFloat(b17_u));
             var hasil17 = total17.toFixed(2);
             $("#hasil17").val(hasil17);
-        });
-    });
 
-    $(document).ready(function() {
-        $(".brs18-a, .brs18-b, .brs18-c, .brs18-d, .brs18-e, .brs18-f, .brs18-g, .brs18-h, .brs18-i, .brs18-j, .brs18-k, .brs18-l, .brs18-m, .brs18-n, .brs18-o, .brs18-q, .brs18-r, .brs18-s, .brs18-t, .brs18-u").each(function() {
+            var hasil_brs17 = hasil17;
+
+            var total_bq1 = (parseFloat(b17_a) / parseFloat(hasil_brs17));
+            var hasil_bq1 = total_bq1.toFixed(9);
+            $('#baris-a17').val(hasil_bq1);
+            var total_bq2 = (parseFloat(b17_b) / parseFloat(hasil_brs17));
+            var hasil_bq2 = total_bq2.toFixed(9);
+            $('#baris-b17').val(hasil_bq2);
+            var total_bq3 = (parseFloat(b17_c) / parseFloat(hasil_brs17));
+            var hasil_bq3 = total_bq3.toFixed(9);
+            $('#baris-c17 ').val(hasil_bq3);
+            var total_bq4 = (parseFloat(b17_d) / parseFloat(hasil_brs17));
+            var hasil_bq4 = total_bq4.toFixed(9);
+            $('#baris-d17').val(hasil_bq4);
+            var total_bq5 = (parseFloat(b17_e) / parseFloat(hasil_brs17));
+            var hasil_bq5 = total_bq5.toFixed(9);
+            $('#baris-e17').val(hasil_bq5);
+            var total_bq6 = (parseFloat(b17_f) / parseFloat(hasil_brs17));
+            var hasil_bq6 = total_bq6.toFixed(9);
+            $('#baris-f17').val(hasil_bq6);
+            var total_bq7 = (parseFloat(b17_g) / parseFloat(hasil_brs17));
+            var hasil_bq7 = total_bq7.toFixed(9);
+            $('#baris-g17').val(hasil_bq7);
+            var total_bq8 = (parseFloat(b17_h) / parseFloat(hasil_brs17));
+            var hasil_bq8 = total_bq8.toFixed(9);
+            $('#baris-h17').val(hasil_bq8);
+            var total_bq9 = (parseFloat(b17_i) / parseFloat(hasil_brs17));
+            var hasil_bq9 = total_bq9.toFixed(9);
+            $('#baris-i17').val(hasil_bq9);
+            var total_bq10 = (parseFloat(b17_j) / parseFloat(hasil_brs17));
+            var hasil_bq10 = total_bq10.toFixed(9);
+            $('#baris-j17').val(hasil_bq10);
+            var total_bq11 = (parseFloat(b17_k) / parseFloat(hasil_brs17));
+            var hasil_bq11 = total_bq11.toFixed(9);
+            $('#baris-k17').val(hasil_bq11);
+            var total_bq12 = (parseFloat(b17_l) / parseFloat(hasil_brs17));
+            var hasil_bq12 = total_bq12.toFixed(9);
+            $('#baris-l17').val(hasil_bq12);
+            var total_bq13 = (parseFloat(b17_m) / parseFloat(hasil_brs17));
+            var hasil_bq13 = total_bq13.toFixed(9);
+            $('#baris-m17').val(hasil_bq13);
+            var total_bq14 = (parseFloat(b17_n) / parseFloat(hasil_brs17));
+            var hasil_bq14 = total_bq14.toFixed(9);
+            $('#baris-n17').val(hasil_bq14);
+            var total_bq15 = (parseFloat(b17_o) / parseFloat(hasil_brs17));
+            var hasil_bq15 = total_bq15.toFixed(9);
+            $('#baris-o17').val(hasil_bq15);
+            var total_bq16 = (parseFloat(b17_p) / parseFloat(hasil_brs17));
+            var hasil_bq16 = total_bq16.toFixed(9);
+            $('#baris-p17').val(hasil_bq16);
+            var total_bq17 = (parseFloat(b17_q) / parseFloat(hasil_brs17));
+            var hasil_bq17 = total_bq17.toFixed(9);
+            $('#baris-q17').val(hasil_bq17);
+            var total_bq18 = (parseFloat(b17_r) / parseFloat(hasil_brs17));
+            var hasil_bq18 = total_bq18.toFixed(9);
+            $('#baris-r17').val(hasil_bq18);
+            var total_bq19 = (parseFloat(b17_s) / parseFloat(hasil_brs17));
+            var hasil_bq19 = total_bq19.toFixed(9);
+            $('#baris-s17').val(hasil_bq19);
+            var total_bq20 = (parseFloat(b17_t) / parseFloat(hasil_brs17));
+            var hasil_bq20 = total_bq20.toFixed(9);
+            $('#baris-t17').val(hasil_bq20);
+            var total_bq21 = (parseFloat(b17_u) / parseFloat(hasil_brs17));
+            var hasil_bq21 = total_bq21.toFixed(9);
+            $('#baris-u17').val(hasil_bq21);
+
+
             var b18_a = $(".brs18-a").val();
             var b18_b = $(".brs18-b").val();
             var b18_c = $(".brs18-c").val();
@@ -2789,11 +2903,74 @@
             var total18 = (parseFloat(b18_a) + parseFloat(b18_b) + parseFloat(b18_c) + parseFloat(b18_d) + parseFloat(b18_e) + parseFloat(b18_f) + parseFloat(b18_g) + parseFloat(b18_h) + parseFloat(b18_i) + parseFloat(b18_j) + parseFloat(b18_k) + parseFloat(b18_l) + parseFloat(b18_m) + parseFloat(b18_n) + parseFloat(b18_o) + parseFloat(b18_p) + parseFloat(b18_q) + parseFloat(b18_r) + parseFloat(b18_s) + parseFloat(b18_t) + parseFloat(b18_u));
             var hasil18 = total18.toFixed(2);
             $("#hasil18").val(hasil18);
-        });
-    });
 
-    $(document).ready(function() {
-        $(".brs19-a, .brs19-b, .brs19-c, .brs19-d, .brs19-e, .brs19-f, .brs19-g, .brs19-h, .brs19-i, .brs19-j, .brs19-k, .brs19-l, .brs19-m, .brs19-n, .brs19-o, .brs19-q, .brs19-r, .brs19-s, .brs19-t, .brs19-u").each(function() {
+            var hasil_brs18 = hasil18;
+
+            var total_br1 = (parseFloat(b18_a) / parseFloat(hasil_brs18));
+            var hasil_br1 = total_br1.toFixed(9);
+            $('#baris-a18').val(hasil_br1);
+            var total_br2 = (parseFloat(b18_b) / parseFloat(hasil_brs18));
+            var hasil_br2 = total_br2.toFixed(9);
+            $('#baris-b18').val(hasil_br2);
+            var total_br3 = (parseFloat(b18_c) / parseFloat(hasil_brs18));
+            var hasil_br3 = total_br3.toFixed(9);
+            $('#baris-c18 ').val(hasil_br3);
+            var total_br4 = (parseFloat(b18_d) / parseFloat(hasil_brs18));
+            var hasil_br4 = total_br4.toFixed(9);
+            $('#baris-d18').val(hasil_br4);
+            var total_br5 = (parseFloat(b18_e) / parseFloat(hasil_brs18));
+            var hasil_br5 = total_br5.toFixed(9);
+            $('#baris-e18').val(hasil_br5);
+            var total_br6 = (parseFloat(b18_f) / parseFloat(hasil_brs18));
+            var hasil_br6 = total_br6.toFixed(9);
+            $('#baris-f18').val(hasil_br6);
+            var total_br7 = (parseFloat(b18_g) / parseFloat(hasil_brs18));
+            var hasil_br7 = total_br7.toFixed(9);
+            $('#baris-g18').val(hasil_br7);
+            var total_br8 = (parseFloat(b18_h) / parseFloat(hasil_brs18));
+            var hasil_br8 = total_br8.toFixed(9);
+            $('#baris-h18').val(hasil_br8);
+            var total_br9 = (parseFloat(b18_i) / parseFloat(hasil_brs18));
+            var hasil_br9 = total_br9.toFixed(9);
+            $('#baris-i18').val(hasil_br9);
+            var total_br10 = (parseFloat(b18_j) / parseFloat(hasil_brs18));
+            var hasil_br10 = total_br10.toFixed(9);
+            $('#baris-j18').val(hasil_br10);
+            var total_br11 = (parseFloat(b18_k) / parseFloat(hasil_brs18));
+            var hasil_br11 = total_br11.toFixed(9);
+            $('#baris-k18').val(hasil_br11);
+            var total_br12 = (parseFloat(b18_l) / parseFloat(hasil_brs18));
+            var hasil_br12 = total_br12.toFixed(9);
+            $('#baris-l18').val(hasil_br12);
+            var total_br13 = (parseFloat(b18_m) / parseFloat(hasil_brs18));
+            var hasil_br13 = total_br13.toFixed(9);
+            $('#baris-m18').val(hasil_br13);
+            var total_br14 = (parseFloat(b18_n) / parseFloat(hasil_brs18));
+            var hasil_br14 = total_br14.toFixed(9);
+            $('#baris-n18').val(hasil_br14);
+            var total_br15 = (parseFloat(b18_o) / parseFloat(hasil_brs18));
+            var hasil_br15 = total_br15.toFixed(9);
+            $('#baris-o18').val(hasil_br15);
+            var total_br16 = (parseFloat(b18_p) / parseFloat(hasil_brs18));
+            var hasil_br16 = total_br16.toFixed(9);
+            $('#baris-p18').val(hasil_br16);
+            var total_br17 = (parseFloat(b18_q) / parseFloat(hasil_brs18));
+            var hasil_br17 = total_br17.toFixed(9);
+            $('#baris-q18').val(hasil_br17);
+            var total_br18 = (parseFloat(b18_r) / parseFloat(hasil_brs18));
+            var hasil_br18 = total_br18.toFixed(9);
+            $('#baris-r18').val(hasil_br18);
+            var total_br19 = (parseFloat(b18_s) / parseFloat(hasil_brs18));
+            var hasil_br19 = total_br19.toFixed(9);
+            $('#baris-s18').val(hasil_br19);
+            var total_br20 = (parseFloat(b18_t) / parseFloat(hasil_brs18));
+            var hasil_br20 = total_br20.toFixed(9);
+            $('#baris-t18').val(hasil_br20);
+            var total_br21 = (parseFloat(b18_u) / parseFloat(hasil_brs18));
+            var hasil_br21 = total_br21.toFixed(9);
+            $('#baris-u18').val(hasil_br21);
+
+
             var b19_a = $(".brs19-a").val();
             var b19_b = $(".brs19-b").val();
             var b19_c = $(".brs19-c").val();
@@ -2819,11 +2996,74 @@
             var total19 = (parseFloat(b19_a) + parseFloat(b19_b) + parseFloat(b19_c) + parseFloat(b19_d) + parseFloat(b19_e) + parseFloat(b19_f) + parseFloat(b19_g) + parseFloat(b19_h) + parseFloat(b19_i) + parseFloat(b19_j) + parseFloat(b19_k) + parseFloat(b19_l) + parseFloat(b19_m) + parseFloat(b19_n) + parseFloat(b19_o) + parseFloat(b19_p) + parseFloat(b19_q) + parseFloat(b19_r) + parseFloat(b19_s) + parseFloat(b19_t) + parseFloat(b19_u));
             var hasil19 = total19.toFixed(2);
             $("#hasil19").val(hasil19);
-        });
-    });
 
-    $(document).ready(function() {
-        $(".brs20-a, .brs20-b, .brs20-c, .brs20-d, .brs20-e, .brs20-f, .brs20-g, .brs20-h, .brs20-i, .brs20-j, .brs20-k, .brs20-l, .brs20-m, .brs20-n, .brs20-o, .brs20-q, .brs20-r, .brs20-s, .brs20-t, .brs20-u").each(function() {
+            var hasil_brs19 = hasil19;
+
+            var total_bs1 = (parseFloat(b19_a) / parseFloat(hasil_brs19));
+            var hasil_bs1 = total_bs1.toFixed(9);
+            $('#baris-a19').val(hasil_bs1);
+            var total_bs2 = (parseFloat(b19_b) / parseFloat(hasil_brs19));
+            var hasil_bs2 = total_bs2.toFixed(9);
+            $('#baris-b19').val(hasil_bs2);
+            var total_bs3 = (parseFloat(b19_c) / parseFloat(hasil_brs19));
+            var hasil_bs3 = total_bs3.toFixed(9);
+            $('#baris-c19 ').val(hasil_bs3);
+            var total_bs4 = (parseFloat(b19_d) / parseFloat(hasil_brs19));
+            var hasil_bs4 = total_bs4.toFixed(9);
+            $('#baris-d19').val(hasil_bs4);
+            var total_bs5 = (parseFloat(b19_e) / parseFloat(hasil_brs19));
+            var hasil_bs5 = total_bs5.toFixed(9);
+            $('#baris-e19').val(hasil_bs5);
+            var total_bs6 = (parseFloat(b19_f) / parseFloat(hasil_brs19));
+            var hasil_bs6 = total_bs6.toFixed(9);
+            $('#baris-f19').val(hasil_bs6);
+            var total_bs7 = (parseFloat(b19_g) / parseFloat(hasil_brs19));
+            var hasil_bs7 = total_bs7.toFixed(9);
+            $('#baris-g19').val(hasil_bs7);
+            var total_bs8 = (parseFloat(b19_h) / parseFloat(hasil_brs19));
+            var hasil_bs8 = total_bs8.toFixed(9);
+            $('#baris-h19').val(hasil_bs8);
+            var total_bs9 = (parseFloat(b19_i) / parseFloat(hasil_brs19));
+            var hasil_bs9 = total_bs9.toFixed(9);
+            $('#baris-i19').val(hasil_bs9);
+            var total_bs10 = (parseFloat(b19_j) / parseFloat(hasil_brs19));
+            var hasil_bs10 = total_bs10.toFixed(9);
+            $('#baris-j19').val(hasil_bs10);
+            var total_bs11 = (parseFloat(b19_k) / parseFloat(hasil_brs19));
+            var hasil_bs11 = total_bs11.toFixed(9);
+            $('#baris-k19').val(hasil_bs11);
+            var total_bs12 = (parseFloat(b19_l) / parseFloat(hasil_brs19));
+            var hasil_bs12 = total_bs12.toFixed(9);
+            $('#baris-l19').val(hasil_bs12);
+            var total_bs13 = (parseFloat(b19_m) / parseFloat(hasil_brs19));
+            var hasil_bs13 = total_bs13.toFixed(9);
+            $('#baris-m19').val(hasil_bs13);
+            var total_bs14 = (parseFloat(b19_n) / parseFloat(hasil_brs19));
+            var hasil_bs14 = total_bs14.toFixed(9);
+            $('#baris-n19').val(hasil_bs14);
+            var total_bs15 = (parseFloat(b19_o) / parseFloat(hasil_brs19));
+            var hasil_bs15 = total_bs15.toFixed(9);
+            $('#baris-o19').val(hasil_bs15);
+            var total_bs16 = (parseFloat(b19_p) / parseFloat(hasil_brs19));
+            var hasil_bs16 = total_bs16.toFixed(9);
+            $('#baris-p19').val(hasil_bs16);
+            var total_bs17 = (parseFloat(b19_q) / parseFloat(hasil_brs19));
+            var hasil_bs17 = total_bs17.toFixed(9);
+            $('#baris-q19').val(hasil_bs17);
+            var total_bs18 = (parseFloat(b19_r) / parseFloat(hasil_brs19));
+            var hasil_bs18 = total_bs18.toFixed(9);
+            $('#baris-r19').val(hasil_bs18);
+            var total_bs19 = (parseFloat(b19_s) / parseFloat(hasil_brs19));
+            var hasil_bs19 = total_bs19.toFixed(9);
+            $('#baris-s19').val(hasil_bs19);
+            var total_bs20 = (parseFloat(b19_t) / parseFloat(hasil_brs19));
+            var hasil_bs20 = total_bs20.toFixed(9);
+            $('#baris-t19').val(hasil_bs20);
+            var total_bs21 = (parseFloat(b19_u) / parseFloat(hasil_brs19));
+            var hasil_bs21 = total_bs21.toFixed(9);
+            $('#baris-u19').val(hasil_bs21);
+
+
             var b20_a = $(".brs20-a").val();
             var b20_b = $(".brs20-b").val();
             var b20_c = $(".brs20-c").val();
@@ -2849,11 +3089,74 @@
             var total20 = (parseFloat(b20_a) + parseFloat(b20_b) + parseFloat(b20_c) + parseFloat(b20_d) + parseFloat(b20_e) + parseFloat(b20_f) + parseFloat(b20_g) + parseFloat(b20_h) + parseFloat(b20_i) + parseFloat(b20_j) + parseFloat(b20_k) + parseFloat(b20_l) + parseFloat(b20_m) + parseFloat(b20_n) + parseFloat(b20_o) + parseFloat(b20_p) + parseFloat(b20_q) + parseFloat(b20_r) + parseFloat(b20_s) + parseFloat(b20_t) + parseFloat(b20_u));
             var hasil20 = total20.toFixed(2);
             $("#hasil20").val(hasil20);
-        });
-    });
 
-    $(document).ready(function() {
-        $(".brs21-a, .brs21-b, .brs21-c, .brs21-d, .brs21-e, .brs21-f, .brs21-g, .brs21-h, .brs21-i, .brs21-j, .brs21-k, .brs21-l, .brs21-m, .brs21-n, .brs21-o, .brs21-q, .brs21-r, .brs21-s, .brs21-t, .brs21-u").each(function() {
+            var hasil_brs20 = hasil20;
+
+            var total_bt1 = (parseFloat(b20_a) / parseFloat(hasil_brs20));
+            var hasil_bt1 = total_bt1.toFixed(9);
+            $('#baris-a20').val(hasil_bt1);
+            var total_bt2 = (parseFloat(b20_b) / parseFloat(hasil_brs20));
+            var hasil_bt2 = total_bt2.toFixed(9);
+            $('#baris-b20').val(hasil_bt2);
+            var total_bt3 = (parseFloat(b20_c) / parseFloat(hasil_brs20));
+            var hasil_bt3 = total_bt3.toFixed(9);
+            $('#baris-c20 ').val(hasil_bt3);
+            var total_bt4 = (parseFloat(b20_d) / parseFloat(hasil_brs20));
+            var hasil_bt4 = total_bt4.toFixed(9);
+            $('#baris-d20').val(hasil_bt4);
+            var total_bt5 = (parseFloat(b20_e) / parseFloat(hasil_brs20));
+            var hasil_bt5 = total_bt5.toFixed(9);
+            $('#baris-e20').val(hasil_bt5);
+            var total_bt6 = (parseFloat(b20_f) / parseFloat(hasil_brs20));
+            var hasil_bt6 = total_bt6.toFixed(9);
+            $('#baris-f20').val(hasil_bt6);
+            var total_bt7 = (parseFloat(b20_g) / parseFloat(hasil_brs20));
+            var hasil_bt7 = total_bt7.toFixed(9);
+            $('#baris-g20').val(hasil_bt7);
+            var total_bt8 = (parseFloat(b20_h) / parseFloat(hasil_brs20));
+            var hasil_bt8 = total_bt8.toFixed(9);
+            $('#baris-h20').val(hasil_bt8);
+            var total_bt9 = (parseFloat(b20_i) / parseFloat(hasil_brs20));
+            var hasil_bt9 = total_bt9.toFixed(9);
+            $('#baris-i20').val(hasil_bt9);
+            var total_bt10 = (parseFloat(b20_j) / parseFloat(hasil_brs20));
+            var hasil_bt10 = total_bt10.toFixed(9);
+            $('#baris-j20').val(hasil_bt10);
+            var total_bt11 = (parseFloat(b20_k) / parseFloat(hasil_brs20));
+            var hasil_bt11 = total_bt11.toFixed(9);
+            $('#baris-k20').val(hasil_bt11);
+            var total_bt12 = (parseFloat(b20_l) / parseFloat(hasil_brs20));
+            var hasil_bt12 = total_bt12.toFixed(9);
+            $('#baris-l20').val(hasil_bt12);
+            var total_bt13 = (parseFloat(b20_m) / parseFloat(hasil_brs20));
+            var hasil_bt13 = total_bt13.toFixed(9);
+            $('#baris-m20').val(hasil_bt13);
+            var total_bt14 = (parseFloat(b20_n) / parseFloat(hasil_brs20));
+            var hasil_bt14 = total_bt14.toFixed(9);
+            $('#baris-n20').val(hasil_bt14);
+            var total_bt15 = (parseFloat(b20_o) / parseFloat(hasil_brs20));
+            var hasil_bt15 = total_bt15.toFixed(9);
+            $('#baris-o20').val(hasil_bt15);
+            var total_bt16 = (parseFloat(b20_p) / parseFloat(hasil_brs20));
+            var hasil_bt16 = total_bt16.toFixed(9);
+            $('#baris-p20').val(hasil_bt16);
+            var total_bt17 = (parseFloat(b20_q) / parseFloat(hasil_brs20));
+            var hasil_bt17 = total_bt17.toFixed(9);
+            $('#baris-q20').val(hasil_bt17);
+            var total_bt18 = (parseFloat(b20_r) / parseFloat(hasil_brs20));
+            var hasil_bt18 = total_bt18.toFixed(9);
+            $('#baris-r20').val(hasil_bt18);
+            var total_bt19 = (parseFloat(b20_s) / parseFloat(hasil_brs20));
+            var hasil_bt19 = total_bt19.toFixed(9);
+            $('#baris-s20').val(hasil_bt19);
+            var total_bt20 = (parseFloat(b20_t) / parseFloat(hasil_brs20));
+            var hasil_bt20 = total_bt20.toFixed(9);
+            $('#baris-t20').val(hasil_bt20);
+            var total_bt21 = (parseFloat(b20_u) / parseFloat(hasil_brs20));
+            var hasil_bt21 = total_bt21.toFixed(9);
+            $('#baris-u20').val(hasil_bt21);
+
+
             var b21_a = $(".brs21-a").val();
             var b21_b = $(".brs21-b").val();
             var b21_c = $(".brs21-c").val();
@@ -2879,6 +3182,665 @@
             var total21 = (parseFloat(b21_a) + parseFloat(b21_b) + parseFloat(b21_c) + parseFloat(b21_d) + parseFloat(b21_e) + parseFloat(b21_f) + parseFloat(b21_g) + parseFloat(b21_h) + parseFloat(b21_i) + parseFloat(b21_j) + parseFloat(b21_k) + parseFloat(b21_l) + parseFloat(b21_m) + parseFloat(b21_n) + parseFloat(b21_o) + parseFloat(b21_p) + parseFloat(b21_q) + parseFloat(b21_r) + parseFloat(b21_s) + parseFloat(b21_t) + parseFloat(b21_u));
             var hasil21 = total21.toFixed(2);
             $("#hasil21").val(hasil21);
+
+            var hasil_brs21 = hasil21;
+
+            var total_bu1 = (parseFloat(b21_a) / parseFloat(hasil_brs21));
+            var hasil_bu1 = total_bu1.toFixed(9);
+            $('#baris-a21').val(hasil_bu1);
+            var total_bu2 = (parseFloat(b21_b) / parseFloat(hasil_brs21));
+            var hasil_bu2 = total_bu2.toFixed(9);
+            $('#baris-b21').val(hasil_bu2);
+            var total_bu3 = (parseFloat(b21_c) / parseFloat(hasil_brs21));
+            var hasil_bu3 = total_bu3.toFixed(9);
+            $('#baris-c21 ').val(hasil_bu3);
+            var total_bu4 = (parseFloat(b21_d) / parseFloat(hasil_brs21));
+            var hasil_bu4 = total_bu4.toFixed(9);
+            $('#baris-d21').val(hasil_bu4);
+            var total_bu5 = (parseFloat(b21_e) / parseFloat(hasil_brs21));
+            var hasil_bu5 = total_bu5.toFixed(9);
+            $('#baris-e21').val(hasil_bu5);
+            var total_bu6 = (parseFloat(b21_f) / parseFloat(hasil_brs21));
+            var hasil_bu6 = total_bu6.toFixed(9);
+            $('#baris-f21').val(hasil_bu6);
+            var total_bu7 = (parseFloat(b21_g) / parseFloat(hasil_brs21));
+            var hasil_bu7 = total_bu7.toFixed(9);
+            $('#baris-g21').val(hasil_bu7);
+            var total_bu8 = (parseFloat(b21_h) / parseFloat(hasil_brs21));
+            var hasil_bu8 = total_bu8.toFixed(9);
+            $('#baris-h21').val(hasil_bu8);
+            var total_bu9 = (parseFloat(b21_i) / parseFloat(hasil_brs21));
+            var hasil_bu9 = total_bu9.toFixed(9);
+            $('#baris-i21').val(hasil_bu9);
+            var total_bu10 = (parseFloat(b21_j) / parseFloat(hasil_brs21));
+            var hasil_bu10 = total_bu10.toFixed(9);
+            $('#baris-j21').val(hasil_bu10);
+            var total_bu11 = (parseFloat(b21_k) / parseFloat(hasil_brs21));
+            var hasil_bu11 = total_bu11.toFixed(9);
+            $('#baris-k21').val(hasil_bu11);
+            var total_bu12 = (parseFloat(b21_l) / parseFloat(hasil_brs21));
+            var hasil_bu12 = total_bu12.toFixed(9);
+            $('#baris-l21').val(hasil_bu12);
+            var total_bu13 = (parseFloat(b21_m) / parseFloat(hasil_brs21));
+            var hasil_bu13 = total_bu13.toFixed(9);
+            $('#baris-m21').val(hasil_bu13);
+            var total_bu14 = (parseFloat(b21_n) / parseFloat(hasil_brs21));
+            var hasil_bu14 = total_bu14.toFixed(9);
+            $('#baris-n21').val(hasil_bu14);
+            var total_bu15 = (parseFloat(b21_o) / parseFloat(hasil_brs21));
+            var hasil_bu15 = total_bu15.toFixed(9);
+            $('#baris-o21').val(hasil_bu15);
+            var total_bu16 = (parseFloat(b21_p) / parseFloat(hasil_brs21));
+            var hasil_bu16 = total_bu16.toFixed(9);
+            $('#baris-p21').val(hasil_bu16);
+            var total_bu17 = (parseFloat(b21_q) / parseFloat(hasil_brs21));
+            var hasil_bu17 = total_bu17.toFixed(9);
+            $('#baris-q21').val(hasil_bu17);
+            var total_bu18 = (parseFloat(b21_r) / parseFloat(hasil_brs21));
+            var hasil_bu18 = total_bu18.toFixed(9);
+            $('#baris-r21').val(hasil_bu18);
+            var total_bu19 = (parseFloat(b21_s) / parseFloat(hasil_brs21));
+            var hasil_bu19 = total_bu19.toFixed(9);
+            $('#baris-s21').val(hasil_bu19);
+            var total_bu20 = (parseFloat(b21_t) / parseFloat(hasil_brs21));
+            var hasil_bu20 = total_bu20.toFixed(9);
+            $('#baris-t21').val(hasil_bu20);
+            var total_bu21 = (parseFloat(b21_u) / parseFloat(hasil_brs21));
+            var hasil_bu21 = total_bu21.toFixed(9);
+            $('#baris-u21').val(hasil_bu21);
+
+            //eigen 1
+            var jml_ba1 = hasil_ba1;
+            var jml_bb1 = hasil_bb1;
+            var jml_bc1 = hasil_bc1;
+            var jml_bd1 = hasil_bd1;
+            var jml_be1 = hasil_be1;
+            var jml_bf1 = hasil_bf1;
+            var jml_bg1 = hasil_bg1;
+            var jml_bh1 = hasil_bh1;
+            var jml_bi1 = hasil_bi1;
+            var jml_bj1 = hasil_bj1;
+            var jml_bk1 = hasil_bk1;
+            var jml_bl1 = hasil_bl1;
+            var jml_bm1 = hasil_bm1;
+            var jml_bn1 = hasil_bn1;
+            var jml_bo1 = hasil_bo1;
+            var jml_bp1 = hasil_bp1;
+            var jml_bq1 = hasil_bq1;
+            var jml_br1 = hasil_br1;
+            var jml_bs1 = hasil_bs1;
+            var jml_bt1 = hasil_bt1;
+            var jml_bu1 = hasil_bu1;
+
+            var eigen1 = ((parseFloat(jml_ba1) + parseFloat(jml_bb1) + parseFloat(jml_bc1) + parseFloat(jml_bd1) + parseFloat(jml_be1) + parseFloat(jml_bf1) + parseFloat(jml_bg1) + parseFloat(jml_bh1) + parseFloat(jml_bi1) + parseFloat(jml_bj1) + parseFloat(jml_bk1) + parseFloat(jml_bl1) + parseFloat(jml_bm1) + parseFloat(jml_bn1) + parseFloat(jml_bo1) + parseFloat(jml_bp1) + parseFloat(jml_bq1) + parseFloat(jml_br1) + parseFloat(jml_bs1) + parseFloat(jml_bt1) + parseFloat(jml_bu1)) / 21);
+            var hsl_eigen1 = eigen1.toFixed(3);
+            $('#eigen1').val(hsl_eigen1);
+            
+            //eigen2
+            var jml_ba2 = hasil_ba2;
+            var jml_bb2 = hasil_bb2;
+            var jml_bc2 = hasil_bc2;
+            var jml_bd2 = hasil_bd2;
+            var jml_be2 = hasil_be2;
+            var jml_bf2 = hasil_bf2;
+            var jml_bg2 = hasil_bg2;
+            var jml_bh2 = hasil_bh2;
+            var jml_bi2 = hasil_bi2;
+            var jml_bj2 = hasil_bj2;
+            var jml_bk2 = hasil_bk2;
+            var jml_bl2 = hasil_bl2;
+            var jml_bm2 = hasil_bm2;
+            var jml_bn2 = hasil_bn2;
+            var jml_bo2 = hasil_bo2;
+            var jml_bp2 = hasil_bp2;
+            var jml_bq2 = hasil_bq2;
+            var jml_br2 = hasil_br2;
+            var jml_bs2 = hasil_bs2;
+            var jml_bt2 = hasil_bt2;
+            var jml_bu2 = hasil_bu2;
+
+            var eigen2 = ((parseFloat(jml_ba2) + parseFloat(jml_bb2) + parseFloat(jml_bc2) + parseFloat(jml_bd2) + parseFloat(jml_be2) + parseFloat(jml_bf2) + parseFloat(jml_bg2) + parseFloat(jml_bh2) + parseFloat(jml_bi2) + parseFloat(jml_bj2) + parseFloat(jml_bk2) + parseFloat(jml_bl2) + parseFloat(jml_bm2) + parseFloat(jml_bn2) + parseFloat(jml_bo2) + parseFloat(jml_bp2) + parseFloat(jml_bq2) + parseFloat(jml_br2) + parseFloat(jml_bs2) + parseFloat(jml_bt2) + parseFloat(jml_bu2)) / 21);
+            var hsl_eigen2 = eigen2.toFixed(3);
+            $('#eigen2').val(hsl_eigen2);
+
+            //eigen3
+            var jml_ba3 = hasil_ba3;
+            var jml_bb3 = hasil_bb3;
+            var jml_bc3 = hasil_bc3;
+            var jml_bd3 = hasil_bd3;
+            var jml_be3 = hasil_be3;
+            var jml_bf3 = hasil_bf3;
+            var jml_bg3 = hasil_bg3;
+            var jml_bh3 = hasil_bh3;
+            var jml_bi3 = hasil_bi3;
+            var jml_bj3 = hasil_bj3;
+            var jml_bk3 = hasil_bk3;
+            var jml_bl3 = hasil_bl3;
+            var jml_bm3 = hasil_bm3;
+            var jml_bn3 = hasil_bn3;
+            var jml_bo3 = hasil_bo3;
+            var jml_bp3 = hasil_bp3;
+            var jml_bq3 = hasil_bq3;
+            var jml_br3 = hasil_br3;
+            var jml_bs3 = hasil_bs3;
+            var jml_bt3 = hasil_bt3;
+            var jml_bu3 = hasil_bu3;
+
+            var eigen3 = ((parseFloat(jml_ba3) + parseFloat(jml_bb3) + parseFloat(jml_bc3) + parseFloat(jml_bd3) + parseFloat(jml_be3) + parseFloat(jml_bf3) + parseFloat(jml_bg3) + parseFloat(jml_bh3) + parseFloat(jml_bi3) + parseFloat(jml_bj3) + parseFloat(jml_bk3) + parseFloat(jml_bl3) + parseFloat(jml_bm3) + parseFloat(jml_bn3) + parseFloat(jml_bo3) + parseFloat(jml_bp3) + parseFloat(jml_bq3) + parseFloat(jml_br3) + parseFloat(jml_bs3) + parseFloat(jml_bt3) + parseFloat(jml_bu3)) / 21);
+            var hsl_eigen3 = eigen3.toFixed(3);
+            $('#eigen3').val(hsl_eigen3);
+
+            //eigen4
+            var jml_ba4 = hasil_ba4;
+            var jml_bb4 = hasil_bb4;
+            var jml_bc4 = hasil_bc4;
+            var jml_bd4 = hasil_bd4;
+            var jml_be4 = hasil_be4;
+            var jml_bf4 = hasil_bf4;
+            var jml_bg4 = hasil_bg4;
+            var jml_bh4 = hasil_bh4;
+            var jml_bi4 = hasil_bi4;
+            var jml_bj4 = hasil_bj4;
+            var jml_bk4 = hasil_bk4;
+            var jml_bl4 = hasil_bl4;
+            var jml_bm4 = hasil_bm4;
+            var jml_bn4 = hasil_bn4;
+            var jml_bo4 = hasil_bo4;
+            var jml_bp4 = hasil_bp4;
+            var jml_bq4 = hasil_bq4;
+            var jml_br4 = hasil_br4;
+            var jml_bs4 = hasil_bs4;
+            var jml_bt4 = hasil_bt4;
+            var jml_bu4 = hasil_bu4;
+
+            var eigen4 = ((parseFloat(jml_ba4) + parseFloat(jml_bb4) + parseFloat(jml_bc4) + parseFloat(jml_bd4) + parseFloat(jml_be4) + parseFloat(jml_bf4) + parseFloat(jml_bg4) + parseFloat(jml_bh4) + parseFloat(jml_bi4) + parseFloat(jml_bj4) + parseFloat(jml_bk4) + parseFloat(jml_bl4) + parseFloat(jml_bm4) + parseFloat(jml_bn4) + parseFloat(jml_bo4) + parseFloat(jml_bp4) + parseFloat(jml_bq4) + parseFloat(jml_br4) + parseFloat(jml_bs4) + parseFloat(jml_bt4) + parseFloat(jml_bu4)) / 21);
+            var hsl_eigen4 = eigen4.toFixed(3);
+            $('#eigen4').val(hsl_eigen4);
+
+            //eigen5
+            var jml_ba5 = hasil_ba5;
+            var jml_bb5 = hasil_bb5;
+            var jml_bc5 = hasil_bc5;
+            var jml_bd5 = hasil_bd5;
+            var jml_be5 = hasil_be5;
+            var jml_bf5 = hasil_bf5;
+            var jml_bg5 = hasil_bg5;
+            var jml_bh5 = hasil_bh5;
+            var jml_bi5 = hasil_bi5;
+            var jml_bj5 = hasil_bj5;
+            var jml_bk5 = hasil_bk5;
+            var jml_bl5 = hasil_bl5;
+            var jml_bm5 = hasil_bm5;
+            var jml_bn5 = hasil_bn5;
+            var jml_bo5 = hasil_bo5;
+            var jml_bp5 = hasil_bp5;
+            var jml_bq5 = hasil_bq5;
+            var jml_br5 = hasil_br5;
+            var jml_bs5 = hasil_bs5;
+            var jml_bt5 = hasil_bt5;
+            var jml_bu5 = hasil_bu5;
+
+            var eigen5 = ((parseFloat(jml_ba5) + parseFloat(jml_bb5) + parseFloat(jml_bc5) + parseFloat(jml_bd5) + parseFloat(jml_be5) + parseFloat(jml_bf5) + parseFloat(jml_bg5) + parseFloat(jml_bh5) + parseFloat(jml_bi5) + parseFloat(jml_bj5) + parseFloat(jml_bk5) + parseFloat(jml_bl5) + parseFloat(jml_bm5) + parseFloat(jml_bn5) + parseFloat(jml_bo5) + parseFloat(jml_bp5) + parseFloat(jml_bq5) + parseFloat(jml_br5) + parseFloat(jml_bs5) + parseFloat(jml_bt5) + parseFloat(jml_bu5)) / 21);
+            var hsl_eigen5 = eigen5.toFixed(3);
+            $('#eigen5').val(hsl_eigen5);
+
+            //eigen6
+            var jml_ba6 = hasil_ba6;
+            var jml_bb6 = hasil_bb6;
+            var jml_bc6 = hasil_bc6;
+            var jml_bd6 = hasil_bd6;
+            var jml_be6 = hasil_be6;
+            var jml_bf6 = hasil_bf6;
+            var jml_bg6 = hasil_bg6;
+            var jml_bh6 = hasil_bh6;
+            var jml_bi6 = hasil_bi6;
+            var jml_bj6 = hasil_bj6;
+            var jml_bk6 = hasil_bk6;
+            var jml_bl6 = hasil_bl6;
+            var jml_bm6 = hasil_bm6;
+            var jml_bn6 = hasil_bn6;
+            var jml_bo6 = hasil_bo6;
+            var jml_bp6 = hasil_bp6;
+            var jml_bq6 = hasil_bq6;
+            var jml_br6 = hasil_br6;
+            var jml_bs6 = hasil_bs6;
+            var jml_bt6 = hasil_bt6;
+            var jml_bu6 = hasil_bu6;
+
+            var eigen6 = ((parseFloat(jml_ba6) + parseFloat(jml_bb6) + parseFloat(jml_bc6) + parseFloat(jml_bd6) + parseFloat(jml_be6) + parseFloat(jml_bf6) + parseFloat(jml_bg6) + parseFloat(jml_bh6) + parseFloat(jml_bi6) + parseFloat(jml_bj6) + parseFloat(jml_bk6) + parseFloat(jml_bl6) + parseFloat(jml_bm6) + parseFloat(jml_bn6) + parseFloat(jml_bo6) + parseFloat(jml_bp6) + parseFloat(jml_bq6) + parseFloat(jml_br6) + parseFloat(jml_bs6) + parseFloat(jml_bt6) + parseFloat(jml_bu6)) / 21);
+            var hsl_eigen6 = eigen6.toFixed(3);
+            $('#eigen6').val(hsl_eigen6);
+
+            //eigen7
+            var jml_ba7 = hasil_ba7;
+            var jml_bb7 = hasil_bb7;
+            var jml_bc7 = hasil_bc7;
+            var jml_bd7 = hasil_bd7;
+            var jml_be7 = hasil_be7;
+            var jml_bf7 = hasil_bf7;
+            var jml_bg7 = hasil_bg7;
+            var jml_bh7 = hasil_bh7;
+            var jml_bi7 = hasil_bi7;
+            var jml_bj7 = hasil_bj7;
+            var jml_bk7 = hasil_bk7;
+            var jml_bl7 = hasil_bl7;
+            var jml_bm7 = hasil_bm7;
+            var jml_bn7 = hasil_bn7;
+            var jml_bo7 = hasil_bo7;
+            var jml_bp7 = hasil_bp7;
+            var jml_bq7 = hasil_bq7;
+            var jml_br7 = hasil_br7;
+            var jml_bs7 = hasil_bs7;
+            var jml_bt7 = hasil_bt7;
+            var jml_bu7 = hasil_bu7;
+
+            var eigen7 = ((parseFloat(jml_ba7) + parseFloat(jml_bb7) + parseFloat(jml_bc7) + parseFloat(jml_bd7) + parseFloat(jml_be7) + parseFloat(jml_bf7) + parseFloat(jml_bg7) + parseFloat(jml_bh7) + parseFloat(jml_bi7) + parseFloat(jml_bj7) + parseFloat(jml_bk7) + parseFloat(jml_bl7) + parseFloat(jml_bm7) + parseFloat(jml_bn7) + parseFloat(jml_bo7) + parseFloat(jml_bp7) + parseFloat(jml_bq7) + parseFloat(jml_br7) + parseFloat(jml_bs7) + parseFloat(jml_bt7) + parseFloat(jml_bu7)) / 21);
+            var hsl_eigen7 = eigen7.toFixed(3);
+            $('#eigen7').val(hsl_eigen7);
+
+            //eigen8
+            var jml_ba8 = hasil_ba8;
+            var jml_bb8 = hasil_bb8;
+            var jml_bc8 = hasil_bc8;
+            var jml_bd8 = hasil_bd8;
+            var jml_be8 = hasil_be8;
+            var jml_bf8 = hasil_bf8;
+            var jml_bg8 = hasil_bg8;
+            var jml_bh8 = hasil_bh8;
+            var jml_bi8 = hasil_bi8;
+            var jml_bj8 = hasil_bj8;
+            var jml_bk8 = hasil_bk8;
+            var jml_bl8 = hasil_bl8;
+            var jml_bm8 = hasil_bm8;
+            var jml_bn8 = hasil_bn8;
+            var jml_bo8 = hasil_bo8;
+            var jml_bp8 = hasil_bp8;
+            var jml_bq8 = hasil_bq8;
+            var jml_br8 = hasil_br8;
+            var jml_bs8 = hasil_bs8;
+            var jml_bt8 = hasil_bt8;
+            var jml_bu8 = hasil_bu8;
+
+            var eigen8 = ((parseFloat(jml_ba8) + parseFloat(jml_bb8) + parseFloat(jml_bc8) + parseFloat(jml_bd8) + parseFloat(jml_be8) + parseFloat(jml_bf8) + parseFloat(jml_bg8) + parseFloat(jml_bh8) + parseFloat(jml_bi8) + parseFloat(jml_bj8) + parseFloat(jml_bk8) + parseFloat(jml_bl8) + parseFloat(jml_bm8) + parseFloat(jml_bn8) + parseFloat(jml_bo8) + parseFloat(jml_bp8) + parseFloat(jml_bq8) + parseFloat(jml_br8) + parseFloat(jml_bs8) + parseFloat(jml_bt8) + parseFloat(jml_bu8)) / 21);
+            var hsl_eigen8 = eigen8.toFixed(3);
+            $('#eigen8').val(hsl_eigen8);
+
+            //eigen9
+            var jml_ba9 = hasil_ba9;
+            var jml_bb9 = hasil_bb9;
+            var jml_bc9 = hasil_bc9;
+            var jml_bd9 = hasil_bd9;
+            var jml_be9 = hasil_be9;
+            var jml_bf9 = hasil_bf9;
+            var jml_bg9 = hasil_bg9;
+            var jml_bh9 = hasil_bh9;
+            var jml_bi9 = hasil_bi9;
+            var jml_bj9 = hasil_bj9;
+            var jml_bk9 = hasil_bk9;
+            var jml_bl9 = hasil_bl9;
+            var jml_bm9 = hasil_bm9;
+            var jml_bn9 = hasil_bn9;
+            var jml_bo9 = hasil_bo9;
+            var jml_bp9 = hasil_bp9;
+            var jml_bq9 = hasil_bq9;
+            var jml_br9 = hasil_br9;
+            var jml_bs9 = hasil_bs9;
+            var jml_bt9 = hasil_bt9;
+            var jml_bu9 = hasil_bu9;
+
+            var eigen9 = ((parseFloat(jml_ba9) + parseFloat(jml_bb9) + parseFloat(jml_bc9) + parseFloat(jml_bd9) + parseFloat(jml_be9) + parseFloat(jml_bf9) + parseFloat(jml_bg9) + parseFloat(jml_bh9) + parseFloat(jml_bi9) + parseFloat(jml_bj9) + parseFloat(jml_bk9) + parseFloat(jml_bl9) + parseFloat(jml_bm9) + parseFloat(jml_bn9) + parseFloat(jml_bo9) + parseFloat(jml_bp9) + parseFloat(jml_bq9) + parseFloat(jml_br9) + parseFloat(jml_bs9) + parseFloat(jml_bt9) + parseFloat(jml_bu9)) / 21);
+            var hsl_eigen9 = eigen9.toFixed(3);
+            $('#eigen9').val(hsl_eigen9);
+
+            //eigen10
+            var jml_ba10 = hasil_ba10;
+            var jml_bb10 = hasil_bb10;
+            var jml_bc10 = hasil_bc10;
+            var jml_bd10 = hasil_bd10;
+            var jml_be10 = hasil_be10;
+            var jml_bf10 = hasil_bf10;
+            var jml_bg10 = hasil_bg10;
+            var jml_bh10 = hasil_bh10;
+            var jml_bi10 = hasil_bi10;
+            var jml_bj10 = hasil_bj10;
+            var jml_bk10 = hasil_bk10;
+            var jml_bl10 = hasil_bl10;
+            var jml_bm10 = hasil_bm10;
+            var jml_bn10 = hasil_bn10;
+            var jml_bo10 = hasil_bo10;
+            var jml_bp10 = hasil_bp10;
+            var jml_bq10 = hasil_bq10;
+            var jml_br10 = hasil_br10;
+            var jml_bs10 = hasil_bs10;
+            var jml_bt10 = hasil_bt10;
+            var jml_bu10 = hasil_bu10;
+
+            var eigen10 = ((parseFloat(jml_ba10) + parseFloat(jml_bb10) + parseFloat(jml_bc10) + parseFloat(jml_bd10) + parseFloat(jml_be10) + parseFloat(jml_bf10) + parseFloat(jml_bg10) + parseFloat(jml_bh10) + parseFloat(jml_bi10) + parseFloat(jml_bj10) + parseFloat(jml_bk10) + parseFloat(jml_bl10) + parseFloat(jml_bm10) + parseFloat(jml_bn10) + parseFloat(jml_bo10) + parseFloat(jml_bp10) + parseFloat(jml_bq10) + parseFloat(jml_br10) + parseFloat(jml_bs10) + parseFloat(jml_bt10) + parseFloat(jml_bu10)) / 21);
+            var hsl_eigen10 = eigen10.toFixed(3);
+            $('#eigen10').val(hsl_eigen10);
+
+            //eigen11
+            var jml_ba11 = hasil_ba11;
+            var jml_bb11 = hasil_bb11;
+            var jml_bc11 = hasil_bc11;
+            var jml_bd11 = hasil_bd11;
+            var jml_be11 = hasil_be11;
+            var jml_bf11 = hasil_bf11;
+            var jml_bg11 = hasil_bg11;
+            var jml_bh11 = hasil_bh11;
+            var jml_bi11 = hasil_bi11;
+            var jml_bj11 = hasil_bj11;
+            var jml_bk11 = hasil_bk11;
+            var jml_bl11 = hasil_bl11;
+            var jml_bm11 = hasil_bm11;
+            var jml_bn11 = hasil_bn11;
+            var jml_bo11 = hasil_bo11;
+            var jml_bp11 = hasil_bp11;
+            var jml_bq11 = hasil_bq11;
+            var jml_br11 = hasil_br11;
+            var jml_bs11 = hasil_bs11;
+            var jml_bt11 = hasil_bt11;
+            var jml_bu11 = hasil_bu11;
+
+            var eigen11 = ((parseFloat(jml_ba11) + parseFloat(jml_bb11) + parseFloat(jml_bc11) + parseFloat(jml_bd11) + parseFloat(jml_be11) + parseFloat(jml_bf11) + parseFloat(jml_bg11) + parseFloat(jml_bh11) + parseFloat(jml_bi11) + parseFloat(jml_bj11) + parseFloat(jml_bk11) + parseFloat(jml_bl11) + parseFloat(jml_bm11) + parseFloat(jml_bn11) + parseFloat(jml_bo11) + parseFloat(jml_bp11) + parseFloat(jml_bq11) + parseFloat(jml_br11) + parseFloat(jml_bs11) + parseFloat(jml_bt11) + parseFloat(jml_bu11)) / 21);
+            var hsl_eigen11 = eigen11.toFixed(3);
+            $('#eigen11').val(hsl_eigen11);
+
+            //eigen12
+            var jml_ba12 = hasil_ba12;
+            var jml_bb12 = hasil_bb12;
+            var jml_bc12 = hasil_bc12;
+            var jml_bd12 = hasil_bd12;
+            var jml_be12 = hasil_be12;
+            var jml_bf12 = hasil_bf12;
+            var jml_bg12 = hasil_bg12;
+            var jml_bh12 = hasil_bh12;
+            var jml_bi12 = hasil_bi12;
+            var jml_bj12 = hasil_bj12;
+            var jml_bk12 = hasil_bk12;
+            var jml_bl12 = hasil_bl12;
+            var jml_bm12 = hasil_bm12;
+            var jml_bn12 = hasil_bn12;
+            var jml_bo12 = hasil_bo12;
+            var jml_bp12 = hasil_bp12;
+            var jml_bq12 = hasil_bq12;
+            var jml_br12 = hasil_br12;
+            var jml_bs12 = hasil_bs12;
+            var jml_bt12 = hasil_bt12;
+            var jml_bu12 = hasil_bu12;
+
+            var eigen12 = ((parseFloat(jml_ba12) + parseFloat(jml_bb12) + parseFloat(jml_bc12) + parseFloat(jml_bd12) + parseFloat(jml_be12) + parseFloat(jml_bf12) + parseFloat(jml_bg12) + parseFloat(jml_bh12) + parseFloat(jml_bi12) + parseFloat(jml_bj12) + parseFloat(jml_bk12) + parseFloat(jml_bl12) + parseFloat(jml_bm12) + parseFloat(jml_bn12) + parseFloat(jml_bo12) + parseFloat(jml_bp12) + parseFloat(jml_bq12) + parseFloat(jml_br12) + parseFloat(jml_bs12) + parseFloat(jml_bt12) + parseFloat(jml_bu12)) / 21);
+            var hsl_eigen12 = eigen12.toFixed(3);
+            $('#eigen12').val(hsl_eigen12);
+
+            //eigen12
+            var jml_ba13 = hasil_ba13;
+            var jml_bb13 = hasil_bb13;
+            var jml_bc13 = hasil_bc13;
+            var jml_bd13 = hasil_bd13;
+            var jml_be13 = hasil_be13;
+            var jml_bf13 = hasil_bf13;
+            var jml_bg13 = hasil_bg13;
+            var jml_bh13 = hasil_bh13;
+            var jml_bi13 = hasil_bi13;
+            var jml_bj13 = hasil_bj13;
+            var jml_bk13 = hasil_bk13;
+            var jml_bl13 = hasil_bl13;
+            var jml_bm13 = hasil_bm13;
+            var jml_bn13 = hasil_bn13;
+            var jml_bo13 = hasil_bo13;
+            var jml_bp13 = hasil_bp13;
+            var jml_bq13 = hasil_bq13;
+            var jml_br13 = hasil_br13;
+            var jml_bs13 = hasil_bs13;
+            var jml_bt13 = hasil_bt13;
+            var jml_bu13 = hasil_bu13;
+
+            var eigen13 = ((parseFloat(jml_ba13) + parseFloat(jml_bb13) + parseFloat(jml_bc13) + parseFloat(jml_bd13) + parseFloat(jml_be13) + parseFloat(jml_bf13) + parseFloat(jml_bg13) + parseFloat(jml_bh13) + parseFloat(jml_bi13) + parseFloat(jml_bj13) + parseFloat(jml_bk13) + parseFloat(jml_bl13) + parseFloat(jml_bm13) + parseFloat(jml_bn13) + parseFloat(jml_bo13) + parseFloat(jml_bp13) + parseFloat(jml_bq13) + parseFloat(jml_br13) + parseFloat(jml_bs13) + parseFloat(jml_bt13) + parseFloat(jml_bu13)) / 21);
+            var hsl_eigen13 = eigen13.toFixed(3);
+            $('#eigen13').val(hsl_eigen13);
+
+            //eigen14
+            var jml_ba14 = hasil_ba14;
+            var jml_bb14 = hasil_bb14;
+            var jml_bc14 = hasil_bc14;
+            var jml_bd14 = hasil_bd14;
+            var jml_be14 = hasil_be14;
+            var jml_bf14 = hasil_bf14;
+            var jml_bg14 = hasil_bg14;
+            var jml_bh14 = hasil_bh14;
+            var jml_bi14 = hasil_bi14;
+            var jml_bj14 = hasil_bj14;
+            var jml_bk14 = hasil_bk14;
+            var jml_bl14 = hasil_bl14;
+            var jml_bm14 = hasil_bm14;
+            var jml_bn14 = hasil_bn14;
+            var jml_bo14 = hasil_bo14;
+            var jml_bp14 = hasil_bp14;
+            var jml_bq14 = hasil_bq14;
+            var jml_br14 = hasil_br14;
+            var jml_bs14 = hasil_bs14;
+            var jml_bt14 = hasil_bt14;
+            var jml_bu14 = hasil_bu14;
+
+            var eigen14 = ((parseFloat(jml_ba14) + parseFloat(jml_bb14) + parseFloat(jml_bc14) + parseFloat(jml_bd14) + parseFloat(jml_be14) + parseFloat(jml_bf14) + parseFloat(jml_bg14) + parseFloat(jml_bh14) + parseFloat(jml_bi14) + parseFloat(jml_bj14) + parseFloat(jml_bk14) + parseFloat(jml_bl14) + parseFloat(jml_bm14) + parseFloat(jml_bn14) + parseFloat(jml_bo14) + parseFloat(jml_bp14) + parseFloat(jml_bq14) + parseFloat(jml_br14) + parseFloat(jml_bs14) + parseFloat(jml_bt14) + parseFloat(jml_bu14)) / 21);
+            var hsl_eigen14 = eigen14.toFixed(3);
+            $('#eigen14').val(hsl_eigen14);
+
+            //eigen15
+            var jml_ba15 = hasil_ba15;
+            var jml_bb15 = hasil_bb15;
+            var jml_bc15 = hasil_bc15;
+            var jml_bd15 = hasil_bd15;
+            var jml_be15 = hasil_be15;
+            var jml_bf15 = hasil_bf15;
+            var jml_bg15 = hasil_bg15;
+            var jml_bh15 = hasil_bh15;
+            var jml_bi15 = hasil_bi15;
+            var jml_bj15 = hasil_bj15;
+            var jml_bk15 = hasil_bk15;
+            var jml_bl15 = hasil_bl15;
+            var jml_bm15 = hasil_bm15;
+            var jml_bn15 = hasil_bn15;
+            var jml_bo15 = hasil_bo15;
+            var jml_bp15 = hasil_bp15;
+            var jml_bq15 = hasil_bq15;
+            var jml_br15 = hasil_br15;
+            var jml_bs15 = hasil_bs15;
+            var jml_bt15 = hasil_bt15;
+            var jml_bu15 = hasil_bu15;
+
+            var eigen15 = ((parseFloat(jml_ba15) + parseFloat(jml_bb15) + parseFloat(jml_bc15) + parseFloat(jml_bd15) + parseFloat(jml_be15) + parseFloat(jml_bf15) + parseFloat(jml_bg15) + parseFloat(jml_bh15) + parseFloat(jml_bi15) + parseFloat(jml_bj15) + parseFloat(jml_bk15) + parseFloat(jml_bl15) + parseFloat(jml_bm15) + parseFloat(jml_bn15) + parseFloat(jml_bo15) + parseFloat(jml_bp15) + parseFloat(jml_bq15) + parseFloat(jml_br15) + parseFloat(jml_bs15) + parseFloat(jml_bt15) + parseFloat(jml_bu15)) / 21);
+            var hsl_eigen15 = eigen15.toFixed(3);
+            $('#eigen15').val(hsl_eigen15);
+
+            //eigen16
+            var jml_ba16 = hasil_ba16;
+            var jml_bb16 = hasil_bb16;
+            var jml_bc16 = hasil_bc16;
+            var jml_bd16 = hasil_bd16;
+            var jml_be16 = hasil_be16;
+            var jml_bf16 = hasil_bf16;
+            var jml_bg16 = hasil_bg16;
+            var jml_bh16 = hasil_bh16;
+            var jml_bi16 = hasil_bi16;
+            var jml_bj16 = hasil_bj16;
+            var jml_bk16 = hasil_bk16;
+            var jml_bl16 = hasil_bl16;
+            var jml_bm16 = hasil_bm16;
+            var jml_bn16 = hasil_bn16;
+            var jml_bo16 = hasil_bo16;
+            var jml_bp16 = hasil_bp16;
+            var jml_bq16 = hasil_bq16;
+            var jml_br16 = hasil_br16;
+            var jml_bs16 = hasil_bs16;
+            var jml_bt16 = hasil_bt16;
+            var jml_bu16 = hasil_bu16;
+
+            var eigen16 = ((parseFloat(jml_ba16) + parseFloat(jml_bb16) + parseFloat(jml_bc16) + parseFloat(jml_bd16) + parseFloat(jml_be16) + parseFloat(jml_bf16) + parseFloat(jml_bg16) + parseFloat(jml_bh16) + parseFloat(jml_bi16) + parseFloat(jml_bj16) + parseFloat(jml_bk16) + parseFloat(jml_bl16) + parseFloat(jml_bm16) + parseFloat(jml_bn16) + parseFloat(jml_bo16) + parseFloat(jml_bp16) + parseFloat(jml_bq16) + parseFloat(jml_br16) + parseFloat(jml_bs16) + parseFloat(jml_bt16) + parseFloat(jml_bu16)) / 21);
+            var hsl_eigen16 = eigen16.toFixed(3);
+            $('#eigen16').val(hsl_eigen16);
+
+            //eigen17
+            var jml_ba17 = hasil_ba17;
+            var jml_bb17 = hasil_bb17;
+            var jml_bc17 = hasil_bc17;
+            var jml_bd17 = hasil_bd17;
+            var jml_be17 = hasil_be17;
+            var jml_bf17 = hasil_bf17;
+            var jml_bg17 = hasil_bg17;
+            var jml_bh17 = hasil_bh17;
+            var jml_bi17 = hasil_bi17;
+            var jml_bj17 = hasil_bj17;
+            var jml_bk17 = hasil_bk17;
+            var jml_bl17 = hasil_bl17;
+            var jml_bm17 = hasil_bm17;
+            var jml_bn17 = hasil_bn17;
+            var jml_bo17 = hasil_bo17;
+            var jml_bp17 = hasil_bp17;
+            var jml_bq17 = hasil_bq17;
+            var jml_br17 = hasil_br17;
+            var jml_bs17 = hasil_bs17;
+            var jml_bt17 = hasil_bt17;
+            var jml_bu17 = hasil_bu17;
+
+            var eigen17 = ((parseFloat(jml_ba17) + parseFloat(jml_bb17) + parseFloat(jml_bc17) + parseFloat(jml_bd17) + parseFloat(jml_be17) + parseFloat(jml_bf17) + parseFloat(jml_bg17) + parseFloat(jml_bh17) + parseFloat(jml_bi17) + parseFloat(jml_bj17) + parseFloat(jml_bk17) + parseFloat(jml_bl17) + parseFloat(jml_bm17) + parseFloat(jml_bn17) + parseFloat(jml_bo17) + parseFloat(jml_bp17) + parseFloat(jml_bq17) + parseFloat(jml_br17) + parseFloat(jml_bs17) + parseFloat(jml_bt17) + parseFloat(jml_bu17)) / 21);
+            var hsl_eigen17 = eigen17.toFixed(3);
+            $('#eigen17').val(hsl_eigen17);
+
+            //eigen18
+            var jml_ba18 = hasil_ba18;
+            var jml_bb18 = hasil_bb18;
+            var jml_bc18 = hasil_bc18;
+            var jml_bd18 = hasil_bd18;
+            var jml_be18 = hasil_be18;
+            var jml_bf18 = hasil_bf18;
+            var jml_bg18 = hasil_bg18;
+            var jml_bh18 = hasil_bh18;
+            var jml_bi18 = hasil_bi18;
+            var jml_bj18 = hasil_bj18;
+            var jml_bk18 = hasil_bk18;
+            var jml_bl18 = hasil_bl18;
+            var jml_bm18 = hasil_bm18;
+            var jml_bn18 = hasil_bn18;
+            var jml_bo18 = hasil_bo18;
+            var jml_bp18 = hasil_bp18;
+            var jml_bq18 = hasil_bq18;
+            var jml_br18 = hasil_br18;
+            var jml_bs18 = hasil_bs18;
+            var jml_bt18 = hasil_bt18;
+            var jml_bu18 = hasil_bu18;
+
+            var eigen18 = ((parseFloat(jml_ba18) + parseFloat(jml_bb18) + parseFloat(jml_bc18) + parseFloat(jml_bd18) + parseFloat(jml_be18) + parseFloat(jml_bf18) + parseFloat(jml_bg18) + parseFloat(jml_bh18) + parseFloat(jml_bi18) + parseFloat(jml_bj18) + parseFloat(jml_bk18) + parseFloat(jml_bl18) + parseFloat(jml_bm18) + parseFloat(jml_bn18) + parseFloat(jml_bo18) + parseFloat(jml_bp18) + parseFloat(jml_bq18) + parseFloat(jml_br18) + parseFloat(jml_bs18) + parseFloat(jml_bt18) + parseFloat(jml_bu18)) / 21);
+            var hsl_eigen18 = eigen18.toFixed(3);
+            $('#eigen18').val(hsl_eigen18);
+
+            //eigen19
+            var jml_ba19 = hasil_ba19;
+            var jml_bb19 = hasil_bb19;
+            var jml_bc19 = hasil_bc19;
+            var jml_bd19 = hasil_bd19;
+            var jml_be19 = hasil_be19;
+            var jml_bf19 = hasil_bf19;
+            var jml_bg19 = hasil_bg19;
+            var jml_bh19 = hasil_bh19;
+            var jml_bi19 = hasil_bi19;
+            var jml_bj19 = hasil_bj19;
+            var jml_bk19 = hasil_bk19;
+            var jml_bl19 = hasil_bl19;
+            var jml_bm19 = hasil_bm19;
+            var jml_bn19 = hasil_bn19;
+            var jml_bo19 = hasil_bo19;
+            var jml_bp19 = hasil_bp19;
+            var jml_bq19 = hasil_bq19;
+            var jml_br19 = hasil_br19;
+            var jml_bs19 = hasil_bs19;
+            var jml_bt19 = hasil_bt19;
+            var jml_bu19 = hasil_bu19;
+
+            var eigen19 = ((parseFloat(jml_ba19) + parseFloat(jml_bb19) + parseFloat(jml_bc19) + parseFloat(jml_bd19) + parseFloat(jml_be19) + parseFloat(jml_bf19) + parseFloat(jml_bg19) + parseFloat(jml_bh19) + parseFloat(jml_bi19) + parseFloat(jml_bj19) + parseFloat(jml_bk19) + parseFloat(jml_bl19) + parseFloat(jml_bm19) + parseFloat(jml_bn19) + parseFloat(jml_bo19) + parseFloat(jml_bp19) + parseFloat(jml_bq19) + parseFloat(jml_br19) + parseFloat(jml_bs19) + parseFloat(jml_bt19) + parseFloat(jml_bu19)) / 21);
+            var hsl_eigen19 = eigen19.toFixed(3);
+            $('#eigen19').val(hsl_eigen19);
+
+            //eigen20
+            var jml_ba20 = hasil_ba20;
+            var jml_bb20 = hasil_bb20;
+            var jml_bc20 = hasil_bc20;
+            var jml_bd20 = hasil_bd20;
+            var jml_be20 = hasil_be20;
+            var jml_bf20 = hasil_bf20;
+            var jml_bg20 = hasil_bg20;
+            var jml_bh20 = hasil_bh20;
+            var jml_bi20 = hasil_bi20;
+            var jml_bj20 = hasil_bj20;
+            var jml_bk20 = hasil_bk20;
+            var jml_bl20 = hasil_bl20;
+            var jml_bm20 = hasil_bm20;
+            var jml_bn20 = hasil_bn20;
+            var jml_bo20 = hasil_bo20;
+            var jml_bp20 = hasil_bp20;
+            var jml_bq20 = hasil_bq20;
+            var jml_br20 = hasil_br20;
+            var jml_bs20 = hasil_bs20;
+            var jml_bt20 = hasil_bt20;
+            var jml_bu20 = hasil_bu20;
+
+            var eigen20 = ((parseFloat(jml_ba20) + parseFloat(jml_bb20) + parseFloat(jml_bc20) + parseFloat(jml_bd20) + parseFloat(jml_be20) + parseFloat(jml_bf20) + parseFloat(jml_bg20) + parseFloat(jml_bh20) + parseFloat(jml_bi20) + parseFloat(jml_bj20) + parseFloat(jml_bk20) + parseFloat(jml_bl20) + parseFloat(jml_bm20) + parseFloat(jml_bn20) + parseFloat(jml_bo20) + parseFloat(jml_bp20) + parseFloat(jml_bq20) + parseFloat(jml_br20) + parseFloat(jml_bs20) + parseFloat(jml_bt20) + parseFloat(jml_bu20)) / 21);
+            var hsl_eigen20 = eigen20.toFixed(3);
+            $('#eigen20').val(hsl_eigen20);
+
+            //eigen21
+            var jml_ba21 = hasil_ba21;
+            var jml_bb21 = hasil_bb21;
+            var jml_bc21 = hasil_bc21;
+            var jml_bd21 = hasil_bd21;
+            var jml_be21 = hasil_be21;
+            var jml_bf21 = hasil_bf21;
+            var jml_bg21 = hasil_bg21;
+            var jml_bh21 = hasil_bh21;
+            var jml_bi21 = hasil_bi21;
+            var jml_bj21 = hasil_bj21;
+            var jml_bk21 = hasil_bk21;
+            var jml_bl21 = hasil_bl21;
+            var jml_bm21 = hasil_bm21;
+            var jml_bn21 = hasil_bn21;
+            var jml_bo21 = hasil_bo21;
+            var jml_bp21 = hasil_bp21;
+            var jml_bq21 = hasil_bq21;
+            var jml_br21 = hasil_br21;
+            var jml_bs21 = hasil_bs21;
+            var jml_bt21 = hasil_bt21;
+            var jml_bu21 = hasil_bu21;
+
+            var eigen21 = ((parseFloat(jml_ba21) + parseFloat(jml_bb21) + parseFloat(jml_bc21) + parseFloat(jml_bd21) + parseFloat(jml_be21) + parseFloat(jml_bf21) + parseFloat(jml_bg21) + parseFloat(jml_bh21) + parseFloat(jml_bi21) + parseFloat(jml_bj21) + parseFloat(jml_bk21) + parseFloat(jml_bl21) + parseFloat(jml_bm21) + parseFloat(jml_bn21) + parseFloat(jml_bo21) + parseFloat(jml_bp21) + parseFloat(jml_bq21) + parseFloat(jml_br21) + parseFloat(jml_bs21) + parseFloat(jml_bt21) + parseFloat(jml_bu21)) / 21);
+            var hsl_eigen21 = eigen21.toFixed(3);
+            $('#eigen21').val(hsl_eigen21);
+
+            var eigenn1 = hsl_eigen1;
+            var eigenn2 = hsl_eigen2;
+            var eigenn3 = hsl_eigen3;
+            var eigenn4 = hsl_eigen4;
+            var eigenn5 = hsl_eigen5;
+            var eigenn6 = hsl_eigen6;
+            var eigenn7 = hsl_eigen7;
+            var eigenn8 = hsl_eigen8;
+            var eigenn9 = hsl_eigen9;
+            var eigenn10 = hsl_eigen10;
+            var eigenn11 = hsl_eigen11;
+            var eigenn12 = hsl_eigen12;
+            var eigenn13 = hsl_eigen13;
+            var eigenn14 = hsl_eigen14;
+            var eigenn15 = hsl_eigen15;
+            var eigenn16 = hsl_eigen16;
+            var eigenn17 = hsl_eigen17;
+            var eigenn18 = hsl_eigen18;
+            var eigenn19 = hsl_eigen19;
+            var eigenn20 = hsl_eigen20;
+            var eigenn21 = hsl_eigen21;
+
+            var jumlah_eigen = (parseFloat(eigenn1) + parseFloat(eigenn2) + parseFloat(eigenn3) + parseFloat(eigenn4) + parseFloat(eigenn5) + parseFloat(eigenn6) + parseFloat(eigenn7) + parseFloat(eigenn8) + parseFloat(eigenn9) + parseFloat(eigenn10) + parseFloat(eigenn11) + parseFloat(eigenn12) + parseFloat(eigenn13) + parseFloat(eigenn14) + parseFloat(eigenn15) + parseFloat(eigenn16) + parseFloat(eigenn17) + parseFloat(eigenn18) + parseFloat(eigenn19) + parseFloat(eigenn20) + parseFloat(eigenn21));
+            var totaleigen = jumlah_eigen.toFixed(1);
+            $('#jumlaheigen').val(totaleigen);
         });
     });
 </script>
