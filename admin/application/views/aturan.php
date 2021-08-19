@@ -78,6 +78,9 @@
                         <?php endforeach; ?>
                     </tbody>
                 </table>
+                <!-- <div class="form-group">
+                    <input type="text" id="satu" value="12"> + <input type="text" id="dua" value="0.5"> = <input type="text" id="hasil">
+                </div> -->
             </div>
         </div>
     </section>
@@ -93,15 +96,15 @@
         });
     });
 
-    // $(document).ready(function() {
-    //     $("#angka_awal, #angka_akhir").keyup(function() {
-    //         var angka_awl = $("#angka_awal").val();
-    //         // var selisih = $("#selisih").val();
-    //         var angka_akh = $("#angka_akhir").val();
+    $(document).ready(function() {
+        $("#satu, #dua").each(function() {
+            var angka_awl = $("#satu").val();
+            // var selisih = $("#selisih").val();
+            var angka_akh = $("#dua").val();
 
-    //         var total = parseInt(angka_awl) * parseInt(angka_akh);
-    //         $("#hasil").val(total);
-    //         console.log(Number(total));
-    //     });
-    // });
+            var total = (parseFloat(angka_awl) + parseFloat(angka_akh));
+            $("#hasil").val(total).toFixed(2);
+            console.log(Number(total));
+        });
+    });
 </script>
