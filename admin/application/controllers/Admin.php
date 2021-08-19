@@ -485,14 +485,16 @@ class Admin extends CI_Controller
 		$this->load->view('template/footer');
 	}
 
-	public function alternatif_matriks(){
+	public function alternatif_matriks()
+	{
 		$data['title'] = 'ALTERNATIF';
 		$data['datanilai'] = $this->db->query("SELECT * FROM minimum_bobot_alternatif JOIN alternatif_tb ON minimum_bobot_alternatif.id_alternatif=alternatif_tb.id_alternatif ")->result();
 		$this->header($data);
 		$this->load->view('nilai_bobot_alternatif');
 		$this->load->view('template/footer');
 	}
-	public function simpan_bobot(){
+	public function simpan_bobot()
+	{
 		$data_input = array(
 			'id_alternatif' => $this->input->post('id_alternatif'),
 			'kimia' => $this->input->post('kimia'),
@@ -590,6 +592,44 @@ class Admin extends CI_Controller
 		$this->load->view('template/footer');
 	}
 
+	public function perhitungan_eigen()
+	{
+		$data['title'] = 'Perhitungan Eigen';
+		$data_eigen = array(
+			'eigen_a' => $this->input->post('eigen1'),
+			'eigen_b' => $this->input->post('eigen2'),
+			'eigen_c' => $this->input->post('eigen3'),
+			'eigen_d' => $this->input->post('eigen4'),
+			'eigen_e' => $this->input->post('eigen5'),
+			'eigen_f' => $this->input->post('eigen6'),
+			'eigen_g' => $this->input->post('eigen7'),
+			'eigen_h' => $this->input->post('eigen8'),
+			'eigen_i' => $this->input->post('eigen9'),
+			'eigen_j' => $this->input->post('eigen10'),
+			'eigen_k' => $this->input->post('eigen11'),
+			'eigen_l' => $this->input->post('eigen12'),
+			'eigen_m' => $this->input->post('eigen13'),
+			'eigen_n' => $this->input->post('eigen14'),
+			'eigen_o' => $this->input->post('eigen15'),
+			'eigen_p' => $this->input->post('eigen16'),
+			'eigen_q' => $this->input->post('eigen17'),
+			'eigen_r' => $this->input->post('eigen18'),
+			'eigen_s' => $this->input->post('eigen19'),
+			'eigen_t' => $this->input->post('eigen20'),
+			'eigen_u' => $this->input->post('eigen21'),
+		);
+
+		$data['eigen'] = $data_eigen;
+		$id1 = 1;
+		$id2 = 2;
+		$id3 = 3;
+		$data['eigen_alt1'] = $this->m_admin->bobot_prioritas1($id1);
+		$data['eigen_alt2'] = $this->m_admin->bobot_prioritas2($id2);
+		$data['eigen_alt3'] = $this->m_admin->bobot_prioritas3($id3);
+		$this->header($data);
+		$this->load->view('perhitungan_ahp');
+		$this->load->view('template/footer');
+	}
 	public function konversi_bobot($id)
 	{
 		$data['title'] = 'Konversi Bobot';

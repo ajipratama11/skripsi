@@ -1148,6 +1148,7 @@
     <section class="content">
         <div class="box box-warning">
             <div class="box-body">
+                <form action="<?= base_url('Admin/perhitungan_eigen') ?>" method="post">
                 <table class="table">
                     <thead>
                         <tr>
@@ -1158,86 +1159,86 @@
                     <tbody>
                         <tr>
                             <td>Kimia</td>
-                            <td><input type="text" id="eigen1" style="width: 150px;" readonly></td>
+                            <td><input type="text" id="eigen1" name="eigen1" style="width: 150px;" readonly></td>
                         </tr>
                         <tr>
                             <td>Biologi</td>
-                            <td><input type="text" id="eigen2" style="width: 150px;" readonly></td>
+                            <td><input type="text" id="eigen2" name="eigen2" style="width: 150px;" readonly></td>
                         </tr>
                         <tr>
                             <td>Fisika</td>
-                            <td><input type="text" id="eigen3" style="width: 150px;" readonly></td>
+                            <td><input type="text" id="eigen3" name="eigen3" style="width: 150px;" readonly></td>
                         </tr>
                         <tr>
                             <td>Matematika</td>
-                            <td><input type="text" id="eigen4" style="width: 150px;" readonly></td>
+                            <td><input type="text" id="eigen4" name="eigen4" style="width: 150px;" readonly></td>
                         </tr>
                         <tr>
                             <td>Bhs Inggris</td>
-                            <td><input type="text" id="eigen5" style="width: 150px;" readonly></td>
+                            <td><input type="text" id="eigen5" name="eigen5" style="width: 150px;" readonly></td>
                         </tr>
                         <tr>
                             <td>Bhs Indonesia</td>
-                            <td><input type="text" id="eigen6" style="width: 150px;" readonly></td>
+                            <td><input type="text" id="eigen6" name="eigen6" style="width: 150px;" readonly></td>
                         </tr>
                         <tr>
                             <td>Realistis</td>
-                            <td><input type="text" id="eigen7" style="width: 150px;" readonly></td>
+                            <td><input type="text" id="eigen7" name="eigen7" style="width: 150px;" readonly></td>
                         </tr>
                         <tr>
                             <td>Intelektual</td>
-                            <td><input type="text" id="eigen8" style="width: 150px;" readonly></td>
+                            <td><input type="text" id="eigen8" name="eigen8" style="width: 150px;" readonly></td>
                         </tr>
                         <tr>
                             <td>Artistik</td>
-                            <td><input type="text" id="eigen9" style="width: 150px;" readonly></td>
+                            <td><input type="text" id="eigen9" name="eigen9" style="width: 150px;" readonly></td>
                         </tr>
                         <tr>
                             <td>Sosial</td>
-                            <td><input type="text" id="eigen10" style="width: 150px;" readonly></td>
+                            <td><input type="text" id="eigen10" name="eigen10" style="width: 150px;" readonly></td>
                         </tr>
                         <tr>
                             <td>Enterprise</td>
-                            <td><input type="text" id="eigen11" style="width: 150px;" readonly></td>
+                            <td><input type="text" id="eigen11" name="eigen11" style="width: 150px;" readonly></td>
                         </tr>
                         <tr>
                             <td>Konvensional</td>
-                            <td><input type="text" id="eigen12" style="width: 150px;" readonly></td>
+                            <td><input type="text" id="eigen12" name="eigen12" style="width: 150px;" readonly></td>
                         </tr>
                         <tr>
                             <td>Linguistik</td>
-                            <td><input type="text" id="eigen13" style="width: 150px;" readonly></td>
+                            <td><input type="text" id="eigen13" name="eigen13" style="width: 150px;" readonly></td>
                         </tr>
                         <tr>
                             <td>Matematikal</td>
-                            <td><input type="text" id="eigen14" style="width: 150px;" readonly></td>
+                            <td><input type="text" id="eigen14" name="eigen14" style="width: 150px;" readonly></td>
                         </tr>
                         <tr>
                             <td>Musikal</td>
-                            <td><input type="text" id="eigen15" style="width: 150px;" readonly></td>
+                            <td><input type="text" id="eigen15" name="eigen15" style="width: 150px;" readonly></td>
                         </tr>
                         <tr>
                             <td>Kinestik</td>
-                            <td><input type="text" id="eigen16" style="width: 150px;" readonly></td>
+                            <td><input type="text" id="eigen16" name="eigen16" style="width: 150px;" readonly></td>
                         </tr>
                         <tr>
                             <td>Spartial</td>
-                            <td><input type="text" id="eigen17" style="width: 150px;" readonly></td>
+                            <td><input type="text" id="eigen17" name="eigen17" style="width: 150px;" readonly></td>
                         </tr>
                         <tr>
                             <td>Intrapersonal</td>
-                            <td><input type="text" id="eigen18" style="width: 150px;" readonly></td>
+                            <td><input type="text" id="eigen18" name="eigen18" style="width: 150px;" readonly></td>
                         </tr>
                         <tr>
                             <td>Interpersonal</td>
-                            <td><input type="text" id="eigen19" style="width: 150px;" readonly></td>
+                            <td><input type="text" id="eigen19" name="eigen19" style="width: 150px;" readonly></td>
                         </tr>
                         <tr>
                             <td>Natural</td>
-                            <td><input type="text" id="eigen20" style="width: 150px;" readonly></td>
+                            <td><input type="text" id="eigen20" name="eigen20" style="width: 150px;" readonly></td>
                         </tr><tr>
                             <td>Eksistensial</td>
-                            <td><input type="text" id="eigen21" style="width: 150px;" readonly></td>
+                            <td><input type="text" id="eigen21" name="eigen21" style="width: 150px;" readonly></td>
                         </tr>
                         </tr><tr>
                             <td>total</td>
@@ -1245,6 +1246,8 @@
                         </tr>
                     </tbody>
                 </table>
+                <button type="submit" class="btn btn-primary mt-4">Hitung Eigen</button>
+            </form>
             </div>
         </div>
     </section>

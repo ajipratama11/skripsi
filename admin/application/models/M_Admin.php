@@ -463,4 +463,32 @@ class M_Admin extends CI_Model
         $this->db->where('id_nilai', $id);
         return $this->db->get()->row();
     }
+
+    public function bobot_prioritas1($id1)
+    {
+        $this->db->select('*');
+        $this->db->from('bobot_prioritas');
+        $this->db->join('alternatif_tb', 'bobot_prioritas.id_alternatif = alternatif_tb.id_alternatif');
+        $this->db->where('id_bobot_alternatif', $id1);
+        return $this->db->get()->row();
+    }
+
+    public function bobot_prioritas2($id2)
+    {
+        $this->db->select('*');
+        $this->db->from('bobot_prioritas');
+        $this->db->join('alternatif_tb', 'bobot_prioritas.id_alternatif = alternatif_tb.id_alternatif');
+        $this->db->where('id_bobot_alternatif', $id2);
+        
+        return $this->db->get()->row();
+    }
+
+    public function bobot_prioritas3($id3)
+    {
+        $this->db->select('*');
+        $this->db->from('bobot_prioritas');
+        $this->db->join('alternatif_tb', 'bobot_prioritas.id_alternatif = alternatif_tb.id_alternatif');
+        $this->db->where('id_bobot_alternatif', $id3);
+        return $this->db->get()->row();
+    }
 }
