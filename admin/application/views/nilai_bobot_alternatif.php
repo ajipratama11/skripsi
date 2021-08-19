@@ -10,7 +10,7 @@
     <section class="content">
         <div class="box box-warning">
             <div class="box-body">
-                <table id="dataset" class="table table-bordered table-striped">
+                <table id="dataset2" class="table table-bordered table-striped">
                     <thead>
                         <tr>
                             <th>Nama Alternatif</th>
@@ -39,8 +39,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($datanilai as $a ) { ?>
-                        <tr>
+                        <?php foreach ($datanilai as $a) { ?>
+                            <tr>
                                 <td><?= $a->nama_alternatif ?></td>
                                 <td><?= $a->kimia ?></td>
                                 <td><?= $a->biologi ?></td>
@@ -64,13 +64,14 @@
                                 <td><?= $a->natrularistik ?></td>
                                 <td><?= $a->eksistensial ?></td>
                             </tr>
-                            <?php } ?>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
         </div>
     </section>
     <section class="content">
+        <a href="<?= base_url('Admin/hasil_nilai_bobot') ?>" class="btn btn-success">Hasil Nilai Bobot</a>
         <div class="box box-warning">
             <div class="box-body">
                 <table id="table" class="table">
@@ -78,32 +79,64 @@
                         <tr>
                             <th>Kimia</th>
                             <th>Bobot</th>
-                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value=""readonly></th>
-                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="" readonly></th>
-                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="" readonly></th>
+                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value="4" readonly></th>
+                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="4" readonly></th>
+                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="4" readonly></th>
+                            <th><br></th>
+                            <th><br>Normalisasi</th>
+                            <th><br></th>
+                            <th><br>Total</th>
+                            <th><br>Eigen Vaktor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Teknik Sipil</td>
-                            <td><input type="text" id="kimia2" style="width: 50px;" value=""readonly></td>
-                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                            <td><input type="text" id="kimia2" style="width: 50px;" value="4" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Informatika</td>
-                            <td><input type="text" id="biologi2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
-                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
+                            <td><input type="text" id="biologi2" style="width: 50px;" value="4" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Industri</td>
-                            <td><input type="text" id="fisika2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisika2" style="width: 50px;" value="4" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Total</td>
+                            <td><input type="text" id="" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.0" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -118,72 +151,64 @@
                         <tr>
                             <th>Biologi</th>
                             <th>Bobot</th>
-                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value=""readonly></th>
-                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="" readonly></th>
-                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="" readonly></th>
+                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value="4" readonly></th>
+                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="3" readonly></th>
+                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="4" readonly></th>
+                            <th><br></th>
+                            <th><br>Normalisasi</th>
+                            <th><br></th>
+                            <th><br>Total</th>
+                            <th><br>Eigen Vaktor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Teknik Sipil</td>
-                            <td><input type="text" id="kimia2" style="width: 50px;" value=""readonly></td>
-                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                            <td><input type="text" id="kimia2" style="width: 50px;" value="4" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="3.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.43" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.43" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.43" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.29" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.43" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Informatika</td>
-                            <td><input type="text" id="biologi2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
-                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
+                            <td><input type="text" id="biologi2" style="width: 50px;" value="3" readonly></td>
+                            <td><input type="text" id="" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="biologibiologi" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="biologifisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.14" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.14" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.14" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.43" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.14" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Industri</td>
-                            <td><input type="text" id="fisika2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-    <section class="content">
-        <div class="box box-warning">
-            <div class="box-body">
-                <table id="table" class="table">
-                    <thead>
-                        <tr>
-                            <th>Biologi</th>
-                            <th>Bobot</th>
-                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value=""readonly></th>
-                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="" readonly></th>
-                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="" readonly></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Teknik Sipil</td>
-                            <td><input type="text" id="kimia2" style="width: 50px;" value=""readonly></td>
-                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                            <td><input type="text" id="fisika2" style="width: 50px;" value="4" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikabiologi" value="3.00" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="0.43" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="0.43" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="0.43" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.29" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="0.43" style="width: 50px; margin-left: -19;" readonly></td>
                         </tr>
                         <tr>
-                            <td>Teknik Informatika</td>
-                            <td><input type="text" id="biologi2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
-                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
-                        </tr>
-                        <tr>
-                            <td>Teknik Industri</td>
-                            <td><input type="text" id="fisika2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
+                            <td></td>
+                            <td>Total</td>
+                            <td><input type="text" id="" value="2.33" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikabiologi" value="7.00" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikafisika" value="2.33" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="3.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px; margin-left: -19;" readonly></td>
                         </tr>
                     </tbody>
                 </table>
@@ -198,32 +223,64 @@
                         <tr>
                             <th>Fisika</th>
                             <th>Bobot</th>
-                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value=""readonly></th>
-                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="" readonly></th>
-                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="" readonly></th>
+                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value="5" readonly></th>
+                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="4" readonly></th>
+                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="4" readonly></th>
+                            <th><br></th>
+                            <th><br>Normalisasi</th>
+                            <th><br></th>
+                            <th><br>Total</th>
+                            <th><br>Eigen Vaktor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Teknik Sipil</td>
-                            <td><input type="text" id="kimia2" style="width: 50px;" value=""readonly></td>
-                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                            <td><input type="text" id="kimia2" style="width: 50px;" value="5" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="6.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="6.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.75" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.75" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.75" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="2.25" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.75" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Informatika</td>
-                            <td><input type="text" id="biologi2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
-                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
+                            <td><input type="text" id="biologi2" style="width: 50px;" value="4" readonly></td>
+                            <td><input type="text" id="" value="0.17" style="width: 50px;"></td>
+                            <td><input type="text" id="biologibiologi" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="biologifisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.13" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.13" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.13" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.38" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.13" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Industri</td>
-                            <td><input type="text" id="fisika2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisika2" style="width: 50px;" value="4" readonly></td>
+                            <td><input type="text" id="" value="0.17" style="width: 50px;"></td>
+                            <td><input type="text" id="biologibiologi" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="biologifisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.13" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.13" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.13" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.38" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.13" style="width: 50px; margin-left: -19;"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Total</td>
+                            <td><input type="text" id="fisikakimia" value="1.33" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikabiologi" value="8.00" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikafisika" value="8.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00"style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="3.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px; margin-left: -19;" readonly></td>
                         </tr>
                     </tbody>
                 </table>
@@ -238,32 +295,64 @@
                         <tr>
                             <th>Matematika</th>
                             <th>Bobot</th>
-                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value=""readonly></th>
-                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="" readonly></th>
-                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="" readonly></th>
+                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value="5" readonly></th>
+                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="4" readonly></th>
+                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="4" readonly></th>
+                            <th><br></th>
+                            <th><br>Normalisasi</th>
+                            <th><br></th>
+                            <th><br>Total</th>
+                            <th><br>Eigen Vaktor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Teknik Sipil</td>
-                            <td><input type="text" id="kimia2" style="width: 50px;" value=""readonly></td>
-                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                            <td><input type="text" id="kimia2" style="width: 50px;" value="5" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="6.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="6.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.75" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.75" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.75" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="2.25" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.75" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Informatika</td>
-                            <td><input type="text" id="biologi2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
-                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
+                            <td><input type="text" id="biologi2" style="width: 50px;" value="4" readonly></td>
+                            <td><input type="text" id="" value="0.17" style="width: 50px;"></td>
+                            <td><input type="text" id="biologibiologi" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="biologifisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.13" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.13" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.13" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.38" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.13" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Industri</td>
-                            <td><input type="text" id="fisika2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisika2" style="width: 50px;" value="4" readonly></td>
+                            <td><input type="text" id="" value="0.17" style="width: 50px;"></td>
+                            <td><input type="text" id="biologibiologi" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="biologifisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.13" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.13" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.13" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.38" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.13" style="width: 50px; margin-left: -19;"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Total</td>
+                            <td><input type="text" id="fisikakimia" value="1.33" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikabiologi" value="8.00" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikafisika" value="8.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00"style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="3.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px; margin-left: -19;" readonly></td>
                         </tr>
                     </tbody>
                 </table>
@@ -276,34 +365,66 @@
                 <table id="table" class="table">
                     <thead>
                         <tr>
-                            <th>Bahasa Inggris</th>
+                            <th>Bhs Inggris</th>
                             <th>Bobot</th>
-                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value=""readonly></th>
-                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="" readonly></th>
-                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="" readonly></th>
+                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value="4" readonly></th>
+                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="5" readonly></th>
+                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="4" readonly></th>
+                            <th><br></th>
+                            <th><br>Normalisasi</th>
+                            <th><br></th>
+                            <th><br>Total</th>
+                            <th><br>Eigen Vaktor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Teknik Sipil</td>
-                            <td><input type="text" id="kimia2" style="width: 50px;" value=""readonly></td>
-                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                            <td><input type="text" id="kimia2" style="width: 50px;" value="4" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="0.17" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika"  value="0.13" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika"  value="0.13" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika"  value="0.13" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika"  value="0.38" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.13" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Informatika</td>
-                            <td><input type="text" id="biologi2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
-                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
+                            <td><input type="text" id="biologi2" style="width: 50px;" value="5" readonly></td>
+                            <td><input type="text" id="" value="6.00" style="width: 50px;"></td>
+                            <td><input type="text" id="biologibiologi" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="biologifisika" value="6.00" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.75" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.75" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.75" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="2.25" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.75" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Industri</td>
-                            <td><input type="text" id="fisika2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisika2" style="width: 50px;" value="4" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="0.17" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika"  value="0.13" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika"  value="0.13" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika"  value="0.13" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika"  value="0.38" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.13" style="width: 50px; margin-left: -19;"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Total</td>
+                            <td><input type="text" id="fisikakimia" value="8.00" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikabiologi" value="1.33" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikafisika" value="8.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="3.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px; margin-left: -19;" readonly></td>
                         </tr>
                     </tbody>
                 </table>
@@ -318,32 +439,64 @@
                         <tr>
                             <th>Bhs Indonesia</th>
                             <th>Bobot</th>
-                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value=""readonly></th>
-                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="" readonly></th>
-                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="" readonly></th>
+                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value="4" readonly></th>
+                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="4" readonly></th>
+                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="4" readonly></th>
+                            <th><br></th>
+                            <th><br>Normalisasi</th>
+                            <th><br></th>
+                            <th><br>Total</th>
+                            <th><br>Eigen Vaktor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Teknik Sipil</td>
-                            <td><input type="text" id="kimia2" style="width: 50px;" value=""readonly></td>
-                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                            <td><input type="text" id="kimia2" style="width: 50px;" value="4" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Informatika</td>
-                            <td><input type="text" id="biologi2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
-                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
+                            <td><input type="text" id="biologi2" style="width: 50px;" value="4" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Industri</td>
-                            <td><input type="text" id="fisika2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisika2" style="width: 50px;" value="4" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Total</td>
+                            <td><input type="text" id="" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.0" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -358,32 +511,64 @@
                         <tr>
                             <th>Realistis</th>
                             <th>Bobot</th>
-                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value=""readonly></th>
-                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="" readonly></th>
-                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="" readonly></th>
+                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value="3" readonly></th>
+                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="3" readonly></th>
+                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="3" readonly></th>
+                            <th><br></th>
+                            <th><br>Normalisasi</th>
+                            <th><br></th>
+                            <th><br>Total</th>
+                            <th><br>Eigen Vaktor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Teknik Sipil</td>
-                            <td><input type="text" id="kimia2" style="width: 50px;" value=""readonly></td>
-                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                            <td><input type="text" id="kimia2" style="width: 50px;" value="3" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Informatika</td>
-                            <td><input type="text" id="biologi2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
-                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
+                            <td><input type="text" id="biologi2" style="width: 50px;" value="3" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Industri</td>
-                            <td><input type="text" id="fisika2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisika2" style="width: 50px;" value="3" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Total</td>
+                            <td><input type="text" id="" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.0" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -398,32 +583,64 @@
                         <tr>
                             <th>Intelektual</th>
                             <th>Bobot</th>
-                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value=""readonly></th>
-                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="" readonly></th>
-                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="" readonly></th>
+                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value="3" readonly></th>
+                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="3" readonly></th>
+                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="3" readonly></th>
+                            <th><br></th>
+                            <th><br>Normalisasi</th>
+                            <th><br></th>
+                            <th><br>Total</th>
+                            <th><br>Eigen Vaktor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Teknik Sipil</td>
-                            <td><input type="text" id="kimia2" style="width: 50px;" value=""readonly></td>
-                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                            <td><input type="text" id="kimia2" style="width: 50px;" value="3" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Informatika</td>
-                            <td><input type="text" id="biologi2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
-                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
+                            <td><input type="text" id="biologi2" style="width: 50px;" value="3" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Industri</td>
-                            <td><input type="text" id="fisika2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisika2" style="width: 50px;" value="3" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Total</td>
+                            <td><input type="text" id="" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.0" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -438,32 +655,64 @@
                         <tr>
                             <th>Artistik</th>
                             <th>Bobot</th>
-                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value=""readonly></th>
-                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="" readonly></th>
-                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="" readonly></th>
+                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value="2" readonly></th>
+                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="2" readonly></th>
+                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="2" readonly></th>
+                            <th><br></th>
+                            <th><br>Normalisasi</th>
+                            <th><br></th>
+                            <th><br>Total</th>
+                            <th><br>Eigen Vaktor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Teknik Sipil</td>
-                            <td><input type="text" id="kimia2" style="width: 50px;" value=""readonly></td>
-                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                            <td><input type="text" id="kimia2" style="width: 50px;" value="2" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Informatika</td>
-                            <td><input type="text" id="biologi2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
-                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
+                            <td><input type="text" id="biologi2" style="width: 50px;" value="2" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Industri</td>
-                            <td><input type="text" id="fisika2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisika2" style="width: 50px;" value="2" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Total</td>
+                            <td><input type="text" id="" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.0" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -478,32 +727,64 @@
                         <tr>
                             <th>Sosial</th>
                             <th>Bobot</th>
-                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value=""readonly></th>
-                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="" readonly></th>
-                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="" readonly></th>
+                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value="2" readonly></th>
+                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="2" readonly></th>
+                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="3" readonly></th>
+                            <th><br></th>
+                            <th><br>Normalisasi</th>
+                            <th><br></th>
+                            <th><br>Total</th>
+                            <th><br>Eigen Vaktor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Teknik Sipil</td>
-                            <td><input type="text" id="kimia2" style="width: 50px;" value=""readonly></td>
-                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                            <td><input type="text" id="kimia2" style="width: 50px;" value="2" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.50" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.25" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.25" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.25" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.75" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.25" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Informatika</td>
-                            <td><input type="text" id="biologi2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
-                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
+                            <td><input type="text" id="biologi2" style="width: 50px;" value="2" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.50" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.25" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.25" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.25" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.75" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.25" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Industri</td>
-                            <td><input type="text" id="fisika2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisika2" style="width: 50px;" value="3" readonly></td>
+                            <td><input type="text" id="" value="2.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="2.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.50" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.50" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.50" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.50" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.50" style="width: 50px; margin-left: -19;"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Total</td>
+                            <td><input type="text" id="fisikakimia" value="4.00" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikabiologi" value="4.00" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikafisika" value="2.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="3.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px; margin-left: -19;" readonly></td>
                         </tr>
                     </tbody>
                 </table>
@@ -518,32 +799,64 @@
                         <tr>
                             <th>Enterprise</th>
                             <th>Bobot</th>
-                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value=""readonly></th>
-                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="" readonly></th>
-                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="" readonly></th>
+                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value="2" readonly></th>
+                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="3" readonly></th>
+                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="3" readonly></th>
+                            <th><br></th>
+                            <th><br>Normalisasi</th>
+                            <th><br></th>
+                            <th><br>Total</th>
+                            <th><br>Eigen Vaktor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Teknik Sipil</td>
-                            <td><input type="text" id="kimia2" style="width: 50px;" value=""readonly></td>
-                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                            <td><input type="text" id="kimia2" style="width: 50px;" value="2" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="0.50" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.50" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.20" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.20" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.20" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.60" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.20" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Informatika</td>
-                            <td><input type="text" id="biologi2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
-                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
+                            <td><input type="text" id="biologi2" style="width: 50px;" value="3" readonly></td>
+                            <td><input type="text" id="" value="2.00" style="width: 50px;"></td>
+                            <td><input type="text" id="biologibiologi" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="biologifisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.40" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.40" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.40" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="1.20" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.40" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Industri</td>
-                            <td><input type="text" id="fisika2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisika2" style="width: 50px;" value="3" readonly></td>
+                            <td><input type="text" id="" value="2.00" style="width: 50px;"></td>
+                            <td><input type="text" id="biologibiologi" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="biologifisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.40" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.40" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.40" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="1.20" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.40" style="width: 50px; margin-left: -19;"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Total</td>
+                            <td><input type="text" id="fisikakimia" value="5.00" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikabiologi" value="2.50" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikafisika" value="2.50" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="3.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px; margin-left: -19;" readonly></td>
                         </tr>
                     </tbody>
                 </table>
@@ -556,34 +869,66 @@
                 <table id="table" class="table">
                     <thead>
                         <tr>
-                            <th>konvensional</th>
+                            <th>Konvensional</th>
                             <th>Bobot</th>
-                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value=""readonly></th>
-                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="" readonly></th>
-                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="" readonly></th>
+                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value="4" readonly></th>
+                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="3" readonly></th>
+                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="2" readonly></th>
+                            <th><br></th>
+                            <th><br>Normalisasi</th>
+                            <th><br></th>
+                            <th><br>Total</th>
+                            <th><br>Eigen Vaktor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Teknik Sipil</td>
-                            <td><input type="text" id="kimia2" style="width: 50px;" value=""readonly></td>
-                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                            <td><input type="text" id="kimia2" style="width: 50px;" value="4" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="3.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="4.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.63" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.67" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.57" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.87" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.62" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Informatika</td>
-                            <td><input type="text" id="biologi2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
-                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
+                            <td><input type="text" id="biologi2" style="width: 50px;" value="3" readonly></td>
+                            <td><input type="text" id="" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="biologibiologi" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="biologifisika" value="2.00" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.21" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.22" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.29" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.72" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.24" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Industri</td>
-                            <td><input type="text" id="fisika2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisika2" style="width: 50px;" value="2" readonly></td>
+                            <td><input type="text" id="" value="0.25" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikabiologi" value="0.50" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="0.16" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="0.11" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="0.14" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="0.41" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="0.14" style="width: 50px; margin-left: -19;" readonly></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Total</td>
+                            <td><input type="text" id="fisikakimia" value="1.58" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikabiologi" value="4.50" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikafisika" value="7.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="3.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px; margin-left: -19;" readonly></td>
                         </tr>
                     </tbody>
                 </table>
@@ -598,32 +943,64 @@
                         <tr>
                             <th>Linguistik</th>
                             <th>Bobot</th>
-                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value=""readonly></th>
-                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="" readonly></th>
-                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="" readonly></th>
+                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value="2" readonly></th>
+                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="2" readonly></th>
+                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="2" readonly></th>
+                            <th><br></th>
+                            <th><br>Normalisasi</th>
+                            <th><br></th>
+                            <th><br>Total</th>
+                            <th><br>Eigen Vaktor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Teknik Sipil</td>
-                            <td><input type="text" id="kimia2" style="width: 50px;" value=""readonly></td>
-                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                            <td><input type="text" id="kimia2" style="width: 50px;" value="2" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Informatika</td>
-                            <td><input type="text" id="biologi2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
-                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
+                            <td><input type="text" id="biologi2" style="width: 50px;" value="2" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Industri</td>
-                            <td><input type="text" id="fisika2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisika2" style="width: 50px;" value="2" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Total</td>
+                            <td><input type="text" id="" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.0" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -638,32 +1015,64 @@
                         <tr>
                             <th>Matematikal</th>
                             <th>Bobot</th>
-                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value=""readonly></th>
-                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="" readonly></th>
-                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="" readonly></th>
+                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value="2" readonly></th>
+                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="2" readonly></th>
+                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="2" readonly></th>
+                            <th><br></th>
+                            <th><br>Normalisasi</th>
+                            <th><br></th>
+                            <th><br>Total</th>
+                            <th><br>Eigen Vaktor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Teknik Sipil</td>
-                            <td><input type="text" id="kimia2" style="width: 50px;" value=""readonly></td>
-                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                            <td><input type="text" id="kimia2" style="width: 50px;" value="2" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Informatika</td>
-                            <td><input type="text" id="biologi2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
-                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
+                            <td><input type="text" id="biologi2" style="width: 50px;" value="2" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Industri</td>
-                            <td><input type="text" id="fisika2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisika2" style="width: 50px;" value="2" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Total</td>
+                            <td><input type="text" id="" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.0" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -678,32 +1087,64 @@
                         <tr>
                             <th>Musikal</th>
                             <th>Bobot</th>
-                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value=""readonly></th>
-                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="" readonly></th>
-                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="" readonly></th>
+                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value="1" readonly></th>
+                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="1" readonly></th>
+                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="1" readonly></th>
+                            <th><br></th>
+                            <th><br>Normalisasi</th>
+                            <th><br></th>
+                            <th><br>Total</th>
+                            <th><br>Eigen Vaktor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Teknik Sipil</td>
-                            <td><input type="text" id="kimia2" style="width: 50px;" value=""readonly></td>
-                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                            <td><input type="text" id="kimia2" style="width: 50px;" value="1" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Informatika</td>
-                            <td><input type="text" id="biologi2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
-                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
+                            <td><input type="text" id="biologi2" style="width: 50px;" value="1" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Industri</td>
-                            <td><input type="text" id="fisika2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisika2" style="width: 50px;" value="1" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Total</td>
+                            <td><input type="text" id="" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.0" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -718,32 +1159,64 @@
                         <tr>
                             <th>Kinestik</th>
                             <th>Bobot</th>
-                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value=""readonly></th>
-                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="" readonly></th>
-                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="" readonly></th>
+                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value="1" readonly></th>
+                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="1" readonly></th>
+                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="3" readonly></th>
+                            <th><br></th>
+                            <th><br>Normalisasi</th>
+                            <th><br></th>
+                            <th><br>Total</th>
+                            <th><br>Eigen Vaktor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Teknik Sipil</td>
-                            <td><input type="text" id="kimia2" style="width: 50px;" value=""readonly></td>
-                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                            <td><input type="text" id="kimia2" style="width: 50px;" value="1" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.50" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.25" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.25" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.25" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.75" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.25" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Informatika</td>
-                            <td><input type="text" id="biologi2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
-                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
+                            <td><input type="text" id="biologi2" style="width: 50px;" value="1" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.50" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.25" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.25" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.25" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.75" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.25" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Industri</td>
-                            <td><input type="text" id="fisika2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisika2" style="width: 50px;" value="3" readonly></td>
+                            <td><input type="text" id="" value="2.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="2.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.50" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.50" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.50" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.50" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.50" style="width: 50px; margin-left: -19;"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Total</td>
+                            <td><input type="text" id="fisikakimia" value="4.00" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikabiologi" value="4.00" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikafisika" value="2.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="3.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px; margin-left: -19;" readonly></td>
                         </tr>
                     </tbody>
                 </table>
@@ -758,32 +1231,64 @@
                         <tr>
                             <th>Spartial</th>
                             <th>Bobot</th>
-                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value=""readonly></th>
-                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="" readonly></th>
-                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="" readonly></th>
+                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value="2" readonly></th>
+                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="2" readonly></th>
+                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="2" readonly></th>
+                            <th><br></th>
+                            <th><br>Normalisasi</th>
+                            <th><br></th>
+                            <th><br>Total</th>
+                            <th><br>Eigen Vaktor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Teknik Sipil</td>
-                            <td><input type="text" id="kimia2" style="width: 50px;" value=""readonly></td>
-                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                            <td><input type="text" id="kimia2" style="width: 50px;" value="2" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Informatika</td>
-                            <td><input type="text" id="biologi2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
-                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
+                            <td><input type="text" id="biologi2" style="width: 50px;" value="2" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Industri</td>
-                            <td><input type="text" id="fisika2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisika2" style="width: 50px;" value="2" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Total</td>
+                            <td><input type="text" id="" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.0" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -798,32 +1303,64 @@
                         <tr>
                             <th>Intrapersonal</th>
                             <th>Bobot</th>
-                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value=""readonly></th>
-                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="" readonly></th>
-                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="" readonly></th>
+                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value="2" readonly></th>
+                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="2" readonly></th>
+                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="1" readonly></th>
+                            <th><br></th>
+                            <th><br>Normalisasi</th>
+                            <th><br></th>
+                            <th><br>Total</th>
+                            <th><br>Eigen Vaktor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Teknik Sipil</td>
-                            <td><input type="text" id="kimia2" style="width: 50px;" value=""readonly></td>
-                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                            <td><input type="text" id="kimia2" style="width: 50px;" value="2" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="biologibiologi" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="biologifisika" value="2.00" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.40" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.40" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.40" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="1.20" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.40" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Informatika</td>
-                            <td><input type="text" id="biologi2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
-                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
+                            <td><input type="text" id="biologi2" style="width: 50px;" value="2" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="biologibiologi" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="biologifisika" value="2.00" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.40" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.40" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.40" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="1.20" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.40" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Industri</td>
-                            <td><input type="text" id="fisika2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisika2" style="width: 50px;" value="1" readonly></td>
+                            <td><input type="text" id="" value="0.50" style="width: 50px;"></td>
+                            <td><input type="text" id="biologibiologi" value="0.50" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="biologifisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.20" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.20" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.20" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.60" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.20" style="width: 50px; margin-left: -19;"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Total</td>
+                            <td><input type="text" id="fisikakimia" value="2.50" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikabiologi" value="2.50" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikafisika" value="5.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="3.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px; margin-left: -19;" readonly></td>
                         </tr>
                     </tbody>
                 </table>
@@ -838,32 +1375,64 @@
                         <tr>
                             <th>Interpersonal</th>
                             <th>Bobot</th>
-                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value=""readonly></th>
-                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="" readonly></th>
-                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="" readonly></th>
+                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value="1" readonly></th>
+                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="1" readonly></th>
+                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="1" readonly></th>
+                            <th><br></th>
+                            <th><br>Normalisasi</th>
+                            <th><br></th>
+                            <th><br>Total</th>
+                            <th><br>Eigen Vaktor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Teknik Sipil</td>
-                            <td><input type="text" id="kimia2" style="width: 50px;" value=""readonly></td>
-                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                            <td><input type="text" id="kimia2" style="width: 50px;" value="1" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Informatika</td>
-                            <td><input type="text" id="biologi2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
-                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
+                            <td><input type="text" id="biologi2" style="width: 50px;" value="1" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Industri</td>
-                            <td><input type="text" id="fisika2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisika2" style="width: 50px;" value="1" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Total</td>
+                            <td><input type="text" id="" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.0" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -878,32 +1447,64 @@
                         <tr>
                             <th>Natrularistik</th>
                             <th>Bobot</th>
-                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value=""readonly></th>
-                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="" readonly></th>
-                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="" readonly></th>
+                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value="2" readonly></th>
+                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="1" readonly></th>
+                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="1" readonly></th>
+                            <th><br></th>
+                            <th><br>Normalisasi</th>
+                            <th><br></th>
+                            <th><br>Total</th>
+                            <th><br>Eigen Vaktor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Teknik Sipil</td>
-                            <td><input type="text" id="kimia2" style="width: 50px;" value=""readonly></td>
-                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                            <td><input type="text" id="kimia2" style="width: 50px;" value="2" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="2.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="2.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.50" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.57" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.57" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.64" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.55" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Informatika</td>
-                            <td><input type="text" id="biologi2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
-                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
+                            <td><input type="text" id="biologi2" style="width: 50px;" value="1" readonly></td>
+                            <td><input type="text" id="" value="0.50" style="width: 50px;"></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="biologifisika" value="0.50" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.25" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.29" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.14" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.68" style="width: 50px;"></td>
+                            <td><input type="text" id="biologifisika" value="0.23" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Industri</td>
-                            <td><input type="text" id="fisika2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisika2" style="width: 50px;" value="1" readonly></td>
+                            <td><input type="text" id="" value="0.50" style="width: 50px;"></td>
+                            <td><input type="text" id="" value="0.50" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="0.25" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="0.14" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="0.29" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="0.68" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="0.23" style="width: 50px; margin-left: -19;" readonly></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Total</td>
+                            <td><input type="text" id="fisikakimia" value="2.00" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikabiologi" value="3.50" style="width: 50px;"></td>
+                            <td><input type="text" id="fisikafisika" value="3.50" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="3.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisikafisika" value="1.00" style="width: 50px; margin-left: -19;" readonly></td>
                         </tr>
                     </tbody>
                 </table>
@@ -918,38 +1519,71 @@
                         <tr>
                             <th>Eksistensial</th>
                             <th>Bobot</th>
-                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value=""readonly></th>
-                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="" readonly></th>
-                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="" readonly></th>
+                            <th>Teknik Sipil <br><input type="text" id="kimia1" style="width: 50px;" value="1" readonly></th>
+                            <th>Teknik Informatika <br><input type="text" id="biologi1" style="width: 50px;" value="1" readonly></th>
+                            <th>Teknik Industri <br><input type="text" id="fisika1" style="width: 50px;" value="1" readonly></th>
+                            <th><br></th>
+                            <th><br>Normalisasi</th>
+                            <th><br></th>
+                            <th><br>Total</th>
+                            <th><br>Eigen Vaktor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Teknik Sipil</td>
-                            <td><input type="text" id="kimia2" style="width: 50px;" value=""readonly></td>
-                            <td><input type="text" id="kimiakimia" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="kimiabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="kimiafisika" style="width: 50px;"></td>
+                            <td><input type="text" id="kimia2" style="width: 50px;" value="1" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Informatika</td>
-                            <td><input type="text" id="biologi2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="biologikimia" style="width: 50px;"></td>
-                            <td><input type="text" id="biologibiologi" style="width: 50px;" readonly></td>
-                            <td><input type="text" id="biologifisika" style="width: 50px;"></td>
+                            <td><input type="text" id="biologi2" style="width: 50px;" value="1" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                         <tr>
                             <td>Teknik Industri</td>
-                            <td><input type="text" id="fisika2" style="width: 50px;" value="" readonly></td>
-                            <td><input type="text" id="fisikakimia" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikabiologi" style="width: 50px;"></td>
-                            <td><input type="text" id="fisikafisika" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="fisika2" style="width: 50px;" value="1" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;" readonly></td>
+                            <td><input type="text" id="" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Total</td>
+                            <td><input type="text" id="" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.0" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px;"></td>
+                            <td><input type="text" id="kimiafisika" value="0.33" style="width: 50px; margin-left: -19;"></td>
+                            <td><input type="text" id="kimiafisika" value="1.00" style="width: 50px; margin-left: -19;"></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </section>
+    
 </div>
 <script>
     $(document).ready(function() {
