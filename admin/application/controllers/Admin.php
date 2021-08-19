@@ -492,6 +492,13 @@ class Admin extends CI_Controller
 		$this->load->view('nilai_bobot_alternatif');
 		$this->load->view('template/footer');
 	}
+	public function hasil_nilai_bobot(){
+		$data['title'] = 'HASIL BOBOT ALTERNATIF';
+		$data['datanilaibobot'] = $this->db->query("SELECT * FROM bobot_prioritas JOIN alternatif_tb ON bobot_prioritas.id_alternatif=alternatif_tb.id_alternatif ")->result();
+		$this->header($data);
+		$this->load->view('hasil_bobot_alternatif');
+		$this->load->view('template/footer');
+	}
 	public function simpan_bobot(){
 		$data_input = array(
 			'id_alternatif' => $this->input->post('id_alternatif'),
