@@ -78,6 +78,7 @@ class KlasifikasiNB extends CI_Controller
 	public function konvert_nilai($id)
 	{
 		$data['datanilai'] = $this->db->get_where('nilai', ['id_nilai' => $id])->row();
+		
 		$data['title'] = 'Klasifikasi Diterima atau Tidak dengan Naive Bayes';
 		$this->header($data);
 		$this->load->view('cobaklasifikasi');

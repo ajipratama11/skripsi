@@ -315,11 +315,18 @@
                             <th>Status</th>
                         </tr>
                     </thead>
+                    <?php
+                    if ($status == 0) {
+                        $data = 'Belum ada status';
+                    } else {
+                        $data = 'Diterima';
+                    }
+                    ?>
                     <tbody class="ranking">
                         <tr>
                             <td>Teknik Sipil</td>
                             <td><input type="text" id="persen_sipil" readonly style="width: 30px;">%</td>
-                            <td><?= $status['hasil'] ?><a class="btn btn-success" href="<?= base_url('KlasifikasiNB/konvert_nilai/'.$eigen['id_nilai']) ?>"> Lihat Status</a></td>
+                            <td><?= $data ?> | <a class="btn btn-success" href="<?= base_url('KlasifikasiNB/konvert_nilai/' . $eigen['id_nilai']) ?>"> Lihat Status</a></td>
                         </tr>
                         <tr>
                             <td>Teknik Informatika</td>
