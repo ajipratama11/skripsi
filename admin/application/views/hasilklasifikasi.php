@@ -9,11 +9,14 @@
                 <a href="<?= site_url('');?>" class="btn btn-sm btn-warning"><i class="fa fa-angle-left"></i>  Kembali</a>
             </div>
             <div class="box-body">
-                <h5>prob diterima : <?= $prob_diterima; ?></h5>
-                <h5>hasil prob diterima: <?= $prob_hasilditerima; ?></h5>
+                <form action="<?= base_url('Admin/simpanhasil') ?>" method="POST">
+                <h5>prob diterima :  <?= $prob_diterima; ?></h5>
+                <h5>hasil prob diterima: <input type="text" name="hasil_prob" value="<?= $prob_hasilditerima; ?>"></h5>
                 <h5>prob tidak diterima: <?= $prob_tidakditerima; ?></h5>
-                <h5>hasil prob tidak diterima: <?= $prob_hasiltidakditerima; ?></h5>
-                <h5><?= $prediksi; ?></h5>
+                <h5>hasil prob tidak diterima: <input type="text" name="hasil_tdkprob" value="<?= $prob_hasiltidakditerima; ?>"></h5>
+                <h5><input type="text" name="hasil" value="<?= $prediksi; ?>"></h5>
+                <button type="submit" class="btn btn-success">SIMPAN</button>
+                </form>
             </div>
         </div>
     </section>

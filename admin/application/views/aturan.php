@@ -47,7 +47,7 @@
                             <tr>
                                 <td><?= $no++ ?></td>
                                 <td><?= $n->nama ?></td>
-                                <td><?= $n->nis ?></td>
+                                <td><input type="text" style="width: 100px;" name="kimia" class="form-control" value="<?= $n->nis ?>" readonly></td>
                                 <td><input type="text" name="kimia" class="form-control" value="<?= $n->kimia ?>" readonly></td>
                                 <td><input type="text" name="biologi" class="form-control" value="<?= $n->biologi ?>" readonly></td>
                                 <td><input type="text" name="fisika" class="form-control" value="<?= $n->fisika ?>" readonly></td>

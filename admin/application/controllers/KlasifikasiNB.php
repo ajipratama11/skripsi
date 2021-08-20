@@ -78,20 +78,7 @@ class KlasifikasiNB extends CI_Controller
 	public function konvert_nilai($id)
 	{
 		$data['datanilai'] = $this->db->get_where('nilai', ['id_nilai' => $id])->row();
-		$nilai = '';
-		$nilai2 = '';
-		$nilai3 = '';
-
-		if ($nilai >= 80 && $nilai <= 100) {
-			$data['dnilai1'] = array($nilai);
-		} else if ($nilai2 >= 69 && $nilai2 <= 79) {
-			echo $nilai2;
-		} else if ($nilai3 >= 0 && $nilai3 <= 68) {
-			echo $nilai3;
-		}
-
-		$data['title'] = 'Dashboard';
-
+		$data['title'] = 'Klasifikasi Diterima atau Tidak dengan Naive Bayes';
 		$this->header($data);
 		$this->load->view('cobaklasifikasi');
 		$this->load->view('template/footer');
@@ -101,6 +88,7 @@ class KlasifikasiNB extends CI_Controller
 	public function act_klasifikasi()
 	{
 		$data = array(
+			'id_nilai' => $this->input->post('id_nilai'),
 			'kimia' => $this->input->post('kimia'),
 			'biologi' => $this->input->post('biologi'),
 			'fisika' => $this->input->post('fisika'),
@@ -203,6 +191,7 @@ class KlasifikasiNB extends CI_Controller
 			$prediksi = 'Tidak Diterima';
 		}
 
+		$data['id_nilai'] = $this->input->post('id_nilai');
 		$data['prob_diterima'] = $prob_Diterima;
 		$data['prob_hasilditerima'] = $hasil_prob_Diterima;
 		$data['prob_tidakditerima'] = $prob_TidakDiterima;
@@ -342,6 +331,7 @@ class KlasifikasiNB extends CI_Controller
 	{
 		$data['title'] = 'Hitung Matrix';
 		$data_matriks = array(
+			'id_nilai' => $this->input->post('id_nilai'),
 			'kimia_a' => $this->input->post('kimia_a'),
 			'kimia_b' => $this->input->post('kimia_b'),
 			'kimia_c' => $this->input->post('kimia_c'),
@@ -794,6 +784,7 @@ class KlasifikasiNB extends CI_Controller
 	{
 		$data['title'] = 'Perhitungan Eigen';
 		$data_eigen = array(
+			'id_nilai' => $this->input->post('id_nilai'),
 			'eigen_a' => $this->input->post('eigen1'),
 			'eigen_b' => $this->input->post('eigen2'),
 			'eigen_c' => $this->input->post('eigen3'),

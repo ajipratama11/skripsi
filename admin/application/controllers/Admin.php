@@ -187,6 +187,17 @@ class Admin extends CI_Controller
 
 	//konversi nilai
 
+	public function simpanhasil(){
+		
+		$data = array(
+			'hasil_prob' => $this->input->post('hasil_prob'),
+			'hasil_tdkprob' => $this->input->post('hasil_prob'),
+			'hasil' => $this->input->post('hasil')
+		);
+		$data = $this->db->insert('hasil_nb',$data);
+		redirect('Admin/aturan');
+	}
+
 	public function konversi_nilai()
 	{
 
@@ -527,6 +538,7 @@ class Admin extends CI_Controller
 	{
 		$data['title'] = 'matriks';
 		$data_input = array(
+			'id_nilai' => $this->input->post('id_nilai'),
 			'nama' => $this->input->post('nama_siswa'),
 			'kimia' => $this->input->post('kimia'),
 			'biologi' => $this->input->post('biologi'),
@@ -596,6 +608,7 @@ class Admin extends CI_Controller
 	{
 		$data['title'] = 'Perhitungan Eigen';
 		$data_eigen = array(
+			'id_nilai' => $this->input->post('id_nilai'),
 			'eigen_a' => $this->input->post('eigen1'),
 			'eigen_b' => $this->input->post('eigen2'),
 			'eigen_c' => $this->input->post('eigen3'),
@@ -626,6 +639,8 @@ class Admin extends CI_Controller
 		$data['eigen_alt1'] = $this->m_admin->bobot_prioritas1($id1);
 		$data['eigen_alt2'] = $this->m_admin->bobot_prioritas2($id2);
 		$data['eigen_alt3'] = $this->m_admin->bobot_prioritas3($id3);
+		$id= $this->input->post('id_nilai');
+		$data['status'] = $this->db->query("SELECT * FROM hasil_nb WHERE id_nilai='$id'")->row_array();
 		$this->header($data);
 		$this->load->view('perhitungan_ahp');
 		$this->load->view('template/footer');
