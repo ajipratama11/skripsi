@@ -71,7 +71,7 @@
                                 <td><input type="text" name="eksistensial" class="form-control" value="<?= $n->eksistensial ?>" readonly></td>
                                 <td>
                                     <!-- <button type="submit" class="btn btn-primary">Konversi Nilai</button> -->
-                                    <a href="<?= base_url('KlasifikasiNB/konvert_nilai/' . $n->id_nilai) ?>" class="btn btn-primary">Konversi nilai</a> |
+                                    <a href="<?= base_url('KlasifikasiNB/konversi_nb/' . $n->id_nilai) ?>" class="btn btn-primary">Status</a> |
                                     <a href="<?= base_url('Admin/konversi_bobot/' . $n->id_nilai) ?>" class="btn btn-success">Konversi bobot</a>
                                 </td>
                             </tr>

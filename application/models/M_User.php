@@ -86,6 +86,16 @@ class M_User extends CI_Model{
 		$this->db->where($whr);
 		return $this->db->get();
 	}
+	
+	function status($id) 
+	{
+		$this->db->select('*');
+		$this->db->from('hasil_nb');
+		$this->db->join('nilai', 'hasil_nb.id_nilai = nilai.id_nilai');
+		$this->db->where('nilai.id_siswa', $id);
+		return $this->db->get()->row();
+	}
+
 	function detil_tes($whr){
 		return $this->db->get_where('ikut_ujian', $whr);
 	}

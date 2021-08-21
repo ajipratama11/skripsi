@@ -198,6 +198,18 @@ class Admin extends CI_Controller
 		redirect('Admin/aturan');
 	}
 
+	// public function simpan_rangking(){
+		
+	// 	$data = array(
+	// 		'id_siswa' => $this->input->post('id_siswa'),
+	// 		'teknik_sipil' => $this->input->post('teknik_sipil'),
+	// 		'teknik informatika' => $this->input->post('teknik_informatika'),
+	// 		'teknik industri' => $this->input->post('teknik_industri')
+	// 	);
+	// 	$data = $this->db->insert('ranking',$data);
+	// 	redirect('KlasifikasiNB/perhitungan_eigen');
+	// }
+
 	public function konversi_nilai()
 	{
 
@@ -539,6 +551,7 @@ class Admin extends CI_Controller
 		$data['title'] = 'matriks';
 		$data_input = array(
 			'id_nilai' => $this->input->post('id_nilai'),
+			'id_siswa' => $this->input->post('id_siswa'),
 			'nama' => $this->input->post('nama_siswa'),
 			'kimia' => $this->input->post('kimia'),
 			'biologi' => $this->input->post('biologi'),
@@ -609,6 +622,7 @@ class Admin extends CI_Controller
 		$data['title'] = 'Perhitungan Eigen';
 		$data_eigen = array(
 			'id_nilai' => $this->input->post('id_nilai'),
+			'id_siswa' => $this->input->post('id_siswa'),
 			'eigen_a' => $this->input->post('eigen1'),
 			'eigen_b' => $this->input->post('eigen2'),
 			'eigen_c' => $this->input->post('eigen3'),
