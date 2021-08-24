@@ -26,7 +26,7 @@
         </a>
         </li>
         <li>
-          <a href="">    
+          <a href="<?= base_url('User/rekomendasi_jurusan') ?>">    
             <i class="fa fa-circle"></i> <span>Potensi Jurusan</span> 
         </a>
         </li>

@@ -15,6 +15,7 @@
                     <div class="col-md-4 form-group">
                         <label for="MataPelajaran">Kimia :</label>
                         <input type="hidden" name="id_nilai" value="<?= $datanilai->id_nilai ?>">
+                        <input type="hidden" name="id_siswa" value="<?= $datanilai->id_siswa ?>">
                         <input type="hidden" name="nama_siswa" value="<?= $datanilai->nama ?>">
                         <select name="kimia" class="form-control" required="">
                             <option value="">Nilai...</option>

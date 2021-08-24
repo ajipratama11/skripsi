@@ -128,8 +128,8 @@
               <a href="<?= base_url('sub_kriteria');?>"><i class="fa fa-circle-o"></i><span>Sub-Kriteria</span></a>
               <a href="<?= base_url('alternatif');?>"><i class="fa fa-circle-o"></i><span>Alternatif</span></a>
               <a href="<?= base_url('konversi');?>"><i class="fa fa-circle-o"></i><span>Konversi Nilai</span></a>
-              <a href="<?= base_url('aturan');?>"><i class="fa fa-circle-o"></i><span>Aturan</span></a>
-              <a href="<?= base_url('perhitungan');?>"><i class="fa fa-circle-o"></i><span>Perhitungan</span></a>
+              <a href="<?= base_url('aturan');?>"><i class="fa fa-circle-o"></i><span>Perhitungan</span></a>
+              <!-- <a href="<?= base_url('perhitungan');?>"><i class="fa fa-circle-o"></i><span>Perhitungan</span></a> -->
             </li>
           </ul>
         </li>

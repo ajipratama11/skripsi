@@ -1158,7 +1158,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Kimia<input type="hidden" name="id_nilai" readonly value="<?= $matriks['id_nilai'] ?>"></td>
+                            <td>Kimia<input type="hidden" name="id_nilai" readonly value="<?= $matriks['id_nilai'] ?>"> <input type="hidden" name="id_siswa" readonly value="<?= $matriks['id_siswa'] ?>"></td>
                             <td><input type="text" id="eigen1" name="eigen1" style="width: 150px;" readonly></td>
                         </tr>
                         <tr>

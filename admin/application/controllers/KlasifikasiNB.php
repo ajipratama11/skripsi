@@ -85,6 +85,32 @@ class KlasifikasiNB extends CI_Controller
 		$this->load->view('template/footer');
 	}
 
+	public function konversi_nb($id)
+	{
+		$data['datanilai'] = $this->db->get_where('nilai', ['id_nilai' => $id])->row();		
+		$data['title'] = 'Klasifikasi Diterima atau Tidak dengan Naive Bayes';
+		$this->header($data);
+		$this->load->view('konvert_nb');
+		$this->load->view('template/footer');
+	}
+
+	public function hasil_nb()
+	{
+		$data['title'] = 'Hasil Keputusan Jurusan';
+		$id1 = 1;
+		$id2 = 2;
+		$id3 = 3;
+		$data['eigen_alt1'] = $this->m_admin->bobot_prioritas1($id1);
+		$data['eigen_alt2'] = $this->m_admin->bobot_prioritas2($id2);
+		$data['eigen_alt3'] = $this->m_admin->bobot_prioritas3($id3);
+		$id= $this->input->post('id_nilai');
+		$data['status'] = $this->db->query("SELECT * FROM hasil_nb WHERE id_nilai='$id'")->row_array();
+		//$data['status2'] = $this->db->query("SELECT * FROM hasil_nb WHERE id_nilai='$id'")->row_array();
+		$this->header($data);
+		$this->load->view('hasil_nb');
+		$this->load->view('template/footer');
+	}
+
 	//Metode Perhitungan
 	public function act_klasifikasi()
 	{
@@ -333,6 +359,7 @@ class KlasifikasiNB extends CI_Controller
 		$data['title'] = 'Hitung Matrix';
 		$data_matriks = array(
 			'id_nilai' => $this->input->post('id_nilai'),
+			'id_siswa' => $this->input->post('id_siswa'),
 			'kimia_a' => $this->input->post('kimia_a'),
 			'kimia_b' => $this->input->post('kimia_b'),
 			'kimia_c' => $this->input->post('kimia_c'),
@@ -786,6 +813,7 @@ class KlasifikasiNB extends CI_Controller
 		$data['title'] = 'Perhitungan Eigen';
 		$data_eigen = array(
 			'id_nilai' => $this->input->post('id_nilai'),
+			'id_siswa' => $this->input->post('id_siswa'),
 			'eigen_a' => $this->input->post('eigen1'),
 			'eigen_b' => $this->input->post('eigen2'),
 			'eigen_c' => $this->input->post('eigen3'),
@@ -815,5 +843,16 @@ class KlasifikasiNB extends CI_Controller
 		$this->load->view('template/footer');
 	}
 
+	public function simpan_ranking(){
+		
+		$data = array(
+			'id_siswa' => $this->input->post('id_siswa'),
+			'teknik_sipil' => $this->input->post('teknik_sipil'),
+			'teknik_informatika' => $this->input->post('teknik_informatika'),
+			'teknik_industri' => $this->input->post('teknik_industri')
+		);
+		$data = $this->db->insert('ranking',$data);
+		redirect('Admin/aturan');
+	}
 	
 }

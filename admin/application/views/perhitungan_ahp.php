@@ -306,38 +306,42 @@
     </section>
     <section class="content">
         <div class="box box-warning">
-            <div class="box-body">
-                <table id="rank" class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th>Jurusan</th>
-                            <th>Nilai</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <?php
-                    if ($status == 0) {
-                        $data = 'Belum ada status';
-                    } else {
-                        $data = 'Diterima';
-                    }
-                    ?>
-                    <tbody class="ranking">
-                        <tr>
-                            <td>Teknik Sipil</td>
-                            <td><input type="text" id="persen_sipil" readonly style="width: 30px;">%</td>
-                            <td><?= $data ?> | <a class="btn btn-success" href="<?= base_url('KlasifikasiNB/konvert_nilai/' . $eigen['id_nilai']) ?>"> Lihat Status</a></td>
-                        </tr>
-                        <tr>
-                            <td>Teknik Informatika</td>
-                            <td><input type="text" id="persen_informatika" readonly style="width: 30px;">%</td>
-                        </tr>
-                        <tr>
-                            <td>Teknik Industri</td>
-                            <td><input type="text" id="persen_industri" readonly style="width: 30px;">%</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="box-body">`
+                <form action="<?= base_url('KlasifikasiNB/simpan_ranking') ?>" method="POST">
+                    <table id="rank" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Jurusan</th>
+                                <th>Nilai</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <?php
+                        if ($status == 0) {
+                            $data = 'Belum ada status';
+                        } else {
+                            $data = 'Diterima';
+                        }
+                        ?>
+                        <tbody class="ranking">
+                            <tr>
+                                <td>Teknik Sipil <input type="hidden" id="id_siswa" name="id_siswa" value="<?= $eigen['id_siswa'] ?>" readonly style="width: 30px;"></td>
+                                <td><input type="text" id="persen_sipil" name="teknik_sipil" readonly style="width: 30px;">%</td>
+                                <td><?= $data ?> | <a class="btn btn-success" href="<?= base_url('KlasifikasiNB/konvert_nilai/' . $eigen['id_nilai']) ?>"> Lihat Status</a></td>
+                            </tr>
+                            <tr>
+                                <td>Teknik Informatika</td>
+                                <td><input type="text" id="persen_informatika" name="teknik_informatika" readonly style="width: 30px;">%</td>
+                                <!-- <td><?= $data ?></td> -->
+                            </tr>
+                            <tr>
+                                <td>Teknik Industri</td>
+                                <td><input type="text" id="persen_industri" name="teknik_industri" readonly style="width: 30px;">%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </form>
                 <!-- <input type="text" id="jumlah_total"> -->
             </div>
         </div>

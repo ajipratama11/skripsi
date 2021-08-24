@@ -77,7 +77,7 @@
                         <thead>
                             <tr>
                                 <th>Kriteria</th>
-                                <th>Bobot <input type="hidden" name="id_nilai" value="<?= $bobot1['id_nilai'] ?>" style="width: 50px;" readonly></th>
+                                <th>Bobot <input type="hidden" name="id_nilai" value="<?= $bobot1['id_nilai'] ?>" style="width: 50px;" readonly><input type="hidden" name="id_siswa" value="<?= $bobot1['id_siswa'] ?>" style="width: 50px;" readonly></th>
                                 <th>Kimia <br><input type="text" id="kimia1" style="width: 50px;" value="<?= $bobot1['kimia'] ?>" readonly></th>
                                 <th>Biologi <br><input type="text" id="biologi1" style="width: 50px;" value="<?= $bobot1['biologi'] ?>" readonly></th>
                                 <th>Fisika <br><input type="text" id="fisika1" style="width: 50px;" value="<?= $bobot1['fisika'] ?>" readonly></th>
