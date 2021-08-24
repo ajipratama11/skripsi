@@ -21,7 +21,7 @@
             <?php
             foreach ($status as $s) {
                 if ($s->hasil == 'Diterima') {
-                    $data = 'Diterima';
+                    $data = $s->hasil;
                 } else {
                     $data = 'Belum ada status';
                 }
