@@ -19,12 +19,14 @@
                 </tr>
             </thead>
             <?php
-            if ($status->hasil == 0) {
-                $data = 'Belum ada status';
-            } else {
-                $data = 'Diterima';
+            foreach ($status as $s) {
+                if ($s->hasil == 'Diterima') {
+                    $data = 'Diterima';
+                } else {
+                    $data = 'Belum ada status';
+                }
+                $data2 = 'Belum ada status';
             }
-            $data2 = 'Belum ada status';
             ?>
             <tbody class="ranking">
                 <tr>

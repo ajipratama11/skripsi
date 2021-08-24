@@ -306,7 +306,8 @@ class User extends CI_Controller
           $data['judul'] = 'Rekomendasi Jurusan';
           $data['title'] = 'Rekomendasi Jurusan';
           $data['rekom'] = $this->db->get_where('ranking', ['id_siswa' => $id])->row_array();
-          $data['status'] = $this->m_user->status($id);
+          // $data['status'] = $this->m_user->status($id);
+          $data['status'] = $this->db->query("SELECT * FROM `hasil_nb` JOIN nilai ON hasil_nb.id_nilai=nilai.id_nilai WHERE nilai.id_siswa='$id'")->result();
           $this->header($data);
           $this->load->view('rekomendasi');
           $this->load->view('_template/footer');
