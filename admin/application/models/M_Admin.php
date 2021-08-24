@@ -491,4 +491,10 @@ class M_Admin extends CI_Model
         $this->db->where('id_bobot_alternatif', $id3);
         return $this->db->get()->row();
     }
+
+    public function siswa_get_id($id)
+    {
+        $this->db->where('id_siswa', $id);
+        return $this->db->get('siswa')->row();
+    }
 }

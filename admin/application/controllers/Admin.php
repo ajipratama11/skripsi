@@ -187,19 +187,20 @@ class Admin extends CI_Controller
 
 	//konversi nilai
 
-	public function simpanhasil(){
-		
+	public function simpanhasil()
+	{
+
 		$data = array(
 			'hasil_prob' => $this->input->post('hasil_prob'),
 			'hasil_tdkprob' => $this->input->post('hasil_prob'),
 			'hasil' => $this->input->post('hasil')
 		);
-		$data = $this->db->insert('hasil_nb',$data);
+		$data = $this->db->insert('hasil_nb', $data);
 		redirect('Admin/aturan');
 	}
 
 	// public function simpan_rangking(){
-		
+
 	// 	$data = array(
 	// 		'id_siswa' => $this->input->post('id_siswa'),
 	// 		'teknik_sipil' => $this->input->post('teknik_sipil'),
@@ -344,6 +345,7 @@ class Admin extends CI_Controller
 		redirect('alternatif');
 	}
 
+
 	// nilai alternatif 
 
 	public function nilaimin_alternatif($id)
@@ -418,12 +420,54 @@ class Admin extends CI_Controller
 		//$data['set_data'] = $this->m_admin->list_dataset()->result();
 		$nilai = $this->m_admin->get_nilai();
 		$sub = $this->db->query("SELECT * FROM sub_kriteria")->result();
+		$data['datasiswa'] = $this->db->get('siswa')->result();
 		$data['sub'] = $sub;
 		$data['nilai'] = $nilai;
 		$this->header($data);
 		$this->load->view('aturan');
 		$this->load->view('template/footer');
 	}
+
+	public function get_id($id)
+	{
+		$data = $this->m_admin->siswa_get_id($id);
+		echo json_encode($data);
+	}
+
+	public function save_nilai()
+	{
+		$data = array(
+			'id_siswa' => $this->input->post('id_siswa'),
+			'nis' => $this->input->post('nis'),
+			'kimia' => $this->input->post('kimia'),
+			'biologi' => $this->input->post('biologi'),
+			'fisika' => $this->input->post('fisika'),
+			'matematika' => $this->input->post('matematika'),
+			'bhs_inggris' => $this->input->post('bhs_inggris'),
+			'bhs_indonesia' => $this->input->post('bhs_indonesia'),
+			'realistis' => $this->input->post('realistis'),
+			'intelektual' => $this->input->post('intelektual'),
+			'artistik' => $this->input->post('artistik'),
+			'sosial' => $this->input->post('sosial'),
+			'enterprise' => $this->input->post('enterprise'),
+			'konvensional' => $this->input->post('konvensional'),
+			'linguistik' => $this->input->post('linguistik'),
+			'matematikal' => $this->input->post('matematikal'),
+			'musikal' => $this->input->post('musikal'),
+			'kinestik' => $this->input->post('kinestik'),
+			'spartial' => $this->input->post('spartial'),
+			'intrapersonal' => $this->input->post('intrapersonal'),
+			'interpersonal' => $this->input->post('matematikal'),
+			'naturalistik' => $this->input->post('naturalistik'),
+			'eksistensial' => $this->input->post('eksistensial')
+		);
+		$this->db->insert('nilai', $data);
+		echo "<script>
+        alert('Data Nilai Berhasil Tersimpan');
+        window.location.href = '" . base_url('Admin/aturan') . "';
+    </script>";
+	}
+
 	public function konversi_alternatif($id)
 	{
 
@@ -653,7 +697,7 @@ class Admin extends CI_Controller
 		$data['eigen_alt1'] = $this->m_admin->bobot_prioritas1($id1);
 		$data['eigen_alt2'] = $this->m_admin->bobot_prioritas2($id2);
 		$data['eigen_alt3'] = $this->m_admin->bobot_prioritas3($id3);
-		$id= $this->input->post('id_nilai');
+		$id = $this->input->post('id_nilai');
 		$data['status'] = $this->db->query("SELECT * FROM hasil_nb WHERE id_nilai='$id'")->row_array();
 		$this->header($data);
 		$this->load->view('perhitungan_ahp');
