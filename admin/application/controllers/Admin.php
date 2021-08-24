@@ -190,6 +190,7 @@ class Admin extends CI_Controller
 	public function simpanhasil(){
 		
 		$data = array(
+			'id_nilai' => $this->input->post('id_nilai'),
 			'hasil_prob' => $this->input->post('hasil_prob'),
 			'hasil_tdkprob' => $this->input->post('hasil_prob'),
 			'hasil' => $this->input->post('hasil')

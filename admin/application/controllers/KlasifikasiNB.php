@@ -192,7 +192,7 @@ class KlasifikasiNB extends CI_Controller
 			$prediksi = 'Tidak Diterima';
 		}
 
-		$data['id_nilai'] = $this->input->post('id_nilai');
+		$data['id'] = $data['id_nilai'];
 		$data['prob_diterima'] = $prob_Diterima;
 		$data['prob_hasilditerima'] = $hasil_prob_Diterima;
 		$data['prob_tidakditerima'] = $prob_TidakDiterima;
